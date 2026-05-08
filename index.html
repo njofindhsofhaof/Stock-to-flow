@@ -14,17 +14,29 @@
           <h1>Dòng tiền sector ETF</h1>
         </section>
         <section class="market-strip" aria-label="Market summary">
-          <div>
-            <span>Risk</span>
-            <strong id="riskState">Neutral</strong>
+          <div class="strip-section">
+            <span class="strip-section-label">Index</span>
+            <div class="strip-metrics">
+              <div><span>Risk</span><strong id="indexRisk">–</strong></div>
+              <div><span>Leader</span><strong id="indexLeader">–</strong></div>
+              <div><span>Watch</span><strong id="indexWatch">–</strong></div>
+            </div>
           </div>
-          <div>
-            <span>Leader</span>
-            <strong id="leaderName">XLK</strong>
+          <div class="strip-section">
+            <span class="strip-section-label">ETF</span>
+            <div class="strip-metrics">
+              <div><span>Risk</span><strong id="etfRisk">–</strong></div>
+              <div><span>Leader</span><strong id="etfLeader">–</strong></div>
+              <div><span>Watch</span><strong id="etfWatch">–</strong></div>
+            </div>
           </div>
-          <div>
-            <span>Watch</span>
-            <strong id="watchCount">0</strong>
+          <div class="strip-section">
+            <span class="strip-section-label">Stock</span>
+            <div class="strip-metrics">
+              <div><span>Risk</span><strong id="stockRisk">–</strong></div>
+              <div><span>Leader</span><strong id="stockLeader">–</strong></div>
+              <div><span>Watch</span><strong id="stockWatch">–</strong></div>
+            </div>
           </div>
         </section>
       </header>

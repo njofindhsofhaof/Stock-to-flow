@@ -429,6 +429,7 @@ let phaseFilter = "all";
 let searchTerm = "";
 let activeView = "map";
 const sectionOrder = ["Index", "ETF", "Stock"];
+const indexOrder = ["SP500", "GLD", "SLV", "URA", "CL"];
 
 const tableBody = document.querySelector("#etfTable tbody");
 const searchInput = document.querySelector("#searchInput");
@@ -621,7 +622,17 @@ function renderTable() {
     .map((section) => {
       const sectionRows = filteredRows
         .filter((etf) => etf.section === section)
-        .sort((a, b) => b.perf.m1 - a.perf.m1);
+        .sort((a, b) => {
+          if (section === "Index") {
+            const ai = indexOrder.indexOf(a.symbol);
+            const bi = indexOrder.indexOf(b.symbol);
+            if (ai === -1 && bi === -1) return 0;
+            if (ai === -1) return 1;
+            if (bi === -1) return -1;
+            return ai - bi;
+          }
+          return b.perf.m1 - a.perf.m1;
+        });
       const headerRow = `
         <tr class="section-row">
           <td colspan="22">
@@ -830,12 +841,19 @@ function renderDetail() {
     })
     .join("");
 
-  const leader = [...etfs].sort((a, b) => b.perf.m1 - a.perf.m1)[0];
-  const watchCount = etfs.filter((item) => item.perf.m1 > 0 && item.flow > 100).length;
-  document.querySelector("#leaderName").textContent = leader.symbol;
-  document.querySelector("#watchCount").textContent = watchCount;
-  document.querySelector("#riskState").textContent =
-    etfs.filter((item) => item.rotation === "Accumulation").length >= 4 ? "Risk On" : "Neutral";
+  sectionOrder.forEach((section) => {
+    const prefix = section.toLowerCase();
+    const sectionEtfs = etfs.filter((item) => item.section === section);
+    if (!sectionEtfs.length) return;
+    const leader = [...sectionEtfs].sort((a, b) => b.perf.m1 - a.perf.m1)[0];
+    const watchCount = sectionEtfs.filter((item) => item.perf.m1 > 0 && item.flow > 100).length;
+    const accCount = sectionEtfs.filter((item) => item.rotation.includes("Accumulation")).length;
+    const threshold = section === "Stock" ? 4 : 2;
+    const risk = accCount >= threshold ? "Risk On" : "Neutral";
+    document.querySelector(`#${prefix}Risk`).textContent = risk;
+    document.querySelector(`#${prefix}Leader`).textContent = leader?.symbol || "–";
+    document.querySelector(`#${prefix}Watch`).textContent = watchCount;
+  });
   document.querySelector("#asOf").textContent = window.marketDataMeta?.updatedAt
     ? `${window.marketDataMeta.source} | Updated ${window.marketDataMeta.updatedAt}`
     : "Static sample data";
