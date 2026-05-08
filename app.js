@@ -482,6 +482,7 @@ function rotationClass(rotation) {
   if (rotation.includes("Accumulation")) return "accumulation-bg";
   if (rotation.includes("Distribution") || rotation.includes("Fading")) return "distribution-bg";
   if (rotation.includes("Reflex")) return "reflex-bg";
+  if (rotation.includes("Trending")) return "trending-bg";
   return "neutral-bg";
 }
 

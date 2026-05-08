@@ -757,9 +757,15 @@ tbody tr.selected {
 }
 
 .rotation.neutral-bg {
-  background: transparent;
+  background: #6b7280;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: normal;
+}
+
+.rotation.trending-bg {
+  background: #a3e635;
+  color: #1a2e05;
+  font-weight: normal;
 }
 
 .signal.buy-signal {
