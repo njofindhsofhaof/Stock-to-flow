@@ -758,8 +758,8 @@ tbody tr.selected {
 
 .rotation.neutral-bg {
   background: transparent;
-  color: var(--cyan);
-  border: 1px solid rgba(84, 198, 179, 0.32);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .signal.buy-signal {
