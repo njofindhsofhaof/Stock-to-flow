@@ -28,6 +28,16 @@ python update_market_data.py
 
 Then open `index.html`.
 
+## Deploy To Vercel
+
+The dashboard also works as a static Vercel site. Connect the GitHub repository to Vercel and deploy from the `main` branch.
+
+The workflow commits a fresh `market_data.js` on scheduled or manual runs. That commit triggers Vercel to redeploy with the latest delayed daily data.
+
+Live URL:
+
+https://stock-to-flow.vercel.app/
+
 ## Deploy To GitHub Pages
 
 1. Create a new GitHub repository.
