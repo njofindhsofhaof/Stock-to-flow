@@ -336,10 +336,14 @@ td:nth-child(2) {
 }
 
 th:nth-child(4),
-td:nth-child(4),
+td:nth-child(4) {
+  width: 72px;
+}
+
 th:nth-child(5),
 td:nth-child(5) {
-  width: 86px;
+  width: 110px;
+  padding-right: 18px;
 }
 
 th:nth-child(6),
@@ -475,7 +479,10 @@ tbody tr.selected {
 
 .summary-item.watch-signal,
 .recommendation-item.watch-signal,
-.recommendation-card.watch-signal,
+.recommendation-card.watch-signal {
+  border-color: rgba(124, 58, 237, 0.38);
+}
+
 .summary-item.hold-signal,
 .recommendation-item.hold-signal,
 .recommendation-card.hold-signal {
@@ -537,7 +544,7 @@ tbody tr.selected {
 }
 
 .recommendation-card.watch-signal h4 {
-  color: var(--amber);
+  color: #a78bfa;
 }
 
 .recommendation-card.reduce-signal h4,
@@ -781,8 +788,8 @@ tbody tr.selected {
 }
 
 .signal.watch-signal {
-  background: #f4b74f;
-  color: #211708;
+  background: #7c3aed;
+  color: #fff;
 }
 
 .signal.neutral-signal {
