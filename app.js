@@ -518,11 +518,11 @@ function calculateRiskV3(sectionData) {
     else if (phase === "Mature" && !["Accumulation", "Accumulation (Quiet)"].includes(rotation)) score -= 0.5;
   }
   const s = score / total;
-  if (s >= 0.5)  return "🔥 Strong ON";
-  if (s >= 0.1)  return "✅ Risk On";
-  if (s >= -0.3) return "⚠️ Neutral";
-  if (s >= -0.8) return "❌ Risk Off";
-  return "💀 Strong OFF";
+  if (s >= 0.5)  return "Strong ON";
+  if (s >= 0.1)  return "Risk On";
+  if (s >= -0.3) return "Neutral";
+  if (s >= -0.8) return "Risk Off";
+  return "Strong OFF";
 }
 
 function signalClass(signal) {
