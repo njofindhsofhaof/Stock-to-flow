@@ -758,6 +758,14 @@ function renderAnalysisPanels() {
     })
     .join("");
 
+  const volTrendClass = (meaning) => {
+    if (meaning.includes("spike") || meaning.includes("Reflex")) return "vol-trend-spike";
+    if (meaning.includes("improving") || meaning.includes("accumulation")) return "vol-trend-up";
+    if (meaning.includes("fading")) return "vol-trend-fade";
+    if (meaning.includes("Distribution")) return "vol-trend-dist";
+    return "vol-trend-neutral";
+  };
+
   const volClass = (v) => {
     if (v >= 150) return "vol-vhigh";
     if (v >= 120) return "vol-high";
@@ -787,7 +795,7 @@ function renderAnalysisPanels() {
               <td class="mono ${volClass(volumes[0])}">${pct(volumes[0])}</td>
               <td class="mono ${volClass(volumes[2])}">${pct(volumes[2])}</td>
               <td class="mono ${volClass(volumes[4])}">${pct(volumes[4])}</td>
-              <td class="vol-trend">${volumeMeaning(etf, volumes)}</td>
+              <td class="vol-trend ${volTrendClass(volumeMeaning(etf, volumes))}">${volumeMeaning(etf, volumes)}</td>
             </tr>
           `;
         }).join("");

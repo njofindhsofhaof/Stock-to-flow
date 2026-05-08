@@ -642,8 +642,13 @@ tbody tr.selected {
 
 .vol-trend {
   font-size: 11px;
-  color: var(--muted);
 }
+
+.vol-trend-spike   { color: #ff6b35; font-weight: 600; }
+.vol-trend-up      { color: #4caf82; }
+.vol-trend-dist    { color: #e05c5c; }
+.vol-trend-fade    { color: var(--muted); }
+.vol-trend-neutral { color: var(--text); }
 
 .ticker-cell strong {
   display: block;
