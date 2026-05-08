@@ -1,6 +1,6 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-08 20:25:21",
+  "updatedAt": "2026-05-08 20:26:46",
   "sections": {
     "Index": {
       "risk": "Risk On",
@@ -211,27 +211,27 @@ window.marketData = [
     "section": "Index",
     "name": "Crude Oil",
     "category": "Commodity",
-    "price": 95.0,
-    "change": 0.2,
-    "mom": 40.2,
+    "price": 94.94,
+    "change": 0.14,
+    "mom": 40.1,
     "phase": "Bottoming",
     "volume": "Rising",
     "rotation": "Neutral",
     "signal": "WATCH",
-    "rsi": 48.1,
+    "rsi": 48.0,
     "flow": 28,
     "perf": {
-      "w1": -6.81,
-      "m1": -1.63,
-      "m3": 46.99
+      "w1": -6.87,
+      "m1": -1.69,
+      "m3": 46.9
     },
     "returns": [
-      0.2,
-      -7.11,
-      -6.81,
-      0.64,
-      -1.63,
-      46.99
+      0.14,
+      -7.17,
+      -6.87,
+      0.57,
+      -1.69,
+      46.9
     ],
     "volumes": [
       144,
@@ -242,10 +242,10 @@ window.marketData = [
       84
     ],
     "rsiStack": [
-      36.3,
-      44.4,
-      48.1,
-      50.5,
+      36.0,
+      44.3,
+      48.0,
+      50.4,
       52.7,
       55.5
     ]
@@ -255,28 +255,28 @@ window.marketData = [
     "dataSymbol": "BTC-USD",
     "section": "Crypto",
     "name": "Bitcoin",
-    "category": "Crypto",
-    "price": 79743.85,
-    "change": -0.33,
-    "mom": 48.8,
+    "category": "Currency",
+    "price": 79722.87,
+    "change": -0.36,
+    "mom": 48.7,
     "phase": "Mature",
     "volume": "Rising",
     "rotation": "Accumulation",
     "signal": "HOLD",
-    "rsi": 60.9,
+    "rsi": 60.8,
     "flow": 111,
     "perf": {
-      "w1": 1.54,
-      "m1": 5.31,
-      "m3": 16.58
+      "w1": 1.51,
+      "m1": 5.28,
+      "m3": 16.55
     },
     "returns": [
-      -0.33,
-      -1.46,
-      1.54,
-      4.44,
-      5.31,
-      16.58
+      -0.36,
+      -1.49,
+      1.51,
+      4.42,
+      5.28,
+      16.55
     ],
     "volumes": [
       108,
@@ -287,9 +287,9 @@ window.marketData = [
       70
     ],
     "rsiStack": [
-      55.2,
-      60.1,
-      60.9,
+      54.9,
+      60.0,
+      60.8,
       59.8,
       57.4,
       55.6
@@ -300,7 +300,7 @@ window.marketData = [
     "dataSymbol": "COIN",
     "section": "Crypto",
     "name": "Coinbase",
-    "category": "Crypto",
+    "category": "Exchange",
     "price": 192.96,
     "change": -2.53,
     "mom": 46.8,
@@ -345,7 +345,7 @@ window.marketData = [
     "dataSymbol": "CRCL",
     "section": "Crypto",
     "name": "Circle",
-    "category": "Crypto",
+    "category": "Stablecoin",
     "price": 113.25,
     "change": -7.02,
     "mom": 53.1,
@@ -390,7 +390,7 @@ window.marketData = [
     "dataSymbol": "MSTR",
     "section": "Crypto",
     "name": "MicroStrategy",
-    "category": "Crypto",
+    "category": "Fund",
     "price": 179.84,
     "change": -3.74,
     "mom": 51.0,
