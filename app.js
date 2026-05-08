@@ -723,10 +723,7 @@ function renderTable() {
   tableBody.querySelectorAll("tr").forEach((row) => {
     row.addEventListener("click", () => {
       selectedSymbol = row.dataset.symbol;
-      const selected = etfs.find((item) => item.symbol === selectedSymbol);
-      if (selected?.section === "ETF" && selected.holdings?.length) {
-        setView("basket");
-      }
+      setView("basket");
       renderTable();
       renderDetail();
     });

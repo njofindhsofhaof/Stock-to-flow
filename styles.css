@@ -664,10 +664,12 @@ tbody tr.selected {
 }
 
 .ticker-list {
-  color: var(--muted);
-  font-size: 12px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: 0.02em;
 }
 
 .pill,
