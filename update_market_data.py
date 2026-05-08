@@ -53,7 +53,6 @@ ASSETS = [
     {"symbol": "CIEN", "data_symbol": "CIEN", "name": "CIEN", "category": "Comm", "section": "Stock"},
     {"symbol": "ALMU", "data_symbol": "ALMU", "name": "ALMU", "category": "Tech Bio", "section": "Stock"},
     {"symbol": "MRVL", "data_symbol": "MRVL", "name": "MRVL", "category": "Tech", "section": "Stock"},
-    {"symbol": "VIVA", "data_symbol": "VIVA", "name": "VIVA", "category": "Stock", "section": "Stock"},
 ]
 
 

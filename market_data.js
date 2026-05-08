@@ -1,6 +1,6 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-08 17:07:01"
+  "updatedAt": "2026-05-08 17:11:00"
 };
 window.marketData = [
   {
@@ -189,9 +189,9 @@ window.marketData = [
     "section": "Index",
     "name": "Crude Oil",
     "category": "Commodity",
-    "price": 95.14,
-    "change": 0.35,
-    "mom": 40.4,
+    "price": 95.19,
+    "change": 0.4,
+    "mom": 40.5,
     "phase": "Bottoming",
     "volume": "Rising",
     "rotation": "Neutral",
@@ -199,17 +199,17 @@ window.marketData = [
     "rsi": 48.3,
     "flow": 18,
     "perf": {
-      "w1": -6.67,
-      "m1": -1.48,
-      "m3": 47.21
+      "w1": -6.62,
+      "m1": -1.43,
+      "m3": 47.28
     },
     "returns": [
-      0.35,
-      -6.97,
-      -6.67,
-      0.78,
-      -1.48,
-      47.21
+      0.4,
+      -6.92,
+      -6.62,
+      0.84,
+      -1.43,
+      47.28
     ],
     "volumes": [
       144,
@@ -220,8 +220,8 @@ window.marketData = [
       84
     ],
     "rsiStack": [
-      36.9,
-      44.7,
+      37.1,
+      44.8,
       48.3,
       50.6,
       52.8,

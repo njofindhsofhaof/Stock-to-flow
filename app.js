@@ -386,7 +386,6 @@ const stockSymbols = [
   "CRDO",
   "ALAB",
   "GFS",
-  "VIVA",
   "QUBT",
   "COHU",
   "ETN",
