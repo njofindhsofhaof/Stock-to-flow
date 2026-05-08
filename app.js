@@ -412,10 +412,27 @@ const sampleStockRows = stockSymbols.map((symbol, index) => ({
   holdings: [],
 }));
 
+const cryptoSymbols = ["BTC", "COIN", "CRCL", "MSTR"];
+const sampleCryptoRows = cryptoSymbols.map((symbol, index) => ({
+  symbol,
+  name: symbol,
+  category: "Crypto",
+  section: "Crypto",
+  mom: 50 + ((index * 11) % 30),
+  phase: ["Early", "Mature", "Bottoming", "Exhaustion"][index % 4],
+  volume: ["Rising", "Spike", "Quiet", "Fading"][index % 4],
+  rotation: ["Accumulation", "Trending up", "Neutral", "Distribution"][index % 4],
+  rsi: 45 + ((index * 8) % 40),
+  flow: 90 + ((index * 12) % 60),
+  perf: { w1: -2 + ((index * 2.1) % 12), m1: -5 + ((index * 3.4) % 28), m3: -8 + ((index * 5.1) % 40) },
+  holdings: [],
+}));
+
 const sampleRows = [
   ...sampleIndexRows,
   ...sampleEtfs.map((item) => ({ ...item, section: "ETF" })),
   ...sampleStockRows,
+  ...sampleCryptoRows,
 ];
 const etfs = mergeLiveEtfs(sampleRows, window.marketData);
 etfs.forEach((item) => {
@@ -427,7 +444,7 @@ let selectedSymbol = "XLK";
 let phaseFilter = "all";
 let searchTerm = "";
 let activeView = "map";
-const sectionOrder = ["Index", "ETF", "Stock"];
+const sectionOrder = ["Index", "ETF", "Stock", "Crypto"];
 const indexOrder = ["SP500", "GLD", "SLV", "URA", "CL"];
 
 const tableBody = document.querySelector("#etfTable tbody");

@@ -1,11 +1,16 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-08 17:48:57",
+  "updatedAt": "2026-05-08 20:25:21",
   "sections": {
     "Index": {
       "risk": "Risk On",
       "leader": "URA",
       "watch": 3
+    },
+    "Crypto": {
+      "risk": "Strong ON",
+      "leader": "MSTR",
+      "watch": 2
     },
     "ETF": {
       "risk": "Risk Off",
@@ -206,27 +211,27 @@ window.marketData = [
     "section": "Index",
     "name": "Crude Oil",
     "category": "Commodity",
-    "price": 94.7,
-    "change": -0.12,
-    "mom": 39.8,
+    "price": 95.0,
+    "change": 0.2,
+    "mom": 40.2,
     "phase": "Bottoming",
     "volume": "Rising",
     "rotation": "Neutral",
     "signal": "WATCH",
-    "rsi": 47.8,
-    "flow": 19,
+    "rsi": 48.1,
+    "flow": 28,
     "perf": {
-      "w1": -7.1,
-      "m1": -1.94,
-      "m3": 46.53
+      "w1": -6.81,
+      "m1": -1.63,
+      "m3": 46.99
     },
     "returns": [
-      -0.12,
-      -7.4,
-      -7.1,
-      0.32,
-      -1.94,
-      46.53
+      0.2,
+      -7.11,
+      -6.81,
+      0.64,
+      -1.63,
+      46.99
     ],
     "volumes": [
       144,
@@ -237,12 +242,192 @@ window.marketData = [
       84
     ],
     "rsiStack": [
-      35.1,
-      43.9,
+      36.3,
+      44.4,
+      48.1,
+      50.5,
+      52.7,
+      55.5
+    ]
+  },
+  {
+    "symbol": "BTC",
+    "dataSymbol": "BTC-USD",
+    "section": "Crypto",
+    "name": "Bitcoin",
+    "category": "Crypto",
+    "price": 79743.85,
+    "change": -0.33,
+    "mom": 48.8,
+    "phase": "Mature",
+    "volume": "Rising",
+    "rotation": "Accumulation",
+    "signal": "HOLD",
+    "rsi": 60.9,
+    "flow": 111,
+    "perf": {
+      "w1": 1.54,
+      "m1": 5.31,
+      "m3": 16.58
+    },
+    "returns": [
+      -0.33,
+      -1.46,
+      1.54,
+      4.44,
+      5.31,
+      16.58
+    ],
+    "volumes": [
+      108,
+      113,
+      59,
+      106,
+      88,
+      70
+    ],
+    "rsiStack": [
+      55.2,
+      60.1,
+      60.9,
+      59.8,
+      57.4,
+      55.6
+    ]
+  },
+  {
+    "symbol": "COIN",
+    "dataSymbol": "COIN",
+    "section": "Crypto",
+    "name": "Coinbase",
+    "category": "Crypto",
+    "price": 192.96,
+    "change": -2.53,
+    "mom": 46.8,
+    "phase": "Early",
+    "volume": "Fading",
+    "rotation": "Trending up",
+    "signal": "BUY",
+    "rsi": 50.6,
+    "flow": 92,
+    "perf": {
+      "w1": 2.76,
+      "m1": 14.16,
+      "m3": 18.74
+    },
+    "returns": [
+      -2.53,
+      -4.94,
+      2.76,
+      -2.51,
+      14.16,
+      18.74
+    ],
+    "volumes": [
+      78,
+      114,
+      80,
+      64,
+      84,
+      96
+    ],
+    "rsiStack": [
+      45.1,
+      49.3,
+      50.6,
+      50.4,
       47.8,
-      50.3,
-      52.6,
-      55.4
+      39.6
+    ]
+  },
+  {
+    "symbol": "CRCL",
+    "dataSymbol": "CRCL",
+    "section": "Crypto",
+    "name": "Circle",
+    "category": "Crypto",
+    "price": 113.25,
+    "change": -7.02,
+    "mom": 53.1,
+    "phase": "Early",
+    "volume": "Spike",
+    "rotation": "Accumulation",
+    "signal": "BUY",
+    "rsi": 56.6,
+    "flow": 161,
+    "perf": {
+      "w1": 24.61,
+      "m1": 33.08,
+      "m3": 89.54
+    },
+    "returns": [
+      -7.02,
+      -5.25,
+      24.61,
+      13.24,
+      33.08,
+      89.54
+    ],
+    "volumes": [
+      148,
+      275,
+      86,
+      56,
+      60,
+      86
+    ],
+    "rsiStack": [
+      57.4,
+      57.7,
+      56.6,
+      55.8,
+      54.3,
+      48.7
+    ]
+  },
+  {
+    "symbol": "MSTR",
+    "dataSymbol": "MSTR",
+    "section": "Crypto",
+    "name": "MicroStrategy",
+    "category": "Crypto",
+    "price": 179.84,
+    "change": -3.74,
+    "mom": 51.0,
+    "phase": "Mature",
+    "volume": "Fading",
+    "rotation": "Accumulation (Quiet)",
+    "signal": "HOLD",
+    "rsi": 62.7,
+    "flow": 83,
+    "perf": {
+      "w1": 8.7,
+      "m1": 39.56,
+      "m3": 35.22
+    },
+    "returns": [
+      -3.74,
+      -2.15,
+      8.7,
+      4.27,
+      39.56,
+      35.22
+    ],
+    "volumes": [
+      76,
+      96,
+      66,
+      72,
+      98,
+      76
+    ],
+    "rsiStack": [
+      57.4,
+      62.4,
+      62.7,
+      61.0,
+      56.9,
+      48.2
     ]
   },
   {
