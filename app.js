@@ -289,18 +289,146 @@ function mergeLiveEtfs(sampleRows, liveRows) {
     return {
       ...base,
       ...live,
+      section: live.section || base.section || "ETF",
       holdings: live.holdings || base.holdings,
       perf: live.perf || base.perf,
     };
   });
 }
 
-const etfs = mergeLiveEtfs(sampleEtfs, window.marketData);
+const sampleIndexRows = [
+  {
+    symbol: "SP500",
+    name: "S&P 500",
+    category: "Broad",
+    section: "Index",
+    mom: 54,
+    phase: "Mature",
+    volume: "Quiet",
+    rotation: "Trending up",
+    rsi: 61.5,
+    flow: 98,
+    perf: { w1: 1.1, m1: 3.8, m3: 8.6 },
+    holdings: [],
+  },
+  {
+    symbol: "GLD",
+    name: "Gold",
+    category: "Commodity",
+    section: "Index",
+    mom: 58,
+    phase: "Mature",
+    volume: "Rising",
+    rotation: "Accumulation",
+    rsi: 63.2,
+    flow: 112,
+    perf: { w1: 2.4, m1: 6.2, m3: 14.1 },
+    holdings: [],
+  },
+  {
+    symbol: "SLV",
+    name: "Silver",
+    category: "Commodity",
+    section: "Index",
+    mom: 62,
+    phase: "Mature",
+    volume: "Spike",
+    rotation: "Accumulation",
+    rsi: 67.9,
+    flow: 138,
+    perf: { w1: 3.1, m1: 9.5, m3: 18.4 },
+    holdings: [],
+  },
+  {
+    symbol: "URA",
+    name: "Uranium",
+    category: "Commodity",
+    section: "Index",
+    mom: 44,
+    phase: "Bottoming",
+    volume: "Spike",
+    rotation: "Reflex Setup",
+    rsi: 42.6,
+    flow: 126,
+    perf: { w1: 1.4, m1: -2.1, m3: 4.8 },
+    holdings: [],
+  },
+  {
+    symbol: "CL",
+    name: "Crude Oil",
+    category: "Commodity",
+    section: "Index",
+    mom: 38,
+    phase: "Bottoming",
+    volume: "Fading",
+    rotation: "Distribution",
+    rsi: 39.8,
+    flow: 84,
+    perf: { w1: -2.8, m1: -6.4, m3: -3.2 },
+    holdings: [],
+  },
+];
+
+const stockSymbols = [
+  "KMT",
+  "VMI",
+  "CSTM",
+  "UNP",
+  "JBHT",
+  "AGCO",
+  "ODFL",
+  "ALMU",
+  "SMTC",
+  "LWLG",
+  "POET",
+  "AVGO",
+  "MRVL",
+  "CRDO",
+  "ALAB",
+  "GFS",
+  "VIVA",
+  "QUBT",
+  "COHU",
+  "ETN",
+  "CIEN",
+  "OXY",
+];
+
+const sampleStockRows = stockSymbols.map((symbol, index) => ({
+  symbol,
+  name: symbol,
+  category: "Stock",
+  section: "Stock",
+  mom: 45 + ((index * 7) % 35),
+  phase: ["Bottoming", "Early", "Mature", "Exhaustion"][index % 4],
+  volume: ["Quiet", "Rising", "Spike", "Fading"][index % 4],
+  rotation: ["Neutral", "Accumulation", "Trending up", "Distribution"][index % 4],
+  rsi: 38 + ((index * 5) % 42),
+  flow: 82 + ((index * 9) % 58),
+  perf: {
+    w1: -3 + ((index * 1.3) % 8),
+    m1: -8 + ((index * 2.1) % 22),
+    m3: -12 + ((index * 3.2) % 36),
+  },
+  holdings: [],
+}));
+
+const sampleRows = [
+  ...sampleIndexRows,
+  ...sampleEtfs.map((item) => ({ ...item, section: "ETF" })),
+  ...sampleStockRows,
+];
+const etfs = mergeLiveEtfs(sampleRows, window.marketData);
+etfs.forEach((item) => {
+  item.section = item.section || "ETF";
+  item.holdings = item.holdings || [];
+});
 
 let selectedSymbol = "XLK";
 let phaseFilter = "all";
 let searchTerm = "";
 let activeView = "map";
+const sectionOrder = ["Index", "ETF", "Stock"];
 
 const tableBody = document.querySelector("#etfTable tbody");
 const searchInput = document.querySelector("#searchInput");
@@ -478,7 +606,7 @@ function volumeMeaning(etf, volumes) {
 
 function filteredEtfs() {
   return etfs.filter((etf) => {
-    const haystack = `${etf.symbol} ${etf.name} ${etf.category} ${etf.holdings
+    const haystack = `${etf.symbol} ${etf.name} ${etf.category} ${(etf.holdings || [])
       .map((item) => item[0])
       .join(" ")}`.toLowerCase();
     const phaseOk = phaseFilter === "all" || etf.phase === phaseFilter;
@@ -488,9 +616,31 @@ function filteredEtfs() {
 }
 
 function renderTable() {
-  const rows = filteredEtfs()
-    .sort((a, b) => b.perf.m1 - a.perf.m1)
-    .map((etf) => {
+  const filteredRows = filteredEtfs();
+  const rows = sectionOrder
+    .map((section) => {
+      const sectionRows = filteredRows
+        .filter((etf) => etf.section === section)
+        .sort((a, b) => b.perf.m1 - a.perf.m1);
+      const headerRow = `
+        <tr class="section-row">
+          <td colspan="22">
+            <strong>${section}</strong>
+            <span>${sectionRows.length ? `${sectionRows.length} symbols` : "No data yet"}</span>
+          </td>
+        </tr>
+      `;
+      if (!sectionRows.length) {
+        return `${headerRow}
+          <tr class="placeholder-row">
+            <td colspan="22">No ${section.toLowerCase()} data yet.</td>
+          </tr>
+        `;
+      }
+      return (
+        headerRow +
+        sectionRows
+          .map((etf) => {
       const metrics = rotationMetrics(etf);
       const signal = etf.signal || determineSignal(etf);
       return `
@@ -505,12 +655,15 @@ function renderTable() {
           <td>${pill(etf.phase, `phase ${phaseClass(etf.phase)}`)}</td>
           <td><span class="volume">${etf.volume}</span></td>
           <td>${pill(etf.rotation, `rotation ${rotationClass(etf.rotation)}`)}</td>
+          <td>${pill(signal, `signal ${signalClass(signal)}`)}</td>
           <td class="${cls(etf.rsi - 50)} mono">${etf.rsi.toFixed(1)}</td>
           ${metrics.returns.map((item) => `<td class="${cls(item)} mono">${fmt(item)}</td>`).join("")}
           ${metrics.volumes.map((item) => `<td class="${cls(item - 100)} mono">${pct(item)}</td>`).join("")}
-          <td>${pill(signal, `signal ${signalClass(signal)}`)}</td>
         </tr>
       `;
+    })
+          .join("")
+      );
     })
     .join("");
 
@@ -518,7 +671,10 @@ function renderTable() {
   tableBody.querySelectorAll("tr").forEach((row) => {
     row.addEventListener("click", () => {
       selectedSymbol = row.dataset.symbol;
-      setView("basket");
+      const selected = etfs.find((item) => item.symbol === selectedSymbol);
+      if (selected?.section === "ETF" && selected.holdings?.length) {
+        setView("basket");
+      }
       renderTable();
       renderDetail();
     });
@@ -700,6 +856,7 @@ phaseButtons.forEach((button) => {
     renderAnalysisPanels();
   });
 });
+
 
 viewButtons.forEach((button) => {
   button.addEventListener("click", () => {
