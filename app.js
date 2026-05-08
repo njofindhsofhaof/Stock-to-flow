@@ -726,6 +726,7 @@ function renderAnalysisPanels() {
   renderSummaryList("#rotationSummary", rotationCounts, rotationClass);
   renderSummaryList("#signalSummary", signalCounts, (signal) => `${signal.toLowerCase()}-signal`);
 
+
   const signalOrder = ["BUY", "HOLD", "WATCH", "REDUCE", "SELL", "AVOID"];
   const signalTitles = {
     BUY: "BUY",
@@ -757,32 +758,41 @@ function renderAnalysisPanels() {
     })
     .join("");
 
-  document.querySelector("#rsiTable tbody").innerHTML = rows
-    .map((etf) => {
-      const values = rsiStack(etf);
-      return `
-        <tr>
-          <td><strong>${etf.symbol}</strong></td>
-          ${values.map((value) => `<td class="${cls(value - 50)} mono">${value.toFixed(1)}</td>`).join("")}
-        </tr>
-      `;
-    })
-    .join("");
+  const volClass = (v) => {
+    if (v >= 150) return "vol-vhigh";
+    if (v >= 120) return "vol-high";
+    if (v >= 100) return "vol-above";
+    if (v >= 80)  return "vol-normal";
+    return "vol-low";
+  };
 
-  document.querySelector("#volumeTable tbody").innerHTML = rows
-    .map((etf) => {
-      const volumes = rotationMetrics(etf).volumes;
-      return `
-        <tr>
-          <td><strong>${etf.symbol}</strong></td>
-          <td class="${cls(volumes[0] - 100)} mono">${pct(volumes[0])}</td>
-          <td class="${cls(volumes[2] - 100)} mono">${pct(volumes[2])}</td>
-          <td class="${cls(volumes[4] - 100)} mono">${pct(volumes[4])}</td>
-          <td>${volumeMeaning(etf, volumes)}</td>
-        </tr>
-      `;
-    })
-    .join("");
+  const byCategory = {};
+  rows.forEach((etf) => {
+    const cat = etf.category || "Other";
+    if (!byCategory[cat]) byCategory[cat] = [];
+    byCategory[cat].push(etf);
+  });
+
+  document.querySelector("#volumeTable tbody").innerHTML = Object.entries(byCategory)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([cat, items]) => {
+      const headerRow = `<tr class="vol-section-row"><td colspan="5"><strong>${cat}</strong></td></tr>`;
+      const dataRows = items
+        .sort((a, b) => rotationMetrics(b).volumes[0] - rotationMetrics(a).volumes[0])
+        .map((etf) => {
+          const volumes = rotationMetrics(etf).volumes;
+          return `
+            <tr>
+              <td><strong>${etf.symbol}</strong></td>
+              <td class="mono ${volClass(volumes[0])}">${pct(volumes[0])}</td>
+              <td class="mono ${volClass(volumes[2])}">${pct(volumes[2])}</td>
+              <td class="mono ${volClass(volumes[4])}">${pct(volumes[4])}</td>
+              <td class="vol-trend">${volumeMeaning(etf, volumes)}</td>
+            </tr>
+          `;
+        }).join("");
+      return headerRow + dataRows;
+    }).join("");
 
 }
 

@@ -607,7 +607,7 @@ tbody tr.selected {
 
 #volumeTable th:nth-child(1),
 #volumeTable td:nth-child(1) {
-  width: 90px;
+  width: 72px;
 }
 
 #volumeTable th:nth-child(2),
@@ -616,13 +616,33 @@ tbody tr.selected {
 #volumeTable td:nth-child(3),
 #volumeTable th:nth-child(4),
 #volumeTable td:nth-child(4) {
-  width: 72px;
+  width: 60px;
   text-align: right;
 }
 
 #volumeTable th:nth-child(5),
 #volumeTable td:nth-child(5) {
   width: auto;
+}
+
+.vol-section-row td {
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 5px 10px;
+}
+
+.vol-vhigh { color: #ff6b35; font-weight: 700; }
+.vol-high  { color: #f0a500; font-weight: 600; }
+.vol-above { color: #4caf82; }
+.vol-normal{ color: var(--text); }
+.vol-low   { color: var(--muted); }
+
+.vol-trend {
+  font-size: 11px;
+  color: var(--muted);
 }
 
 .ticker-cell strong {
