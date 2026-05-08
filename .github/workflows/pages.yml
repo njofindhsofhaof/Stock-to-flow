@@ -40,7 +40,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update market data"
-          file_pattern: market_data.js
+          file_pattern: market_data.js market_history.json
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
