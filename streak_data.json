@@ -1,170 +1,254 @@
 {
   "SP500": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "GLD": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "SLV": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-08"
   },
   "URA": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "CL": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "BTC": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "COIN": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "CRCL": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "MSTR": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "XLE": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "XLK": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "XLU": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "XLV": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "XLC": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "XLF": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "XLRE": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-08"
   },
   "XLI": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-08"
   },
   "XLB": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-08"
   },
   "XLY": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "XLP": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "SOX": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-08"
   },
   "AVGO": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "SMTC": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-08"
   },
   "CRDO": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "ALAB": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "GFS": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-08"
   },
   "QUBT": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "COHU": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "LWLG": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "POET": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "VMI": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "ETN": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-08"
   },
   "UNP": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "JBHT": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "ODFL": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "AGCO": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "CSTM": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "KMT": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "OXY": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "CIEN": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-08"
   },
   "ALMU": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   },
   "MRVL": {
-    "streak": 0,
-    "last_date": "2026-05-08"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-08",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-08"
   }
 }

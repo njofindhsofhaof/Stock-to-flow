@@ -208,7 +208,7 @@ def determine_signal_v3(phase: str, rotation: str, mom: float) -> str:
     return "NEUTRAL"
 
 
-UPGRADE_MAP: dict[str, str] = {
+DIST_UPGRADE: dict[str, str] = {
     "NEUTRAL": "REDUCE",
     "WATCH":   "REDUCE",
     "HOLD":    "REDUCE",
@@ -218,46 +218,111 @@ UPGRADE_MAP: dict[str, str] = {
     "AVOID":   "AVOID",
 }
 
+ACC_UPGRADE_2: dict[str, str] = {
+    "NEUTRAL":    "BUY",
+    "WATCH":      "BUY",
+    "HOLD":       "BUY",
+    "BUY":        "STRONG BUY",
+    "STRONG BUY": "STRONG BUY",
+    "REDUCE":     "REDUCE",
+    "SELL":       "SELL",
+    "AVOID":      "AVOID",
+}
+
+ACC_UPGRADE_3: dict[str, str] = {
+    "NEUTRAL":    "BUY",
+    "WATCH":      "BUY",
+    "HOLD":       "STRONG BUY",
+    "BUY":        "CONFIRMED BUY",
+    "STRONG BUY": "CONFIRMED BUY",
+    "REDUCE":     "REDUCE",
+    "SELL":       "SELL",
+    "AVOID":      "AVOID",
+}
+
 
 def load_streak_data(path: Path) -> dict:
-    if path.exists():
-        return json.loads(path.read_text(encoding="utf-8"))
-    return {}
+    if not path.exists():
+        return {}
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    # Migrate old format {"symbol": {"streak": n, "last_date": "..."}}
+    migrated = {}
+    for sym, val in raw.items():
+        if "dist_streak" in val:
+            migrated[sym] = val
+        else:
+            migrated[sym] = {
+                "dist_streak":     val.get("streak", 0),
+                "dist_last_date":  val.get("last_date", ""),
+                "acc_streak":      0,
+                "acc_last_date":   "",
+            }
+    return migrated
 
 
 def save_streak_data(path: Path, data: dict) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def update_streak(streak_data: dict, symbol: str, is_distribution: bool, today: date) -> int:
-    today_str = today.isoformat()
-    entry = streak_data.get(symbol, {"streak": 0, "last_date": ""})
-    last_date_str = entry.get("last_date", "")
-
-    if is_distribution:
+def _update_one_streak(entry: dict, is_active: bool, today_str: str,
+                       streak_key: str, date_key: str) -> int:
+    last_date_str = entry.get(date_key, "")
+    current = entry.get(streak_key, 0)
+    if is_active:
         if last_date_str == today_str:
-            # Already processed today
-            return entry["streak"]
+            return current
         elif last_date_str:
-            gap = (today - date.fromisoformat(last_date_str)).days
-            streak = entry["streak"] + 1 if gap <= 4 else 1  # <=4 để qua weekend/holiday
+            gap = (date.fromisoformat(today_str) - date.fromisoformat(last_date_str)).days
+            streak = current + 1 if gap <= 4 else 1
         else:
             streak = 1
     else:
         streak = 0
-
-    streak_data[symbol] = {"streak": streak, "last_date": today_str}
+    entry[streak_key] = streak
+    entry[date_key] = today_str
     return streak
 
 
-def upgrade_signal_with_streak(base_signal: str, streak: int) -> str:
-    if streak == 0:
-        return base_signal
-    if streak >= 3:
+def update_streaks(streak_data: dict, symbol: str,
+                   is_dist: bool, is_acc: bool, today: date) -> tuple[int, int]:
+    today_str = today.isoformat()
+    if symbol not in streak_data:
+        streak_data[symbol] = {"dist_streak": 0, "dist_last_date": "",
+                               "acc_streak":  0, "acc_last_date":  ""}
+    entry = streak_data[symbol]
+    dist = _update_one_streak(entry, is_dist, today_str, "dist_streak", "dist_last_date")
+    acc  = _update_one_streak(entry, is_acc,  today_str, "acc_streak",  "acc_last_date")
+    return dist, acc
+
+
+def apply_streaks_to_signal(base_signal: str, dist_streak: int, acc_streak: int) -> str:
+    # Distribution takes priority
+    if dist_streak >= 3:
         return "SELL"
-    if streak == 2:
-        return UPGRADE_MAP.get(base_signal, base_signal)
-    return base_signal  # streak == 1: no change
+    if dist_streak == 2:
+        return DIST_UPGRADE.get(base_signal, base_signal)
+    # Accumulation (only when no distribution conflict)
+    if dist_streak == 0:
+        if acc_streak >= 3:
+            return ACC_UPGRADE_3.get(base_signal, base_signal)
+        if acc_streak == 2:
+            return ACC_UPGRADE_2.get(base_signal, base_signal)
+    return base_signal
+
+
+def apply_streaks_to_rotation(base_rotation: str, dist_streak: int, acc_streak: int,
+                               is_dist: bool, is_acc: bool) -> str:
+    if dist_streak >= 3:
+        return "Confirmed Distribution"
+    if dist_streak == 2 and is_dist:
+        return f"{base_rotation} (Day 2)"
+    if acc_streak >= 3:
+        return "Confirmed Accumulation"
+    if acc_streak == 2 and is_acc:
+        return "Accumulation (Day 2)"
+    if acc_streak == 1 and is_acc:
+        return "Accumulation (Day 1)"
+    return base_rotation
 
 
 def calculate_risk_v3(section_rows: list) -> str:
@@ -328,20 +393,14 @@ def main() -> None:
         mom = round(safe_float(latest["MOM"]), 1)
 
         r1 = safe_float(latest["R1"])
-        v_current = safe_float(latest["V_current"], 100)
         v1 = safe_float(latest["V1"], 100)
         is_dist = r1 < 0 and v1 > 120
-        streak = update_streak(streak_data, asset["symbol"], is_dist, today)
+        is_acc  = r1 > 0 and v1 > 120
+        dist_streak, acc_streak = update_streaks(streak_data, asset["symbol"], is_dist, is_acc, today)
 
         base_signal = determine_signal_v3(phase, rotation, mom)
-        final_signal = upgrade_signal_with_streak(base_signal, streak)
-
-        # Modifier cho rotation khi streak >= 2
-        display_rotation = rotation
-        if streak == 2:
-            display_rotation = f"{rotation} (Day 2)"
-        elif streak >= 3:
-            display_rotation = f"Confirmed Distribution"
+        final_signal = apply_streaks_to_signal(base_signal, dist_streak, acc_streak)
+        display_rotation = apply_streaks_to_rotation(rotation, dist_streak, acc_streak, is_dist, is_acc)
 
         rows.append(
             {
@@ -355,7 +414,7 @@ def main() -> None:
                 "mom": mom,
                 "phase": phase,
                 "volume": "Spike"
-                if v_current > 120
+                if safe_float(latest["V_current"], 100) > 120
                 else "Rising"
                 if safe_float(latest["V1"], 100) > safe_float(latest["V6"], 100)
                 else "Fading"
@@ -363,7 +422,8 @@ def main() -> None:
                 else "Quiet",
                 "rotation": display_rotation,
                 "signal": final_signal,
-                "streak": streak,
+                "dist_streak": dist_streak,
+                "acc_streak":  acc_streak,
                 "rsi": round(safe_float(latest["RSI"], 50), 1),
                 "flow": round(safe_float(latest["V_current"], 100)),
                 "perf": {
