@@ -409,6 +409,12 @@ tbody tr.selected {
   border-color: rgba(239, 131, 84, 0.38);
 }
 
+.summary-item.avoid-signal,
+.recommendation-item.avoid-signal,
+.recommendation-card.avoid-signal {
+  border-color: rgba(183, 75, 84, 0.48);
+}
+
 .summary-item strong,
 .recommendation-item strong {
   overflow: hidden;
@@ -456,7 +462,8 @@ tbody tr.selected {
 }
 
 .recommendation-card.reduce-signal h4,
-.recommendation-card.sell-signal h4 {
+.recommendation-card.sell-signal h4,
+.recommendation-card.avoid-signal h4 {
   color: var(--red);
 }
 
@@ -513,6 +520,30 @@ tbody tr.selected {
 .mini-table td {
   padding: 9px 10px;
   font-size: 12px;
+}
+
+#volumeTable {
+  table-layout: auto;
+}
+
+#volumeTable th:nth-child(1),
+#volumeTable td:nth-child(1) {
+  width: 90px;
+}
+
+#volumeTable th:nth-child(2),
+#volumeTable td:nth-child(2),
+#volumeTable th:nth-child(3),
+#volumeTable td:nth-child(3),
+#volumeTable th:nth-child(4),
+#volumeTable td:nth-child(4) {
+  width: 72px;
+  text-align: right;
+}
+
+#volumeTable th:nth-child(5),
+#volumeTable td:nth-child(5) {
+  width: auto;
 }
 
 .ticker-cell strong {
@@ -636,6 +667,11 @@ tbody tr.selected {
 .signal.reduce-signal {
   background: #ef8354;
   color: #1f1009;
+}
+
+.signal.avoid-signal {
+  background: #7f1d2d;
+  color: #fff;
 }
 
 .signal.watch-signal {
