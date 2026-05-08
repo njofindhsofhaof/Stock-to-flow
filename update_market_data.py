@@ -204,6 +204,53 @@ def determine_signal_v3(phase: str, rotation: str, mom: float) -> str:
     return "NEUTRAL"
 
 
+def calculate_risk_v3(section_rows: list) -> str:
+    if not section_rows:
+        return "Neutral"
+    total = len(section_rows)
+    score = 0.0
+    for item in section_rows:
+        phase = item.get("phase", "Neutral")
+        rotation = item.get("rotation", "Neutral")
+        if rotation in ["Accumulation", "Accumulation (Quiet)", "Trending up"]:
+            if phase in ["Early", "Bottoming"]:
+                score += 2
+            elif phase == "Mature":
+                score += 1
+        elif rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
+            if phase in ["Mature", "Exhaustion"]:
+                score -= 2
+            else:
+                score -= 1
+        if phase == "Exhaustion":
+            score -= 1
+        elif phase == "Mature" and rotation not in ["Accumulation", "Accumulation (Quiet)"]:
+            score -= 0.5
+    s = score / total
+    if s >= 0.5:  return "Strong ON"
+    if s >= 0.1:  return "Risk On"
+    if s >= -0.3: return "Neutral"
+    if s >= -0.8: return "Risk Off"
+    return "Strong OFF"
+
+
+def build_section_summaries(rows: list) -> dict:
+    sections: dict = {}
+    for row in rows:
+        sec = row.get("section", "ETF")
+        sections.setdefault(sec, []).append(row)
+    result = {}
+    for sec, items in sections.items():
+        leader_row = max(items, key=lambda x: x.get("perf", {}).get("m1", 0))
+        watch = sum(1 for x in items if x.get("perf", {}).get("m1", 0) > 0 and x.get("flow", 100) > 100)
+        result[sec] = {
+            "risk": calculate_risk_v3(items),
+            "leader": leader_row["symbol"],
+            "watch": watch,
+        }
+    return result
+
+
 def main() -> None:
     root_dir = Path(__file__).parent
     spy = download("SPY")
@@ -275,14 +322,18 @@ def main() -> None:
             }
         )
 
-    payload = {
-        "source": "Yahoo Finance via yfinance (delayed daily data)",
-        "updatedAt": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "rows": rows,
-    }
-
     if not rows:
         raise RuntimeError("No market data rows were downloaded; keeping the previous dashboard data.")
+
+    sections = build_section_summaries(rows)
+    updated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    payload = {
+        "source": "Yahoo Finance via yfinance (delayed daily data)",
+        "updatedAt": updated_at,
+        "sections": sections,
+        "rows": rows,
+    }
 
     history_path = root_dir / "market_history.json"
     if history_path.exists():
@@ -296,7 +347,8 @@ def main() -> None:
     snapshot_date = datetime.now().strftime("%Y-%m-%d")
     snapshot = {
         "date": snapshot_date,
-        "updatedAt": payload["updatedAt"],
+        "updatedAt": updated_at,
+        "sections": sections,
         "rows": rows,
     }
     snapshots = [item for item in history.get("snapshots", []) if item.get("date") != snapshot_date]
@@ -310,7 +362,7 @@ def main() -> None:
 
     js = (
         "window.marketDataMeta = "
-        + json.dumps({k: payload[k] for k in ["source", "updatedAt"]}, ensure_ascii=False, indent=2)
+        + json.dumps({k: payload[k] for k in ["source", "updatedAt", "sections"]}, ensure_ascii=False, indent=2)
         + ";\nwindow.marketData = "
         + json.dumps(rows, ensure_ascii=False, indent=2)
         + ";\n"
