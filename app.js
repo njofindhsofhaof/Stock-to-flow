@@ -570,8 +570,12 @@ function countBy(items, getter) {
   }, {});
 }
 
-function renderSummaryList(selector, counts, classGetter = () => "") {
-  const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+const phaseOrder = ["Bottoming", "Early", "Mature", "Exhaustion"];
+
+function renderSummaryList(selector, counts, classGetter = () => "", fixedOrder = null) {
+  const entries = fixedOrder
+    ? fixedOrder.filter((k) => k in counts).map((k) => [k, counts[k]])
+    : Object.entries(counts).sort((a, b) => b[1] - a[1]);
   document.querySelector(selector).innerHTML = entries
     .map(([label, count]) => {
       const extraClass = classGetter(label);
@@ -736,7 +740,7 @@ function renderAnalysisPanels() {
   const rotationCounts = countBy(rows, (etf) => etf.rotation);
   const signalCounts = countBy(rows, (etf) => signalShort(etf.signal || determineSignal(etf)));
 
-  renderSummaryList("#phaseSummary", phaseCounts, (phase) => `phase ${phaseClass(phase)}`);
+  renderSummaryList("#phaseSummary", phaseCounts, (phase) => `phase ${phaseClass(phase)}`, phaseOrder);
   renderSummaryList("#rotationSummary", rotationCounts, rotationClass);
   renderSummaryList("#signalSummary", signalCounts, (signal) => `${signal.toLowerCase()}-signal`);
 

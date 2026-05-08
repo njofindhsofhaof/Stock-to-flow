@@ -708,8 +708,8 @@ tbody tr.selected {
 }
 
 .phase.bottoming {
-  background: #90ee90;
-  color: #142016;
+  background: #6b7280;
+  color: #fff;
 }
 
 .phase.early,
