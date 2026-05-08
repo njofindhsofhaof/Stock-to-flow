@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, date, timedelta
 import json
 from pathlib import Path
 
@@ -208,6 +208,58 @@ def determine_signal_v3(phase: str, rotation: str, mom: float) -> str:
     return "NEUTRAL"
 
 
+UPGRADE_MAP: dict[str, str] = {
+    "NEUTRAL": "REDUCE",
+    "WATCH":   "REDUCE",
+    "HOLD":    "REDUCE",
+    "BUY":     "WATCH",
+    "REDUCE":  "SELL",
+    "SELL":    "SELL",
+    "AVOID":   "AVOID",
+}
+
+
+def load_streak_data(path: Path) -> dict:
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    return {}
+
+
+def save_streak_data(path: Path, data: dict) -> None:
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def update_streak(streak_data: dict, symbol: str, is_distribution: bool, today: date) -> int:
+    today_str = today.isoformat()
+    entry = streak_data.get(symbol, {"streak": 0, "last_date": ""})
+    last_date_str = entry.get("last_date", "")
+
+    if is_distribution:
+        if last_date_str == today_str:
+            # Already processed today
+            return entry["streak"]
+        elif last_date_str:
+            gap = (today - date.fromisoformat(last_date_str)).days
+            streak = entry["streak"] + 1 if gap <= 4 else 1  # <=4 để qua weekend/holiday
+        else:
+            streak = 1
+    else:
+        streak = 0
+
+    streak_data[symbol] = {"streak": streak, "last_date": today_str}
+    return streak
+
+
+def upgrade_signal_with_streak(base_signal: str, streak: int) -> str:
+    if streak == 0:
+        return base_signal
+    if streak >= 3:
+        return "SELL"
+    if streak == 2:
+        return UPGRADE_MAP.get(base_signal, base_signal)
+    return base_signal  # streak == 1: no change
+
+
 def calculate_risk_v3(section_rows: list) -> str:
     if not section_rows:
         return "Neutral"
@@ -257,6 +309,9 @@ def build_section_summaries(rows: list) -> dict:
 
 def main() -> None:
     root_dir = Path(__file__).parent
+    streak_path = root_dir / "streak_data.json"
+    streak_data = load_streak_data(streak_path)
+    today = date.today()
     spy = download("SPY")
     rows = []
 
@@ -272,6 +327,21 @@ def main() -> None:
         rotation = str(latest["ROTATION"])
         mom = round(safe_float(latest["MOM"]), 1)
 
+        r1 = safe_float(latest["R1"])
+        v_current = safe_float(latest["V_current"], 100)
+        is_dist = r1 < 0 and v_current > 120
+        streak = update_streak(streak_data, asset["symbol"], is_dist, today)
+
+        base_signal = determine_signal_v3(phase, rotation, mom)
+        final_signal = upgrade_signal_with_streak(base_signal, streak)
+
+        # Modifier cho rotation khi streak >= 2
+        display_rotation = rotation
+        if streak == 2:
+            display_rotation = f"{rotation} (Day 2)"
+        elif streak >= 3:
+            display_rotation = f"Confirmed Distribution"
+
         rows.append(
             {
                 "symbol": asset["symbol"],
@@ -284,14 +354,15 @@ def main() -> None:
                 "mom": mom,
                 "phase": phase,
                 "volume": "Spike"
-                if safe_float(latest["V_current"], 100) > 120
+                if v_current > 120
                 else "Rising"
                 if safe_float(latest["V1"], 100) > safe_float(latest["V6"], 100)
                 else "Fading"
                 if safe_float(latest["V1"], 100) < safe_float(latest["V6"], 100)
                 else "Quiet",
-                "rotation": rotation,
-                "signal": determine_signal_v3(phase, rotation, mom),
+                "rotation": display_rotation,
+                "signal": final_signal,
+                "streak": streak,
                 "rsi": round(safe_float(latest["RSI"], 50), 1),
                 "flow": round(safe_float(latest["V_current"], 100)),
                 "perf": {
@@ -329,6 +400,7 @@ def main() -> None:
     if not rows:
         raise RuntimeError("No market data rows were downloaded; keeping the previous dashboard data.")
 
+    save_streak_data(streak_path, streak_data)
     sections = build_section_summaries(rows)
     updated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
