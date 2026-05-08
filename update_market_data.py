@@ -329,7 +329,8 @@ def main() -> None:
 
         r1 = safe_float(latest["R1"])
         v_current = safe_float(latest["V_current"], 100)
-        is_dist = r1 < 0 and v_current > 120
+        v1 = safe_float(latest["V1"], 100)
+        is_dist = r1 < 0 and v1 > 120
         streak = update_streak(streak_data, asset["symbol"], is_dist, today)
 
         base_signal = determine_signal_v3(phase, rotation, mom)
