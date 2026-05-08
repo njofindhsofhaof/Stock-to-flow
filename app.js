@@ -343,19 +343,32 @@ function rotationClass(rotation) {
 function determineSignal(etf) {
   const phase = etf.phase;
   const rotation = etf.rotation;
+  const mom = etf.mom ?? 50;
 
-  if (phase === "Bottoming" && ["Reflex Setup", "Accumulation", "Accumulation (Quiet)"].includes(rotation)) return "BUY";
-  if (phase === "Early" && ["Accumulation", "Accumulation (Quiet)", "Trending up"].includes(rotation)) return "BUY";
-  if (phase === "Bottoming" && rotation === "Accumulation (Quiet)") return "BUY";
-  if (phase === "Mature" && ["Accumulation", "Accumulation (Quiet)", "Trending up"].includes(rotation)) return "HOLD";
-  if (phase === "Early" && rotation === "Neutral") return "HOLD";
-  if (phase === "Mature" && rotation === "Neutral") return "HOLD";
-  if (phase === "Exhaustion" && ["Accumulation (Quiet)", "Accumulation", "Neutral", "Trending up"].includes(rotation)) return "WATCH";
-  if (phase === "Early" && ["Distribution", "Distribution (Quiet)", "Fading"].includes(rotation)) return "REDUCE";
-  if (phase === "Exhaustion" && ["Distribution", "Distribution (Quiet)", "Fading"].includes(rotation)) {
-    return "SELL";
+  if (phase === "Bottoming" && ["Distribution", "Distribution (Quiet)", "Fading"].includes(rotation)) return "AVOID";
+  if (phase === "Exhaustion" && ["Accumulation (Quiet)", "Accumulation"].includes(rotation)) {
+    return mom > 70 ? "SELL" : "WATCH";
   }
+  if (phase === "Exhaustion" && ["Trending up", "Neutral"].includes(rotation)) return "WATCH";
+
+  if (phase === "Bottoming" && rotation === "Reflex Setup") return "BUY";
+  if (phase === "Bottoming" && ["Accumulation (Quiet)", "Accumulation"].includes(rotation)) return "BUY";
+  if (phase === "Early" && ["Accumulation", "Accumulation (Quiet)", "Trending up"].includes(rotation)) return "BUY";
+
+  if (phase === "Mature" && ["Accumulation", "Accumulation (Quiet)", "Trending up"].includes(rotation)) return "HOLD";
+  if (phase === "Mature" && rotation === "Neutral") return "HOLD";
+  if (phase === "Early" && rotation === "Neutral") return "HOLD";
+  if (phase === "Mature" && rotation === "Reflex Setup") return "HOLD";
+
   if (phase === "Mature" && ["Distribution", "Distribution (Quiet)"].includes(rotation)) return "SELL";
+  if (phase === "Mature" && rotation === "Fading") return "SELL";
+  if (phase === "Early" && ["Distribution", "Distribution (Quiet)", "Fading"].includes(rotation)) return "REDUCE";
+  if (phase === "Exhaustion" && ["Distribution", "Distribution (Quiet)", "Fading"].includes(rotation)) return "SELL";
+
+  if (phase === "Bottoming" && rotation === "Neutral") return "WATCH";
+  if (phase === "Early" && rotation === "Reflex Setup") return "WATCH";
+  if (phase === "Neutral") return "NEUTRAL";
+
   return "NEUTRAL";
 }
 
@@ -364,6 +377,7 @@ function signalClass(signal) {
   if (signal.startsWith("HOLD")) return "hold-signal";
   if (signal.startsWith("SELL")) return "sell-signal";
   if (signal.startsWith("REDUCE")) return "reduce-signal";
+  if (signal.startsWith("AVOID")) return "avoid-signal";
   if (signal.startsWith("WATCH")) return "watch-signal";
   return "neutral-signal";
 }
@@ -373,6 +387,7 @@ function signalShort(signal) {
   if (signal.startsWith("HOLD")) return "HOLD";
   if (signal.startsWith("SELL")) return "SELL";
   if (signal.startsWith("REDUCE")) return "REDUCE";
+  if (signal.startsWith("AVOID")) return "AVOID";
   if (signal.startsWith("WATCH")) return "WATCH";
   return "NEUTRAL";
 }
@@ -477,7 +492,7 @@ function renderTable() {
     .sort((a, b) => b.perf.m1 - a.perf.m1)
     .map((etf) => {
       const metrics = rotationMetrics(etf);
-      const signal = determineSignal(etf);
+      const signal = etf.signal || determineSignal(etf);
       return `
         <tr class="${etf.symbol === selectedSymbol ? "selected" : ""}" data-symbol="${etf.symbol}">
           <td class="ticker-list">${etf.symbol}</td>
@@ -514,24 +529,25 @@ function renderAnalysisPanels() {
   const rows = filteredEtfs();
   const phaseCounts = countBy(rows, (etf) => etf.phase);
   const rotationCounts = countBy(rows, (etf) => etf.rotation);
-  const signalCounts = countBy(rows, (etf) => signalShort(determineSignal(etf)));
+  const signalCounts = countBy(rows, (etf) => signalShort(etf.signal || determineSignal(etf)));
 
   renderSummaryList("#phaseSummary", phaseCounts, (phase) => `phase ${phaseClass(phase)}`);
   renderSummaryList("#rotationSummary", rotationCounts, rotationClass);
   renderSummaryList("#signalSummary", signalCounts, (signal) => `${signal.toLowerCase()}-signal`);
 
-  const signalOrder = ["BUY", "HOLD", "WATCH", "REDUCE", "SELL"];
+  const signalOrder = ["BUY", "HOLD", "WATCH", "REDUCE", "SELL", "AVOID"];
   const signalTitles = {
     BUY: "BUY",
     HOLD: "HOLD",
     WATCH: "WATCH",
     REDUCE: "REDUCE",
     SELL: "SELL",
+    AVOID: "AVOID",
   };
 
   document.querySelector("#recommendations").innerHTML = signalOrder
     .map((signal) => {
-      const matches = rows.filter((etf) => signalShort(determineSignal(etf)) === signal);
+      const matches = rows.filter((etf) => signalShort(etf.signal || determineSignal(etf)) === signal);
       return `
         <div class="recommendation-card ${signal.toLowerCase()}-signal">
           <h4>${signalTitles[signal]}</h4>
