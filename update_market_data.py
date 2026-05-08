@@ -137,6 +137,47 @@ def safe_float(value: object, default: float = 0) -> float:
     return float(value)
 
 
+def determine_signal_v3(phase: str, rotation: str, mom: float) -> str:
+    if phase == "Bottoming" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
+        return "AVOID"
+    if phase == "Exhaustion" and rotation in ["Accumulation (Quiet)", "Accumulation"]:
+        return "SELL" if mom > 70 else "WATCH"
+    if phase == "Exhaustion" and rotation in ["Trending up", "Neutral"]:
+        return "WATCH"
+
+    if phase == "Bottoming" and rotation == "Reflex Setup":
+        return "BUY"
+    if phase == "Bottoming" and rotation in ["Accumulation (Quiet)", "Accumulation"]:
+        return "BUY"
+    if phase == "Early" and rotation in ["Accumulation", "Accumulation (Quiet)", "Trending up"]:
+        return "BUY"
+
+    if phase == "Mature" and rotation in ["Accumulation", "Accumulation (Quiet)", "Trending up"]:
+        return "HOLD"
+    if phase == "Mature" and rotation == "Neutral":
+        return "HOLD"
+    if phase == "Early" and rotation == "Neutral":
+        return "HOLD"
+    if phase == "Mature" and rotation == "Reflex Setup":
+        return "HOLD"
+
+    if phase == "Mature" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
+        return "SELL"
+    if phase == "Early" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
+        return "REDUCE"
+    if phase == "Exhaustion" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
+        return "SELL"
+
+    if phase == "Bottoming" and rotation == "Neutral":
+        return "WATCH"
+    if phase == "Early" and rotation == "Reflex Setup":
+        return "WATCH"
+    if phase == "Neutral":
+        return "NEUTRAL"
+
+    return "NEUTRAL"
+
+
 def main() -> None:
     spy = download("SPY")
     rows = []
@@ -148,6 +189,9 @@ def main() -> None:
 
         analyzed = calculate_rotation_signals(df, spy)
         latest = analyzed.iloc[-1]
+        phase = str(latest["MAX"])
+        rotation = str(latest["ROTATION"])
+        mom = round(safe_float(latest["MOM"]), 1)
 
         rows.append(
             {
@@ -157,8 +201,8 @@ def main() -> None:
                 "category": category,
                 "price": round(safe_float(latest["Close"]), 2),
                 "change": round(safe_float(df["Close"].pct_change().iloc[-1] * 100), 2),
-                "mom": round(safe_float(latest["MOM"]), 1),
-                "phase": str(latest["MAX"]),
+                "mom": mom,
+                "phase": phase,
                 "volume": "Spike"
                 if safe_float(latest["V_current"], 100) > 120
                 else "Rising"
@@ -166,7 +210,8 @@ def main() -> None:
                 else "Fading"
                 if safe_float(latest["V1"], 100) < safe_float(latest["V6"], 100)
                 else "Quiet",
-                "rotation": str(latest["ROTATION"]),
+                "rotation": rotation,
+                "signal": determine_signal_v3(phase, rotation, mom),
                 "rsi": round(safe_float(latest["RSI"], 50), 1),
                 "flow": round(safe_float(latest["V_current"], 100)),
                 "perf": {
