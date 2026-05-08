@@ -480,7 +480,6 @@ function renderTable() {
       const signal = determineSignal(etf);
       return `
         <tr class="${etf.symbol === selectedSymbol ? "selected" : ""}" data-symbol="${etf.symbol}">
-          <td class="ticker-cell"><strong>${etf.name}</strong><span>${etf.category} basket</span></td>
           <td class="ticker-list">${etf.symbol}</td>
           <td>${etf.category}</td>
           <td class="mono">${money(etf.price)}</td>
@@ -578,29 +577,6 @@ function renderAnalysisPanels() {
     })
     .join("");
 
-  const outflow = rows.filter((etf) => {
-    const signal = signalShort(determineSignal(etf));
-    return signal === "SELL" || etf.rotation.includes("Distribution") || etf.rotation === "Fading";
-  });
-  const inflow = rows.filter((etf) => {
-    const signal = signalShort(determineSignal(etf));
-    return signal === "BUY" || etf.rotation.includes("Accumulation") || etf.rotation === "Reflex Setup";
-  });
-
-  document.querySelector("#moneyFlow").innerHTML = `
-    <div class="flow-column">
-      <h4>Rai khoi / reduce</h4>
-      <div class="flow-chip-list">
-        ${outflow.map((etf) => `<span class="flow-chip sell-signal">${etf.symbol}</span>`).join("") || "<span class=\"flow-chip\">None</span>"}
-      </div>
-    </div>
-    <div class="flow-column">
-      <h4>Dang vao / watch add</h4>
-      <div class="flow-chip-list">
-        ${inflow.map((etf) => `<span class="flow-chip buy-signal">${etf.symbol}</span>`).join("") || "<span class=\"flow-chip\">None</span>"}
-      </div>
-    </div>
-  `;
 }
 
 function setView(view) {
