@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ETF Rotation Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <section>
+          <p class="eyebrow">ETF rotation monitor</p>
+          <h1>Dòng tiền sector ETF</h1>
+        </section>
+        <section class="market-strip" aria-label="Market summary">
+          <div>
+            <span>Risk</span>
+            <strong id="riskState">Neutral</strong>
+          </div>
+          <div>
+            <span>Leader</span>
+            <strong id="leaderName">XLK</strong>
+          </div>
+          <div>
+            <span>Watch</span>
+            <strong id="watchCount">0</strong>
+          </div>
+        </section>
+      </header>
+
+      <nav class="view-tabs" aria-label="Dashboard views">
+        <button class="active" data-view="map">Rotation Map</button>
+        <button data-view="basket">Basket Detail</button>
+      </nav>
+
+      <section class="toolbar" aria-label="Dashboard controls">
+        <label class="search">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="ETF, stock, sector..." />
+        </label>
+        <div class="segmented" role="tablist" aria-label="Phase filter">
+          <button class="active" data-phase="all">All</button>
+          <button data-phase="Early">Early</button>
+          <button data-phase="Mature">Mature</button>
+          <button data-phase="Bottoming">Bottoming</button>
+          <button data-phase="Exhaustion">Exhaustion</button>
+        </div>
+      </section>
+
+      <section class="layout map-view" id="mapView">
+        <div class="table-panel">
+          <div class="section-head">
+            <h2>Rotation Map</h2>
+            <span id="asOf">Static sample data</span>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table" id="etfTable">
+              <thead>
+                <tr>
+                  <th>Market</th>
+                  <th>Tickers</th>
+                  <th>Cat</th>
+                  <th>Mom</th>
+                  <th>MAX</th>
+                  <th>Vol Profile</th>
+                  <th>Rotation</th>
+                  <th>RSI</th>
+                  <th>R1</th>
+                  <th>R3</th>
+                  <th>R5</th>
+                  <th>R10</th>
+                  <th>R20</th>
+                  <th>R60</th>
+                  <th>V1</th>
+                  <th>V2</th>
+                  <th>V3</th>
+                  <th>V4</th>
+                  <th>V5</th>
+                  <th>V6</th>
+                  <th>Signal</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="analysis-grid">
+          <section class="analysis-panel">
+            <div class="section-head compact">
+              <h3>Phase Distribution</h3>
+              <span>MAX</span>
+            </div>
+            <div id="phaseSummary" class="summary-list"></div>
+          </section>
+
+          <section class="analysis-panel">
+            <div class="section-head compact">
+              <h3>Rotation Distribution</h3>
+              <span>Flow</span>
+            </div>
+            <div id="rotationSummary" class="summary-list"></div>
+          </section>
+
+          <section class="analysis-panel">
+            <div class="section-head compact">
+              <h3>Trading Signal</h3>
+              <span>BUY / HOLD / SELL</span>
+            </div>
+            <div id="signalSummary" class="summary-list"></div>
+          </section>
+
+          <section class="analysis-panel recommendation-panel">
+            <div class="section-head compact">
+              <h3>Rotation Recommendation</h3>
+              <span>Action list</span>
+            </div>
+            <div id="recommendations" class="recommendation-list"></div>
+          </section>
+
+          <section class="analysis-panel wide-panel">
+            <div class="section-head compact">
+              <h3>RSI Multi-Timeframe</h3>
+              <span>RSI1 short - RSI6 long</span>
+            </div>
+            <div class="mini-table-wrap">
+              <table class="mini-table" id="rsiTable">
+                <thead>
+                  <tr>
+                    <th>Symbol</th>
+                    <th>RSI1</th>
+                    <th>RSI2</th>
+                    <th>RSI3</th>
+                    <th>RSI4</th>
+                    <th>RSI5</th>
+                    <th>RSI6</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="analysis-panel wide-panel">
+            <div class="section-head compact">
+              <h3>Relative Volume</h3>
+              <span>% vs 20D average</span>
+            </div>
+            <div class="mini-table-wrap">
+              <table class="mini-table" id="volumeTable">
+                <thead>
+                  <tr>
+                    <th>Symbol</th>
+                    <th>V1</th>
+                    <th>V3</th>
+                    <th>V5</th>
+                    <th>Meaning</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="analysis-panel flow-panel">
+            <div class="section-head compact">
+              <h3>Money Flow</h3>
+              <span>Rotation map</span>
+            </div>
+            <div id="moneyFlow" class="flow-map"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="layout detail-view hidden" id="basketView">
+        <aside class="detail-panel" aria-live="polite">
+          <div class="detail-title">
+            <div>
+              <p class="eyebrow">Selected basket</p>
+              <h2 id="selectedTitle">XLK Technology</h2>
+            </div>
+            <span id="selectedBadge" class="badge">Watch</span>
+          </div>
+
+          <div class="metric-grid">
+            <div>
+              <span>ETF 1M</span>
+              <strong id="metricOneMonth">0%</strong>
+            </div>
+            <div>
+              <span>Top weight lift</span>
+              <strong id="metricTopLift">0%</strong>
+            </div>
+            <div>
+              <span>Breadth</span>
+              <strong id="metricBreadth">0/0</strong>
+            </div>
+            <div>
+              <span>Confidence</span>
+              <strong id="metricConfidence">0</strong>
+            </div>
+          </div>
+
+          <div class="drivers">
+            <div class="section-head compact">
+              <h3>Drivers</h3>
+              <span>Weight x perf</span>
+            </div>
+            <div id="driverList" class="driver-list"></div>
+          </div>
+
+          <div class="tape">
+            <div class="section-head compact">
+              <h3>Short-Term Tape</h3>
+              <span>R / V</span>
+            </div>
+            <div id="tapeGrid" class="tape-grid"></div>
+          </div>
+
+          <div class="holdings">
+            <div class="section-head compact">
+              <h3>Constituents</h3>
+              <span id="holdingCount">0 names</span>
+            </div>
+            <div class="holding-header" aria-hidden="true">
+              <span>Ticker</span>
+              <span>Name</span>
+              <span>Weight</span>
+              <span>Perf</span>
+              <span>Contr</span>
+            </div>
+            <div id="holdingsTable" class="holdings-table"></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./market_data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
