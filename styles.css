@@ -757,14 +757,16 @@ tbody tr.selected {
 }
 
 .rotation.neutral-bg {
-  background: #6b7280;
+  background: transparent;
   color: #fff;
+  border: 1px solid #fff;
   font-weight: normal;
 }
 
 .rotation.trending-bg {
-  background: #a3e635;
-  color: #1a2e05;
+  background: transparent;
+  color: #a3e635;
+  border: 1px solid #a3e635;
   font-weight: normal;
 }
 
