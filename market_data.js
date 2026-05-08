@@ -1,6 +1,6 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-08 13:20:59"
+  "updatedAt": "2026-05-08 16:22:15"
 };
 window.marketData = [
   {
@@ -14,6 +14,7 @@ window.marketData = [
     "phase": "Bottoming",
     "volume": "Spike",
     "rotation": "Distribution",
+    "signal": "AVOID",
     "rsi": 41.6,
     "flow": 124,
     "perf": {
@@ -57,6 +58,7 @@ window.marketData = [
     "phase": "Exhaustion",
     "volume": "Rising",
     "rotation": "Accumulation (Quiet)",
+    "signal": "WATCH",
     "rsi": 79.8,
     "flow": 106,
     "perf": {
@@ -100,6 +102,7 @@ window.marketData = [
     "phase": "Bottoming",
     "volume": "Rising",
     "rotation": "Distribution",
+    "signal": "AVOID",
     "rsi": 40.9,
     "flow": 119,
     "perf": {
@@ -143,6 +146,7 @@ window.marketData = [
     "phase": "Early",
     "volume": "Rising",
     "rotation": "Neutral",
+    "signal": "HOLD",
     "rsi": 44.1,
     "flow": 90,
     "perf": {
@@ -186,6 +190,7 @@ window.marketData = [
     "phase": "Early",
     "volume": "Rising",
     "rotation": "Neutral",
+    "signal": "HOLD",
     "rsi": 57.6,
     "flow": 95,
     "perf": {
@@ -229,6 +234,7 @@ window.marketData = [
     "phase": "Early",
     "volume": "Rising",
     "rotation": "Distribution",
+    "signal": "REDUCE",
     "rsi": 51.4,
     "flow": 111,
     "perf": {
@@ -272,6 +278,7 @@ window.marketData = [
     "phase": "Mature",
     "volume": "Spike",
     "rotation": "Distribution",
+    "signal": "SELL",
     "rsi": 60.1,
     "flow": 135,
     "perf": {
@@ -315,6 +322,7 @@ window.marketData = [
     "phase": "Mature",
     "volume": "Spike",
     "rotation": "Distribution",
+    "signal": "SELL",
     "rsi": 55.1,
     "flow": 122,
     "perf": {
@@ -358,6 +366,7 @@ window.marketData = [
     "phase": "Early",
     "volume": "Spike",
     "rotation": "Distribution",
+    "signal": "REDUCE",
     "rsi": 51.1,
     "flow": 124,
     "perf": {
@@ -401,6 +410,7 @@ window.marketData = [
     "phase": "Mature",
     "volume": "Rising",
     "rotation": "Trending up",
+    "signal": "HOLD",
     "rsi": 62.4,
     "flow": 102,
     "perf": {
@@ -444,6 +454,7 @@ window.marketData = [
     "phase": "Mature",
     "volume": "Rising",
     "rotation": "Neutral",
+    "signal": "HOLD",
     "rsi": 55.5,
     "flow": 89,
     "perf": {
@@ -487,6 +498,7 @@ window.marketData = [
     "phase": "Mature",
     "volume": "Spike",
     "rotation": "Accumulation",
+    "signal": "HOLD",
     "rsi": 73.5,
     "flow": 150,
     "perf": {
