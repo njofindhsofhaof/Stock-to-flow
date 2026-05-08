@@ -18,7 +18,7 @@
     "acc_last_date": "2026-05-08"
   },
   "URA": {
-    "dist_streak": 0,
+    "dist_streak": 1,
     "dist_last_date": "2026-05-08",
     "acc_streak": 0,
     "acc_last_date": "2026-05-08"
@@ -42,7 +42,7 @@
     "acc_last_date": "2026-05-08"
   },
   "CRCL": {
-    "dist_streak": 0,
+    "dist_streak": 1,
     "dist_last_date": "2026-05-08",
     "acc_streak": 0,
     "acc_last_date": "2026-05-08"
@@ -222,7 +222,7 @@
     "acc_last_date": "2026-05-08"
   },
   "KMT": {
-    "dist_streak": 0,
+    "dist_streak": 1,
     "dist_last_date": "2026-05-08",
     "acc_streak": 0,
     "acc_last_date": "2026-05-08"

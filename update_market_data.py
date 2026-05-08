@@ -251,11 +251,14 @@ def load_streak_data(path: Path) -> dict:
         if "dist_streak" in val:
             migrated[sym] = val
         else:
+            old_streak = val.get("streak", 0)
             migrated[sym] = {
-                "dist_streak":     val.get("streak", 0),
-                "dist_last_date":  val.get("last_date", ""),
-                "acc_streak":      0,
-                "acc_last_date":   "",
+                "dist_streak":    old_streak,
+                # Only carry over date if there was an active streak; otherwise
+                # reset so today's run can re-evaluate correctly.
+                "dist_last_date": val.get("last_date", "") if old_streak > 0 else "",
+                "acc_streak":     0,
+                "acc_last_date":  "",
             }
     return migrated
 
