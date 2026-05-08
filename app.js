@@ -500,6 +500,31 @@ function determineSignal(etf) {
   return "NEUTRAL";
 }
 
+function calculateRiskV3(sectionData) {
+  if (!sectionData.length) return "⚠️ Neutral";
+  const total = sectionData.length;
+  let score = 0;
+  for (const item of sectionData) {
+    const phase = item.phase || "Neutral";
+    const rotation = item.rotation || "Neutral";
+    if (["Accumulation", "Accumulation (Quiet)", "Trending up"].includes(rotation)) {
+      if (["Early", "Bottoming"].includes(phase)) score += 2;
+      else if (phase === "Mature") score += 1;
+    } else if (["Distribution", "Distribution (Quiet)", "Fading"].includes(rotation)) {
+      if (["Mature", "Exhaustion"].includes(phase)) score -= 2;
+      else score -= 1;
+    }
+    if (phase === "Exhaustion") score -= 1;
+    else if (phase === "Mature" && !["Accumulation", "Accumulation (Quiet)"].includes(rotation)) score -= 0.5;
+  }
+  const s = score / total;
+  if (s >= 0.5)  return "🔥 Strong ON";
+  if (s >= 0.1)  return "✅ Risk On";
+  if (s >= -0.3) return "⚠️ Neutral";
+  if (s >= -0.8) return "❌ Risk Off";
+  return "💀 Strong OFF";
+}
+
 function signalClass(signal) {
   if (signal.startsWith("BUY")) return "buy-signal";
   if (signal.startsWith("HOLD")) return "hold-signal";
@@ -846,9 +871,7 @@ function renderDetail() {
     if (!sectionEtfs.length) return;
     const leader = [...sectionEtfs].sort((a, b) => b.perf.m1 - a.perf.m1)[0];
     const watchCount = sectionEtfs.filter((item) => item.perf.m1 > 0 && item.flow > 100).length;
-    const accCount = sectionEtfs.filter((item) => item.rotation.includes("Accumulation")).length;
-    const threshold = section === "Stock" ? 4 : 2;
-    const risk = accCount >= threshold ? "Risk On" : "Neutral";
+    const risk = calculateRiskV3(sectionEtfs);
     document.querySelector(`#${prefix}Risk`).textContent = risk;
     document.querySelector(`#${prefix}Leader`).textContent = leader?.symbol || "–";
     document.querySelector(`#${prefix}Watch`).textContent = watchCount;
