@@ -14,20 +14,47 @@ except Exception:
     ta = None
 
 
-TICKERS = {
-    "XLE": ("Energy", "Energy"),
-    "XLK": ("Technology", "Tech"),
-    "XLU": ("Utilities", "Defensive"),
-    "XLV": ("Health Care", "Health"),
-    "XLC": ("Communication Services", "Comm"),
-    "XLF": ("Financials", "Financial"),
-    "XLRE": ("Real Estate", "Real Estate"),
-    "XLI": ("Industrials", "Industrial"),
-    "XLB": ("Materials", "Materials"),
-    "XLY": ("Consumer Discretionary", "Consumer"),
-    "XLP": ("Consumer Staples", "Defensive"),
-    "SOXX": ("Semiconductors", "Semis"),
-}
+ASSETS = [
+    {"symbol": "SP500", "data_symbol": "^GSPC", "name": "S&P 500", "category": "Broad", "section": "Index"},
+    {"symbol": "GLD", "data_symbol": "GLD", "name": "Gold", "category": "Commodity", "section": "Index"},
+    {"symbol": "SLV", "data_symbol": "SLV", "name": "Silver", "category": "Commodity", "section": "Index"},
+    {"symbol": "URA", "data_symbol": "URA", "name": "Uranium", "category": "Commodity", "section": "Index"},
+    {"symbol": "CL", "data_symbol": "CL=F", "name": "Crude Oil", "category": "Commodity", "section": "Index"},
+    {"symbol": "XLE", "data_symbol": "XLE", "name": "Energy", "category": "Energy", "section": "ETF"},
+    {"symbol": "XLK", "data_symbol": "XLK", "name": "Technology", "category": "Tech", "section": "ETF"},
+    {"symbol": "XLU", "data_symbol": "XLU", "name": "Utilities", "category": "Defensive", "section": "ETF"},
+    {"symbol": "XLV", "data_symbol": "XLV", "name": "Health Care", "category": "Health", "section": "ETF"},
+    {"symbol": "XLC", "data_symbol": "XLC", "name": "Communication Services", "category": "Comm", "section": "ETF"},
+    {"symbol": "XLF", "data_symbol": "XLF", "name": "Financials", "category": "Financial", "section": "ETF"},
+    {"symbol": "XLRE", "data_symbol": "XLRE", "name": "Real Estate", "category": "Real Estate", "section": "ETF"},
+    {"symbol": "XLI", "data_symbol": "XLI", "name": "Industrials", "category": "Industrial", "section": "ETF"},
+    {"symbol": "XLB", "data_symbol": "XLB", "name": "Materials", "category": "Materials", "section": "ETF"},
+    {"symbol": "XLY", "data_symbol": "XLY", "name": "Consumer Discretionary", "category": "Consumer", "section": "ETF"},
+    {"symbol": "XLP", "data_symbol": "XLP", "name": "Consumer Staples", "category": "Defensive", "section": "ETF"},
+    {"symbol": "SOX", "data_symbol": "SOXX", "name": "Semiconductors", "category": "Semis", "section": "ETF"},
+    {"symbol": "KMT", "data_symbol": "KMT", "name": "KMT", "category": "Stock", "section": "Stock"},
+    {"symbol": "VMI", "data_symbol": "VMI", "name": "VMI", "category": "Stock", "section": "Stock"},
+    {"symbol": "CSTM", "data_symbol": "CSTM", "name": "CSTM", "category": "Stock", "section": "Stock"},
+    {"symbol": "UNP", "data_symbol": "UNP", "name": "UNP", "category": "Stock", "section": "Stock"},
+    {"symbol": "JBHT", "data_symbol": "JBHT", "name": "JBHT", "category": "Stock", "section": "Stock"},
+    {"symbol": "AGCO", "data_symbol": "AGCO", "name": "AGCO", "category": "Stock", "section": "Stock"},
+    {"symbol": "ODFL", "data_symbol": "ODFL", "name": "ODFL", "category": "Stock", "section": "Stock"},
+    {"symbol": "ALMU", "data_symbol": "ALMU", "name": "ALMU", "category": "Stock", "section": "Stock"},
+    {"symbol": "SMTC", "data_symbol": "SMTC", "name": "SMTC", "category": "Stock", "section": "Stock"},
+    {"symbol": "LWLG", "data_symbol": "LWLG", "name": "LWLG", "category": "Stock", "section": "Stock"},
+    {"symbol": "POET", "data_symbol": "POET", "name": "POET", "category": "Stock", "section": "Stock"},
+    {"symbol": "AVGO", "data_symbol": "AVGO", "name": "AVGO", "category": "Stock", "section": "Stock"},
+    {"symbol": "MRVL", "data_symbol": "MRVL", "name": "MRVL", "category": "Stock", "section": "Stock"},
+    {"symbol": "CRDO", "data_symbol": "CRDO", "name": "CRDO", "category": "Stock", "section": "Stock"},
+    {"symbol": "ALAB", "data_symbol": "ALAB", "name": "ALAB", "category": "Stock", "section": "Stock"},
+    {"symbol": "GFS", "data_symbol": "GFS", "name": "GFS", "category": "Stock", "section": "Stock"},
+    {"symbol": "VIVA", "data_symbol": "VIVA", "name": "VIVA", "category": "Stock", "section": "Stock"},
+    {"symbol": "QUBT", "data_symbol": "QUBT", "name": "QUBT", "category": "Stock", "section": "Stock"},
+    {"symbol": "COHU", "data_symbol": "COHU", "name": "COHU", "category": "Stock", "section": "Stock"},
+    {"symbol": "ETN", "data_symbol": "ETN", "name": "ETN", "category": "Stock", "section": "Stock"},
+    {"symbol": "CIEN", "data_symbol": "CIEN", "name": "CIEN", "category": "Stock", "section": "Stock"},
+    {"symbol": "OXY", "data_symbol": "OXY", "name": "OXY", "category": "Stock", "section": "Stock"},
+]
 
 
 def flatten_columns(df: pd.DataFrame) -> pd.DataFrame:
@@ -179,10 +206,12 @@ def determine_signal_v3(phase: str, rotation: str, mom: float) -> str:
 
 
 def main() -> None:
+    root_dir = Path(__file__).parent
     spy = download("SPY")
     rows = []
 
-    for ticker, (name, category) in TICKERS.items():
+    for asset in ASSETS:
+        ticker = asset["data_symbol"]
         df = download(ticker)
         if df is None or len(df) < 65:
             continue
@@ -195,10 +224,11 @@ def main() -> None:
 
         rows.append(
             {
-                "symbol": "SOX" if ticker == "SOXX" else ticker,
-                "dataSymbol": ticker,
-                "name": name,
-                "category": category,
+                "symbol": asset["symbol"],
+                "dataSymbol": asset["data_symbol"],
+                "section": asset["section"],
+                "name": asset["name"],
+                "category": asset["category"],
                 "price": round(safe_float(latest["Close"]), 2),
                 "change": round(safe_float(df["Close"].pct_change().iloc[-1] * 100), 2),
                 "mom": mom,
@@ -255,6 +285,30 @@ def main() -> None:
     if not rows:
         raise RuntimeError("No market data rows were downloaded; keeping the previous dashboard data.")
 
+    history_path = root_dir / "market_history.json"
+    if history_path.exists():
+        history = json.loads(history_path.read_text(encoding="utf-8"))
+    else:
+        history = {
+            "source": payload["source"],
+            "snapshots": [],
+        }
+
+    snapshot_date = datetime.now().strftime("%Y-%m-%d")
+    snapshot = {
+        "date": snapshot_date,
+        "updatedAt": payload["updatedAt"],
+        "rows": rows,
+    }
+    snapshots = [item for item in history.get("snapshots", []) if item.get("date") != snapshot_date]
+    snapshots.append(snapshot)
+    snapshots.sort(key=lambda item: item.get("date", ""))
+    history = {
+        "source": payload["source"],
+        "snapshots": snapshots,
+    }
+    history_path.write_text(json.dumps(history, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
     js = (
         "window.marketDataMeta = "
         + json.dumps({k: payload[k] for k in ["source", "updatedAt"]}, ensure_ascii=False, indent=2)
@@ -262,9 +316,10 @@ def main() -> None:
         + json.dumps(rows, ensure_ascii=False, indent=2)
         + ";\n"
     )
-    output_path = Path(__file__).with_name("market_data.js")
+    output_path = root_dir / "market_data.js"
     output_path.write_text(js, encoding="utf-8")
     print(f"Wrote market_data.js with {len(rows)} rows")
+    print(f"Wrote market_history.json with {len(snapshots)} daily snapshots")
 
 
 if __name__ == "__main__":
