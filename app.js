@@ -314,6 +314,11 @@ function fmt(value, suffix = "%") {
   return `${sign}${value.toFixed(1)}${suffix}`;
 }
 
+function money(value) {
+  if (typeof value !== "number" || Number.isNaN(value)) return "-";
+  return `$${value.toFixed(2)}`;
+}
+
 function pct(value) {
   return `${Math.round(value)}%`;
 }
@@ -339,24 +344,18 @@ function determineSignal(etf) {
   const phase = etf.phase;
   const rotation = etf.rotation;
 
-  if (phase === "Bottoming" && ["Reflex Setup", "Accumulation", "Accumulation (Quiet)"].includes(rotation)) {
-    return "BUY (Bottoming + Accumulation)";
-  }
-  if (phase === "Early" && ["Accumulation", "Accumulation (Quiet)", "Trending up"].includes(rotation)) {
-    return "BUY (Early + Accumulation)";
-  }
-  if (phase === "Mature" && rotation === "Accumulation") {
-    return "HOLD (Mature + Still Accumulating)";
-  }
+  if (phase === "Bottoming" && ["Reflex Setup", "Accumulation", "Accumulation (Quiet)"].includes(rotation)) return "BUY";
+  if (phase === "Early" && ["Accumulation", "Accumulation (Quiet)", "Trending up"].includes(rotation)) return "BUY";
+  if (phase === "Bottoming" && rotation === "Accumulation (Quiet)") return "BUY";
+  if (phase === "Mature" && ["Accumulation", "Accumulation (Quiet)", "Trending up"].includes(rotation)) return "HOLD";
+  if (phase === "Early" && rotation === "Neutral") return "HOLD";
+  if (phase === "Mature" && rotation === "Neutral") return "HOLD";
+  if (phase === "Exhaustion" && ["Accumulation (Quiet)", "Accumulation", "Neutral", "Trending up"].includes(rotation)) return "WATCH";
+  if (phase === "Early" && ["Distribution", "Distribution (Quiet)", "Fading"].includes(rotation)) return "REDUCE";
   if (phase === "Exhaustion" && ["Distribution", "Distribution (Quiet)", "Fading"].includes(rotation)) {
-    return "SELL / REDUCE (Exhaustion + Distribution)";
+    return "SELL";
   }
-  if (phase === "Exhaustion") {
-    return "WATCH (Exhaustion)";
-  }
-  if (rotation === "Reflex Setup") {
-    return "WATCH (Reflex Setup)";
-  }
+  if (phase === "Mature" && ["Distribution", "Distribution (Quiet)"].includes(rotation)) return "SELL";
   return "NEUTRAL";
 }
 
@@ -364,6 +363,7 @@ function signalClass(signal) {
   if (signal.startsWith("BUY")) return "buy-signal";
   if (signal.startsWith("HOLD")) return "hold-signal";
   if (signal.startsWith("SELL")) return "sell-signal";
+  if (signal.startsWith("REDUCE")) return "reduce-signal";
   if (signal.startsWith("WATCH")) return "watch-signal";
   return "neutral-signal";
 }
@@ -372,6 +372,7 @@ function signalShort(signal) {
   if (signal.startsWith("BUY")) return "BUY";
   if (signal.startsWith("HOLD")) return "HOLD";
   if (signal.startsWith("SELL")) return "SELL";
+  if (signal.startsWith("REDUCE")) return "REDUCE";
   if (signal.startsWith("WATCH")) return "WATCH";
   return "NEUTRAL";
 }
@@ -397,6 +398,10 @@ function renderSummaryList(selector, counts, classGetter = () => "") {
       `;
     })
     .join("");
+}
+
+function pill(label, className) {
+  return `<span class="pill ${className}">${label}</span>`;
 }
 
 function contribution(holding) {
@@ -478,14 +483,18 @@ function renderTable() {
           <td class="ticker-cell"><strong>${etf.name}</strong><span>${etf.category} basket</span></td>
           <td class="ticker-list">${etf.symbol}</td>
           <td>${etf.category}</td>
-          <td class="${cls(etf.mom)} mono">${etf.mom}</td>
-          <td class="phase ${phaseClass(etf.phase)}">${etf.phase}</td>
+          <td class="mono">${money(etf.price)}</td>
+          <td class="${cls(etf.change || 0)} mono">${typeof etf.change === "number" ? fmt(etf.change) : "-"}</td>
+          <td class="${cls(etf.mom - 50)} mono">
+            <div class="mom-cell"><span class="mom-track"><span style="width:${Math.max(0, Math.min(100, etf.mom))}%"></span></span><strong>${etf.mom}</strong></div>
+          </td>
+          <td>${pill(etf.phase, `phase ${phaseClass(etf.phase)}`)}</td>
           <td><span class="volume">${etf.volume}</span></td>
-          <td class="rotation ${rotationClass(etf.rotation)}">${etf.rotation}</td>
+          <td>${pill(etf.rotation, `rotation ${rotationClass(etf.rotation)}`)}</td>
           <td class="${cls(etf.rsi - 50)} mono">${etf.rsi.toFixed(1)}</td>
           ${metrics.returns.map((item) => `<td class="${cls(item)} mono">${fmt(item)}</td>`).join("")}
           ${metrics.volumes.map((item) => `<td class="${cls(item - 100)} mono">${pct(item)}</td>`).join("")}
-          <td class="signal ${signalClass(signal)}">${signal}</td>
+          <td>${pill(signal, `signal ${signalClass(signal)}`)}</td>
         </tr>
       `;
     })
@@ -512,31 +521,35 @@ function renderAnalysisPanels() {
   renderSummaryList("#rotationSummary", rotationCounts, rotationClass);
   renderSummaryList("#signalSummary", signalCounts, (signal) => `${signal.toLowerCase()}-signal`);
 
-  const recommendationRows = rows
-    .map((etf) => ({ etf, signal: signalShort(determineSignal(etf)) }))
-    .filter(({ signal }) => ["BUY", "SELL", "WATCH", "HOLD"].includes(signal));
+  const signalOrder = ["BUY", "HOLD", "WATCH", "REDUCE", "SELL"];
+  const signalTitles = {
+    BUY: "BUY",
+    HOLD: "HOLD",
+    WATCH: "WATCH",
+    REDUCE: "REDUCE",
+    SELL: "SELL",
+  };
 
-  document.querySelector("#recommendations").innerHTML = recommendationRows.length
-    ? recommendationRows
-        .map(({ etf, signal }) => {
-          const actionText =
-            signal === "BUY"
-              ? "Consider add"
-              : signal === "SELL"
-                ? "Reduce / take profit"
-                : signal === "HOLD"
-                  ? "Hold"
-                  : "Watch";
-          return `
-            <div class="recommendation-item ${signal.toLowerCase()}-signal">
-              <strong>${signal}</strong>
-              <span>${etf.symbol} (${etf.name}) - MAX: ${etf.phase}, Rotation: ${etf.rotation}</span>
-              <span>${actionText}</span>
-            </div>
-          `;
-        })
-        .join("")
-    : `<div class="summary-item"><strong>No strong setup</strong><span>NEUTRAL</span></div>`;
+  document.querySelector("#recommendations").innerHTML = signalOrder
+    .map((signal) => {
+      const matches = rows.filter((etf) => signalShort(determineSignal(etf)) === signal);
+      return `
+        <div class="recommendation-card ${signal.toLowerCase()}-signal">
+          <h4>${signalTitles[signal]}</h4>
+          ${
+            matches.length
+              ? `<ul>${matches
+                  .map(
+                    (etf) =>
+                      `<li><strong>${etf.symbol}</strong><span>${etf.phase} + ${etf.rotation}</span></li>`,
+                  )
+                  .join("")}</ul>`
+              : `<p>No ${signal}</p>`
+          }
+        </div>
+      `;
+    })
+    .join("");
 
   document.querySelector("#rsiTable tbody").innerHTML = rows
     .map((etf) => {
