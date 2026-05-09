@@ -506,10 +506,10 @@ tbody tr.selected {
   border-color: rgba(183, 75, 84, 0.48);
 }
 
-.summary-item.phase.bottoming strong { color: #6b7280; }
-.summary-item.phase.early strong     { color: #86b84f; }
-.summary-item.phase.mature strong    { color: #ffd700; }
-.summary-item.phase.exhaustion strong { color: #ff6347; }
+.summary-item.phase.bottoming  { background: #12171e; color: #6b7280; border-color: #6b7280; }
+.summary-item.phase.early      { background: #12171e; color: #86b84f; border-color: #86b84f; }
+.summary-item.phase.mature     { background: #12171e; color: #ffd700; border-color: #ffd700; }
+.summary-item.phase.exhaustion { background: #12171e; color: #ff6347; border-color: #ff6347; }
 
 .summary-item strong,
 .recommendation-item strong {
