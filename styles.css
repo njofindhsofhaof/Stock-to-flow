@@ -506,6 +506,11 @@ tbody tr.selected {
   border-color: rgba(183, 75, 84, 0.48);
 }
 
+.summary-item.phase.bottoming strong { color: #6b7280; }
+.summary-item.phase.early strong     { color: #86b84f; }
+.summary-item.phase.mature strong    { color: #ffd700; }
+.summary-item.phase.exhaustion strong { color: #ff6347; }
+
 .summary-item strong,
 .recommendation-item strong {
   overflow: hidden;
