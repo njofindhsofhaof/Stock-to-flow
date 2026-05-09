@@ -515,7 +515,7 @@ tbody tr.selected {
 
 .summary-item span,
 .recommendation-item span {
-  color: var(--muted);
+  color: var(--text);
   font-variant-numeric: tabular-nums;
 }
 
