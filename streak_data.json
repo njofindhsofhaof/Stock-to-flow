@@ -328,5 +328,17 @@
     "dist_last_date": "2026-05-12",
     "acc_streak": 0,
     "acc_last_date": "2026-05-12"
+  },
+  "DBA": {
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
+  },
+  "VEGI": {
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
   }
 }

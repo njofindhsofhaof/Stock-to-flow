@@ -1,6 +1,6 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-12 11:22:34",
+  "updatedAt": "2026-05-12 12:47:33",
   "sections": {
     "Index": {
       "risk": "Risk On",
@@ -13,7 +13,7 @@ window.marketDataMeta = {
       "watch": 2
     },
     "ETF": {
-      "risk": "Neutral",
+      "risk": "Risk Off",
       "leader": "SOX",
       "watch": 2
     },
@@ -219,29 +219,29 @@ window.marketData = [
     "section": "Index",
     "name": "Crude Oil",
     "category": "Commodity",
-    "price": 99.06,
-    "change": 1.01,
-    "mom": 43.9,
+    "price": 98.93,
+    "change": 0.88,
+    "mom": 43.8,
     "phase": "Early",
     "volume": "Fading",
     "rotation": "Trending up",
     "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 52.4,
+    "rsi": 52.2,
     "flow": 4,
     "perf": {
-      "w1": -3.14,
-      "m1": 8.52,
-      "m3": 57.51
+      "w1": -3.27,
+      "m1": 8.38,
+      "m3": 57.31
     },
     "returns": [
-      1.01,
-      4.48,
-      -3.14,
-      -0.87,
-      8.52,
-      57.51
+      0.88,
+      4.35,
+      -3.27,
+      -1.0,
+      8.38,
+      57.31
     ],
     "volumes": [
       86,
@@ -252,12 +252,12 @@ window.marketData = [
       87
     ],
     "rsiStack": [
+      52.7,
+      51.6,
+      52.2,
       53.2,
-      51.9,
-      52.4,
-      53.3,
       54.5,
-      56.0
+      55.9
     ]
   },
   {
@@ -266,29 +266,29 @@ window.marketData = [
     "section": "Crypto",
     "name": "Bitcoin",
     "category": "Currency",
-    "price": 81141.73,
-    "change": -1.21,
-    "mom": 49.0,
+    "price": 81231.48,
+    "change": -1.1,
+    "mom": 49.5,
     "phase": "Mature",
     "volume": "Fading",
     "rotation": "Fading",
     "signal": "SELL",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 62.9,
-    "flow": 89,
+    "rsi": 63.3,
+    "flow": 90,
     "perf": {
-      "w1": -0.35,
-      "m1": 6.27,
-      "m3": 15.11
+      "w1": -0.24,
+      "m1": 6.39,
+      "m3": 15.23
     },
     "returns": [
-      -1.21,
-      1.19,
-      -0.35,
-      3.79,
-      6.27,
-      15.11
+      -1.1,
+      1.3,
+      -0.24,
+      3.9,
+      6.39,
+      15.23
     ],
     "volumes": [
       81,
@@ -299,11 +299,11 @@ window.marketData = [
       100
     ],
     "rsiStack": [
-      60.3,
-      63.0,
-      62.9,
       61.5,
-      58.3,
+      63.7,
+      63.3,
+      61.7,
+      58.5,
       52.0
     ]
   },
@@ -1060,6 +1060,100 @@ window.marketData = [
     ]
   },
   {
+    "symbol": "DBA",
+    "dataSymbol": "DBA",
+    "section": "ETF",
+    "name": "Agriculture",
+    "category": "Agriculture",
+    "price": 28.33,
+    "change": 1.29,
+    "mom": 51.2,
+    "phase": "Mature",
+    "volume": "Fading",
+    "rotation": "Fading",
+    "signal": "SELL",
+    "dist_streak": 0,
+    "acc_streak": 0,
+    "rsi": 67.0,
+    "flow": 85,
+    "perf": {
+      "w1": 0.14,
+      "m1": 5.2,
+      "m3": 9.42
+    },
+    "returns": [
+      1.29,
+      0.96,
+      0.14,
+      2.76,
+      5.2,
+      9.42
+    ],
+    "volumes": [
+      34,
+      118,
+      154,
+      102,
+      115,
+      76
+    ],
+    "rsiStack": [
+      67.6,
+      67.3,
+      67.0,
+      66.4,
+      64.1,
+      56.6
+    ]
+  },
+  {
+    "symbol": "VEGI",
+    "dataSymbol": "VEGI",
+    "section": "ETF",
+    "name": "Agriculture",
+    "category": "Agriculture",
+    "price": 46.07,
+    "change": 1.92,
+    "mom": 57.4,
+    "phase": "Mature",
+    "volume": "Rising",
+    "rotation": "Neutral",
+    "signal": "HOLD",
+    "dist_streak": 0,
+    "acc_streak": 0,
+    "rsi": 55.7,
+    "flow": 49,
+    "perf": {
+      "w1": 0.77,
+      "m1": -0.82,
+      "m3": 1.05
+    },
+    "returns": [
+      1.92,
+      -0.17,
+      0.77,
+      2.93,
+      -0.82,
+      1.05
+    ],
+    "volumes": [
+      101,
+      63,
+      49,
+      66,
+      57,
+      29
+    ],
+    "rsiStack": [
+      62.9,
+      58.1,
+      55.7,
+      54.7,
+      54.4,
+      52.8
+    ]
+  },
+  {
     "symbol": "FTXR",
     "dataSymbol": "FTXR",
     "section": "ETF",
@@ -1107,53 +1201,6 @@ window.marketData = [
     ]
   },
   {
-    "symbol": "SOIL",
-    "dataSymbol": "SOIL",
-    "section": "ETF",
-    "name": "Fertilizer",
-    "category": "Fertilizer Mat",
-    "price": 6.61,
-    "change": 1.54,
-    "mom": 40.0,
-    "phase": "Early",
-    "volume": "Fading",
-    "rotation": "Trending up",
-    "signal": "BUY",
-    "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 58.7,
-    "flow": 60,
-    "perf": {
-      "w1": -7.94,
-      "m1": 16.78,
-      "m3": 111.18
-    },
-    "returns": [
-      1.54,
-      0.92,
-      -7.94,
-      2.16,
-      16.78,
-      111.18
-    ],
-    "volumes": [
-      54,
-      147,
-      80,
-      104,
-      127,
-      66
-    ],
-    "rsiStack": [
-      50.9,
-      56.1,
-      58.7,
-      60.3,
-      61.6,
-      60.8
-    ]
-  },
-  {
     "symbol": "FTAG",
     "dataSymbol": "FTAG",
     "section": "Stock",
@@ -1198,6 +1245,53 @@ window.marketData = [
       54.4,
       54.5,
       53.7
+    ]
+  },
+  {
+    "symbol": "MOO",
+    "dataSymbol": "MOO",
+    "section": "Stock",
+    "name": "MOO",
+    "category": "Agriculture",
+    "price": 81.91,
+    "change": 0.31,
+    "mom": 44.4,
+    "phase": "Bottoming",
+    "volume": "Spike",
+    "rotation": "Accumulation (Day 1)",
+    "signal": "AVOID",
+    "dist_streak": 0,
+    "acc_streak": 1,
+    "rsi": 42.3,
+    "flow": 214,
+    "perf": {
+      "w1": -2.09,
+      "m1": -3.96,
+      "m3": -3.61
+    },
+    "returns": [
+      0.31,
+      -2.75,
+      -2.09,
+      -0.28,
+      -3.96,
+      -3.61
+    ],
+    "volumes": [
+      548,
+      165,
+      94,
+      104,
+      66,
+      23
+    ],
+    "rsiStack": [
+      35.5,
+      39.4,
+      42.3,
+      44.8,
+      47.6,
+      49.3
     ]
   },
   {
