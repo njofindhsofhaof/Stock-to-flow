@@ -677,6 +677,11 @@ function renderTable() {
             if (bi === -1) return -1;
             return ai - bi;
           }
+          if (section === "Stock") {
+            const catCmp = (a.category || "").localeCompare(b.category || "");
+            if (catCmp !== 0) return catCmp;
+            return a.symbol.localeCompare(b.symbol);
+          }
           return b.perf.m1 - a.perf.m1;
         });
       const headerRow = `
