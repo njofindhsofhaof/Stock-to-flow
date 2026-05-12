@@ -36,7 +36,6 @@ ASSETS = [
     {"symbol": "XLY", "data_symbol": "XLY", "name": "Consumer Discretionary", "category": "Consumer", "section": "ETF"},
     {"symbol": "XLP", "data_symbol": "XLP", "name": "Consumer Staples", "category": "Defensive", "section": "ETF"},
     {"symbol": "SOX",  "data_symbol": "SOXX", "name": "Semiconductors",  "category": "Semis",          "section": "ETF"},
-    {"symbol": "MOO",  "data_symbol": "MOO",  "name": "Agribusiness",    "category": "Agriculture", "section": "ETF"},
     {"symbol": "DBA",  "data_symbol": "DBA",  "name": "Agriculture",     "category": "Agriculture", "section": "ETF"},
     {"symbol": "VEGI", "data_symbol": "VEGI", "name": "Agriculture",     "category": "Agriculture", "section": "ETF"},
     {"symbol": "FTXR", "data_symbol": "FTXR", "name": "Transportation",  "category": "Auto",        "section": "ETF"},

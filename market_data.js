@@ -1,6 +1,6 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-12 12:47:33",
+  "updatedAt": "2026-05-12 12:49:25",
   "sections": {
     "Index": {
       "risk": "Risk On",
@@ -219,8 +219,8 @@ window.marketData = [
     "section": "Index",
     "name": "Crude Oil",
     "category": "Commodity",
-    "price": 98.93,
-    "change": 0.88,
+    "price": 98.98,
+    "change": 0.93,
     "mom": 43.8,
     "phase": "Early",
     "volume": "Fading",
@@ -228,20 +228,20 @@ window.marketData = [
     "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 52.2,
+    "rsi": 52.3,
     "flow": 4,
     "perf": {
-      "w1": -3.27,
-      "m1": 8.38,
-      "m3": 57.31
+      "w1": -3.22,
+      "m1": 8.44,
+      "m3": 57.39
     },
     "returns": [
-      0.88,
-      4.35,
-      -3.27,
-      -1.0,
-      8.38,
-      57.31
+      0.93,
+      4.4,
+      -3.22,
+      -0.95,
+      8.44,
+      57.39
     ],
     "volumes": [
       86,
@@ -252,9 +252,9 @@ window.marketData = [
       87
     ],
     "rsiStack": [
-      52.7,
-      51.6,
-      52.2,
+      52.9,
+      51.7,
+      52.3,
       53.2,
       54.5,
       55.9
@@ -266,7 +266,7 @@ window.marketData = [
     "section": "Crypto",
     "name": "Bitcoin",
     "category": "Currency",
-    "price": 81231.48,
+    "price": 81235.15,
     "change": -1.1,
     "mom": 49.5,
     "phase": "Mature",
@@ -275,20 +275,20 @@ window.marketData = [
     "signal": "SELL",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 63.3,
+    "rsi": 63.4,
     "flow": 90,
     "perf": {
       "w1": -0.24,
       "m1": 6.39,
-      "m3": 15.23
+      "m3": 15.24
     },
     "returns": [
       -1.1,
-      1.3,
+      1.31,
       -0.24,
-      3.9,
+      3.91,
       6.39,
-      15.23
+      15.24
     ],
     "volumes": [
       81,
@@ -299,10 +299,10 @@ window.marketData = [
       100
     ],
     "rsiStack": [
-      61.5,
+      61.6,
       63.7,
-      63.3,
-      61.7,
+      63.4,
+      61.8,
       58.5,
       52.0
     ]
@@ -1010,53 +1010,6 @@ window.marketData = [
       77.3,
       73.2,
       63.7
-    ]
-  },
-  {
-    "symbol": "MOO",
-    "dataSymbol": "MOO",
-    "section": "ETF",
-    "name": "Agribusiness",
-    "category": "Agriculture",
-    "price": 81.91,
-    "change": 0.31,
-    "mom": 44.4,
-    "phase": "Bottoming",
-    "volume": "Spike",
-    "rotation": "Accumulation (Day 1)",
-    "signal": "AVOID",
-    "dist_streak": 0,
-    "acc_streak": 1,
-    "rsi": 42.3,
-    "flow": 214,
-    "perf": {
-      "w1": -2.09,
-      "m1": -3.96,
-      "m3": -3.61
-    },
-    "returns": [
-      0.31,
-      -2.75,
-      -2.09,
-      -0.28,
-      -3.96,
-      -3.61
-    ],
-    "volumes": [
-      548,
-      165,
-      94,
-      104,
-      66,
-      23
-    ],
-    "rsiStack": [
-      35.5,
-      39.4,
-      42.3,
-      44.8,
-      47.6,
-      49.3
     ]
   },
   {
