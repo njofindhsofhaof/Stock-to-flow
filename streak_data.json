@@ -1,254 +1,254 @@
 {
   "SP500": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "GLD": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "SLV": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 2,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
   },
   "URA": {
-    "dist_streak": 2,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-12"
   },
   "CL": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 1,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
   },
   "BTC": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "COIN": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-12"
   },
   "CRCL": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 1,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 2,
+    "acc_last_date": "2026-05-12"
   },
   "MSTR": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "XLE": {
-    "dist_streak": 1,
-    "dist_last_date": "2026-05-10",
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "XLK": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "XLU": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "XLV": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "XLC": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "XLF": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "XLRE": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 2,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
   },
   "XLI": {
-    "dist_streak": 1,
-    "dist_last_date": "2026-05-10",
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "XLB": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 2,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
   },
   "XLY": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "XLP": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "SOX": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 2,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
   },
   "AVGO": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "SMTC": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 2,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
   },
   "CRDO": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "ALAB": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "GFS": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 2,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 3,
+    "acc_last_date": "2026-05-12"
   },
   "QUBT": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "COHU": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "LWLG": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "POET": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-12"
   },
   "VMI": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "ETN": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 2,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
   },
   "UNP": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "JBHT": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "ODFL": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "AGCO": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "CSTM": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "KMT": {
-    "dist_streak": 2,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 1,
+    "acc_last_date": "2026-05-12"
   },
   "OXY": {
-    "dist_streak": 1,
-    "dist_last_date": "2026-05-10",
+    "dist_streak": 0,
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "CIEN": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
-    "acc_streak": 2,
-    "acc_last_date": "2026-05-10"
+    "dist_last_date": "2026-05-12",
+    "acc_streak": 0,
+    "acc_last_date": "2026-05-12"
   },
   "ALMU": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   },
   "MRVL": {
     "dist_streak": 0,
-    "dist_last_date": "2026-05-10",
+    "dist_last_date": "2026-05-12",
     "acc_streak": 0,
-    "acc_last_date": "2026-05-10"
+    "acc_last_date": "2026-05-12"
   }
 }
