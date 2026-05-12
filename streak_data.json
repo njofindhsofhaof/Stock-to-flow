@@ -20,7 +20,7 @@
   "URA": {
     "dist_streak": 0,
     "dist_last_date": "2026-05-12",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-05-12"
   },
   "CL": {
@@ -38,13 +38,13 @@
   "COIN": {
     "dist_streak": 0,
     "dist_last_date": "2026-05-12",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-05-12"
   },
   "CRCL": {
     "dist_streak": 0,
     "dist_last_date": "2026-05-12",
-    "acc_streak": 2,
+    "acc_streak": 0,
     "acc_last_date": "2026-05-12"
   },
   "MSTR": {
@@ -318,7 +318,7 @@
     "acc_last_date": "2026-05-12"
   },
   "FTXR": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-05-12",
     "acc_streak": 0,
     "acc_last_date": "2026-05-12"
@@ -356,7 +356,7 @@
   "NI225": {
     "dist_streak": 0,
     "dist_last_date": "2026-05-12",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-05-12"
   },
   "SBUX": {
