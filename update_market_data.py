@@ -40,7 +40,6 @@ ASSETS = [
     {"symbol": "FTXR", "data_symbol": "FTXR", "name": "Transportation",  "category": "Auto",            "section": "ETF"},
     {"symbol": "SOIL", "data_symbol": "SOIL", "name": "Fertilizer",      "category": "Fertilizer Mat",  "section": "ETF"},
     {"symbol": "FTAG", "data_symbol": "FTAG", "name": "FTAG", "category": "Agriculture", "section": "Stock"},
-    {"symbol": "MOO",  "data_symbol": "MOO",  "name": "MOO",  "category": "Agriculture", "section": "Stock"},
     {"symbol": "F",    "data_symbol": "F",    "name": "F",    "category": "Auto",        "section": "Stock"},
     {"symbol": "GM",   "data_symbol": "GM",   "name": "GM",   "category": "Auto",        "section": "Stock"},
     {"symbol": "TAGS", "data_symbol": "TAGS", "name": "TAGS", "category": "Commodity",   "section": "Stock"},

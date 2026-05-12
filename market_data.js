@@ -1,6 +1,6 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-12 11:19:58",
+  "updatedAt": "2026-05-12 11:22:34",
   "sections": {
     "Index": {
       "risk": "Risk On",
@@ -219,8 +219,8 @@ window.marketData = [
     "section": "Index",
     "name": "Crude Oil",
     "category": "Commodity",
-    "price": 99.08,
-    "change": 1.03,
+    "price": 99.06,
+    "change": 1.01,
     "mom": 43.9,
     "phase": "Early",
     "volume": "Fading",
@@ -231,17 +231,17 @@ window.marketData = [
     "rsi": 52.4,
     "flow": 4,
     "perf": {
-      "w1": -3.12,
-      "m1": 8.55,
-      "m3": 57.54
+      "w1": -3.14,
+      "m1": 8.52,
+      "m3": 57.51
     },
     "returns": [
-      1.03,
-      4.5,
-      -3.12,
-      -0.85,
-      8.55,
-      57.54
+      1.01,
+      4.48,
+      -3.14,
+      -0.87,
+      8.52,
+      57.51
     ],
     "volumes": [
       86,
@@ -252,7 +252,7 @@ window.marketData = [
       87
     ],
     "rsiStack": [
-      53.3,
+      53.2,
       51.9,
       52.4,
       53.3,
@@ -266,7 +266,7 @@ window.marketData = [
     "section": "Crypto",
     "name": "Bitcoin",
     "category": "Currency",
-    "price": 81142.03,
+    "price": 81141.73,
     "change": -1.21,
     "mom": 49.0,
     "phase": "Mature",
@@ -276,7 +276,7 @@ window.marketData = [
     "dist_streak": 0,
     "acc_streak": 0,
     "rsi": 62.9,
-    "flow": 90,
+    "flow": 89,
     "perf": {
       "w1": -0.35,
       "m1": 6.27,
@@ -1198,53 +1198,6 @@ window.marketData = [
       54.4,
       54.5,
       53.7
-    ]
-  },
-  {
-    "symbol": "MOO",
-    "dataSymbol": "MOO",
-    "section": "Stock",
-    "name": "MOO",
-    "category": "Agriculture",
-    "price": 81.91,
-    "change": 0.31,
-    "mom": 44.4,
-    "phase": "Bottoming",
-    "volume": "Spike",
-    "rotation": "Accumulation (Day 1)",
-    "signal": "AVOID",
-    "dist_streak": 0,
-    "acc_streak": 1,
-    "rsi": 42.3,
-    "flow": 214,
-    "perf": {
-      "w1": -2.09,
-      "m1": -3.96,
-      "m3": -3.61
-    },
-    "returns": [
-      0.31,
-      -2.75,
-      -2.09,
-      -0.28,
-      -3.96,
-      -3.61
-    ],
-    "volumes": [
-      548,
-      165,
-      94,
-      104,
-      66,
-      23
-    ],
-    "rsiStack": [
-      35.5,
-      39.4,
-      42.3,
-      44.8,
-      47.6,
-      49.3
     ]
   },
   {
