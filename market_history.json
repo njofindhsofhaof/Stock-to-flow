@@ -4007,11 +4007,16 @@
     },
     {
       "date": "2026-05-12",
-      "updatedAt": "2026-05-12 12:49:25",
+      "updatedAt": "2026-05-12 12:55:20",
       "sections": {
         "Index": {
+          "risk": "Risk Off",
+          "leader": "KOSPI",
+          "watch": 2
+        },
+        "Commodity": {
           "risk": "Risk On",
-          "leader": "SLV",
+          "leader": "IPI",
           "watch": 3
         },
         "Crypto": {
@@ -4027,7 +4032,7 @@
         "Stock": {
           "risk": "Risk On",
           "leader": "CRDO",
-          "watch": 2
+          "watch": 1
         }
       },
       "rows": [
@@ -4079,11 +4084,152 @@
           ]
         },
         {
+          "symbol": "DJI",
+          "dataSymbol": "^DJI",
+          "section": "Index",
+          "name": "Dow Jones",
+          "category": "Broad",
+          "price": 49704.47,
+          "change": 0.19,
+          "mom": 54.4,
+          "phase": "Mature",
+          "volume": "Rising",
+          "rotation": "Neutral",
+          "signal": "HOLD",
+          "dist_streak": 0,
+          "acc_streak": 0,
+          "rsi": 60.6,
+          "flow": 100,
+          "perf": {
+            "w1": 1.56,
+            "m1": 3.08,
+            "m3": 0.51
+          },
+          "returns": [
+            0.19,
+            -0.41,
+            1.56,
+            1.09,
+            3.08,
+            0.51
+          ],
+          "volumes": [
+            93,
+            112,
+            89,
+            150,
+            105,
+            87
+          ],
+          "rsiStack": [
+            60.6,
+            61.1,
+            60.6,
+            58.7,
+            54.5,
+            44.4
+          ]
+        },
+        {
+          "symbol": "KOSPI",
+          "dataSymbol": "^KS11",
+          "section": "Index",
+          "name": "KOSPI",
+          "category": "Broad",
+          "price": 7597.55,
+          "change": -2.87,
+          "mom": 57.3,
+          "phase": "Exhaustion",
+          "volume": "Fading",
+          "rotation": "Accumulation (Quiet)",
+          "signal": "WATCH",
+          "dist_streak": 0,
+          "acc_streak": 0,
+          "rsi": 75.1,
+          "flow": 109,
+          "perf": {
+            "w1": 9.52,
+            "m1": 29.68,
+            "m3": 43.4
+          },
+          "returns": [
+            -2.87,
+            1.44,
+            9.52,
+            17.33,
+            29.68,
+            43.4
+          ],
+          "volumes": [
+            86,
+            86,
+            96,
+            75,
+            91,
+            94
+          ],
+          "rsiStack": [
+            72.8,
+            76.9,
+            75.1,
+            72.1,
+            68.9,
+            66.7
+          ]
+        },
+        {
+          "symbol": "NI225",
+          "dataSymbol": "^N225",
+          "section": "Index",
+          "name": "Nikkei",
+          "category": "Broad",
+          "price": 62659.17,
+          "change": 0.39,
+          "mom": 58.5,
+          "phase": "Mature",
+          "volume": "Fading",
+          "rotation": "Accumulation (Day 1)",
+          "signal": "HOLD",
+          "dist_streak": 0,
+          "acc_streak": 1,
+          "rsi": 68.8,
+          "flow": 0,
+          "perf": {
+            "w1": 5.69,
+            "m1": 11.28,
+            "m3": 15.49
+          },
+          "returns": [
+            0.39,
+            -0.28,
+            5.69,
+            5.16,
+            11.28,
+            15.49
+          ],
+          "volumes": [
+            124,
+            150,
+            137,
+            102,
+            99,
+            125
+          ],
+          "rsiStack": [
+            75.6,
+            72.6,
+            68.8,
+            65.7,
+            62.9,
+            61.4
+          ]
+        },
+        {
           "symbol": "GLD",
           "dataSymbol": "GLD",
-          "section": "Index",
+          "section": "Commodity",
           "name": "Gold",
-          "category": "Commodity",
+          "category": "Precious",
           "price": 434.65,
           "change": 0.2,
           "mom": 60.4,
@@ -4128,9 +4274,9 @@
         {
           "symbol": "SLV",
           "dataSymbol": "SLV",
-          "section": "Index",
+          "section": "Commodity",
           "name": "Silver",
-          "category": "Commodity",
+          "category": "Precious",
           "price": 78.0,
           "change": 6.83,
           "mom": 69.5,
@@ -4175,9 +4321,9 @@
         {
           "symbol": "URA",
           "dataSymbol": "URA",
-          "section": "Index",
+          "section": "Commodity",
           "name": "Uranium",
-          "category": "Commodity",
+          "category": "Energy",
           "price": 57.23,
           "change": 3.72,
           "mom": 53.3,
@@ -4222,32 +4368,32 @@
         {
           "symbol": "CL",
           "dataSymbol": "CL=F",
-          "section": "Index",
+          "section": "Commodity",
           "name": "Crude Oil",
-          "category": "Commodity",
-          "price": 98.98,
-          "change": 0.93,
-          "mom": 43.8,
+          "category": "Energy",
+          "price": 99.16,
+          "change": 1.11,
+          "mom": 44.0,
           "phase": "Early",
           "volume": "Fading",
           "rotation": "Trending up",
           "signal": "BUY",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 52.3,
+          "rsi": 52.5,
           "flow": 4,
           "perf": {
-            "w1": -3.22,
-            "m1": 8.44,
-            "m3": 57.39
+            "w1": -3.04,
+            "m1": 8.63,
+            "m3": 57.67
           },
           "returns": [
-            0.93,
-            4.4,
-            -3.22,
-            -0.95,
-            8.44,
-            57.39
+            1.11,
+            4.59,
+            -3.04,
+            -0.77,
+            8.63,
+            57.67
           ],
           "volumes": [
             86,
@@ -4258,12 +4404,200 @@
             87
           ],
           "rsiStack": [
-            52.9,
-            51.7,
-            52.3,
-            53.2,
-            54.5,
-            55.9
+            53.6,
+            52.0,
+            52.5,
+            53.4,
+            54.6,
+            56.0
+          ]
+        },
+        {
+          "symbol": "CF",
+          "dataSymbol": "CF",
+          "section": "Commodity",
+          "name": "CF",
+          "category": "Materials",
+          "price": 124.48,
+          "change": 8.22,
+          "mom": 47.5,
+          "phase": "Early",
+          "volume": "Rising",
+          "rotation": "Neutral",
+          "signal": "HOLD",
+          "dist_streak": 0,
+          "acc_streak": 0,
+          "rsi": 52.4,
+          "flow": 85,
+          "perf": {
+            "w1": -1.12,
+            "m1": 2.3,
+            "m3": 32.2
+          },
+          "returns": [
+            8.22,
+            3.94,
+            -1.12,
+            0.69,
+            2.3,
+            32.2
+          ],
+          "volumes": [
+            92,
+            158,
+            75,
+            100,
+            52,
+            61
+          ],
+          "rsiStack": [
+            57.3,
+            53.3,
+            52.4,
+            52.8,
+            53.7,
+            54.4
+          ]
+        },
+        {
+          "symbol": "IPI",
+          "dataSymbol": "IPI",
+          "section": "Commodity",
+          "name": "IPI",
+          "category": "Materials",
+          "price": 43.75,
+          "change": 15.71,
+          "mom": 62.2,
+          "phase": "Mature",
+          "volume": "Spike",
+          "rotation": "Accumulation",
+          "signal": "HOLD",
+          "dist_streak": 0,
+          "acc_streak": 0,
+          "rsi": 62.4,
+          "flow": 161,
+          "perf": {
+            "w1": 11.21,
+            "m1": 15.25,
+            "m3": 36.38
+          },
+          "returns": [
+            15.71,
+            16.14,
+            11.21,
+            15.34,
+            15.25,
+            36.38
+          ],
+          "volumes": [
+            81,
+            96,
+            66,
+            99,
+            51,
+            57
+          ],
+          "rsiStack": [
+            76.6,
+            68.4,
+            62.4,
+            59.1,
+            56.9,
+            54.6
+          ]
+        },
+        {
+          "symbol": "MOS",
+          "dataSymbol": "MOS",
+          "section": "Commodity",
+          "name": "MOS",
+          "category": "Materials",
+          "price": 21.79,
+          "change": -1.8,
+          "mom": 40.9,
+          "phase": "Bottoming",
+          "volume": "Spike",
+          "rotation": "Distribution",
+          "signal": "AVOID",
+          "dist_streak": 0,
+          "acc_streak": 0,
+          "rsi": 31.7,
+          "flow": 197,
+          "perf": {
+            "w1": -5.14,
+            "m1": -11.21,
+            "m3": -26.81
+          },
+          "returns": [
+            -1.8,
+            -7.51,
+            -5.14,
+            -6.16,
+            -11.21,
+            -26.81
+          ],
+          "volumes": [
+            115,
+            95,
+            76,
+            93,
+            143,
+            94
+          ],
+          "rsiStack": [
+            18.2,
+            25.6,
+            31.7,
+            36.0,
+            39.9,
+            43.8
+          ]
+        },
+        {
+          "symbol": "NTR",
+          "dataSymbol": "NTR",
+          "section": "Commodity",
+          "name": "NTR",
+          "category": "Materials",
+          "price": 71.29,
+          "change": 4.33,
+          "mom": 43.0,
+          "phase": "Bottoming",
+          "volume": "Spike",
+          "rotation": "Distribution",
+          "signal": "AVOID",
+          "dist_streak": 0,
+          "acc_streak": 0,
+          "rsi": 45.4,
+          "flow": 129,
+          "perf": {
+            "w1": -5.97,
+            "m1": -4.15,
+            "m3": 1.22
+          },
+          "returns": [
+            4.33,
+            -3.41,
+            -5.97,
+            -1.49,
+            -4.15,
+            1.22
+          ],
+          "volumes": [
+            115,
+            178,
+            96,
+            121,
+            51,
+            66
+          ],
+          "rsiStack": [
+            44.9,
+            44.6,
+            45.4,
+            46.5,
+            47.6,
+            46.4
           ]
         },
         {
@@ -4272,29 +4606,29 @@
           "section": "Crypto",
           "name": "Bitcoin",
           "category": "Currency",
-          "price": 81235.15,
-          "change": -1.1,
-          "mom": 49.5,
+          "price": 81191.88,
+          "change": -1.15,
+          "mom": 49.3,
           "phase": "Mature",
           "volume": "Fading",
           "rotation": "Fading",
           "signal": "SELL",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 63.4,
-          "flow": 90,
+          "rsi": 63.2,
+          "flow": 89,
           "perf": {
-            "w1": -0.24,
-            "m1": 6.39,
-            "m3": 15.24
+            "w1": -0.29,
+            "m1": 6.34,
+            "m3": 15.18
           },
           "returns": [
-            -1.1,
-            1.31,
-            -0.24,
-            3.91,
-            6.39,
-            15.24
+            -1.15,
+            1.25,
+            -0.29,
+            3.85,
+            6.34,
+            15.18
           ],
           "volumes": [
             81,
@@ -4305,11 +4639,11 @@
             100
           ],
           "rsiStack": [
-            61.6,
-            63.7,
+            61.0,
             63.4,
-            61.8,
-            58.5,
+            63.2,
+            61.6,
+            58.4,
             52.0
           ]
         },
@@ -5392,194 +5726,6 @@
             59.0,
             58.5,
             58.6
-          ]
-        },
-        {
-          "symbol": "CF",
-          "dataSymbol": "CF",
-          "section": "Stock",
-          "name": "CF",
-          "category": "Materials",
-          "price": 124.48,
-          "change": 8.22,
-          "mom": 47.5,
-          "phase": "Early",
-          "volume": "Rising",
-          "rotation": "Neutral",
-          "signal": "HOLD",
-          "dist_streak": 0,
-          "acc_streak": 0,
-          "rsi": 52.4,
-          "flow": 85,
-          "perf": {
-            "w1": -1.12,
-            "m1": 2.3,
-            "m3": 32.2
-          },
-          "returns": [
-            8.22,
-            3.94,
-            -1.12,
-            0.69,
-            2.3,
-            32.2
-          ],
-          "volumes": [
-            92,
-            158,
-            75,
-            100,
-            52,
-            61
-          ],
-          "rsiStack": [
-            57.3,
-            53.3,
-            52.4,
-            52.8,
-            53.7,
-            54.4
-          ]
-        },
-        {
-          "symbol": "IPI",
-          "dataSymbol": "IPI",
-          "section": "Stock",
-          "name": "IPI",
-          "category": "Materials",
-          "price": 43.75,
-          "change": 15.71,
-          "mom": 62.2,
-          "phase": "Mature",
-          "volume": "Spike",
-          "rotation": "Accumulation",
-          "signal": "HOLD",
-          "dist_streak": 0,
-          "acc_streak": 0,
-          "rsi": 62.4,
-          "flow": 161,
-          "perf": {
-            "w1": 11.21,
-            "m1": 15.25,
-            "m3": 36.38
-          },
-          "returns": [
-            15.71,
-            16.14,
-            11.21,
-            15.34,
-            15.25,
-            36.38
-          ],
-          "volumes": [
-            81,
-            96,
-            66,
-            99,
-            51,
-            57
-          ],
-          "rsiStack": [
-            76.6,
-            68.4,
-            62.4,
-            59.1,
-            56.9,
-            54.6
-          ]
-        },
-        {
-          "symbol": "MOS",
-          "dataSymbol": "MOS",
-          "section": "Stock",
-          "name": "MOS",
-          "category": "Materials",
-          "price": 21.79,
-          "change": -1.8,
-          "mom": 40.9,
-          "phase": "Bottoming",
-          "volume": "Spike",
-          "rotation": "Distribution",
-          "signal": "AVOID",
-          "dist_streak": 0,
-          "acc_streak": 0,
-          "rsi": 31.7,
-          "flow": 197,
-          "perf": {
-            "w1": -5.14,
-            "m1": -11.21,
-            "m3": -26.81
-          },
-          "returns": [
-            -1.8,
-            -7.51,
-            -5.14,
-            -6.16,
-            -11.21,
-            -26.81
-          ],
-          "volumes": [
-            115,
-            95,
-            76,
-            93,
-            143,
-            94
-          ],
-          "rsiStack": [
-            18.2,
-            25.6,
-            31.7,
-            36.0,
-            39.9,
-            43.8
-          ]
-        },
-        {
-          "symbol": "NTR",
-          "dataSymbol": "NTR",
-          "section": "Stock",
-          "name": "NTR",
-          "category": "Materials",
-          "price": 71.29,
-          "change": 4.33,
-          "mom": 43.0,
-          "phase": "Bottoming",
-          "volume": "Spike",
-          "rotation": "Distribution",
-          "signal": "AVOID",
-          "dist_streak": 0,
-          "acc_streak": 0,
-          "rsi": 45.4,
-          "flow": 129,
-          "perf": {
-            "w1": -5.97,
-            "m1": -4.15,
-            "m3": 1.22
-          },
-          "returns": [
-            4.33,
-            -3.41,
-            -5.97,
-            -1.49,
-            -4.15,
-            1.22
-          ],
-          "volumes": [
-            115,
-            178,
-            96,
-            121,
-            51,
-            66
-          ],
-          "rsiStack": [
-            44.9,
-            44.6,
-            45.4,
-            46.5,
-            47.6,
-            46.4
           ]
         },
         {

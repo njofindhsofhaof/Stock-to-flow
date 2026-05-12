@@ -444,8 +444,9 @@ let selectedSymbol = "XLK";
 let phaseFilter = "all";
 let searchTerm = "";
 let activeView = "map";
-const sectionOrder = ["Index", "ETF", "Stock", "Crypto"];
-const indexOrder = ["SP500", "GLD", "SLV", "URA", "CL"];
+const sectionOrder = ["Index", "Commodity", "ETF", "Stock", "Crypto"];
+const indexOrder = ["SP500", "DJI", "KOSPI", "NI225"];
+const commodityOrder = ["GLD", "SLV", "URA", "CL", "CF", "IPI", "MOS", "NTR"];
 
 const tableBody = document.querySelector("#etfTable tbody");
 const searchInput = document.querySelector("#searchInput");
@@ -672,6 +673,14 @@ function renderTable() {
           if (section === "Index") {
             const ai = indexOrder.indexOf(a.symbol);
             const bi = indexOrder.indexOf(b.symbol);
+            if (ai === -1 && bi === -1) return 0;
+            if (ai === -1) return 1;
+            if (bi === -1) return -1;
+            return ai - bi;
+          }
+          if (section === "Commodity") {
+            const ai = commodityOrder.indexOf(a.symbol);
+            const bi = commodityOrder.indexOf(b.symbol);
             if (ai === -1 && bi === -1) return 0;
             if (ai === -1) return 1;
             if (bi === -1) return -1;
