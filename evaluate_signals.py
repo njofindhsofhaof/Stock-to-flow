@@ -9,7 +9,7 @@ Cách dùng:
     python3 evaluate_signals.py --local       # dùng market_history.json local
     python3 evaluate_signals.py --min-days 3  # cho phép đánh giá từ 3 ngày trở lên
 
-Output:
+Output (lưu trong ~/Project/Stock2Flow_Automation/):
     signal_eval.csv   — chi tiết từng signal
     signal_eval.md    — báo cáo tóm tắt
 """
@@ -27,6 +27,8 @@ GITHUB_URL = (
     "https://raw.githubusercontent.com/"
     "njofindhsofhaof/Stock-to-flow/main/market_history.json"
 )
+
+OUTPUT_DIR = Path.home() / "Project" / "Stock2Flow_Automation"
 
 # Số ngày tối thiểu / tối đa để ghép cặp snapshot (tính theo calendar days)
 MIN_DAYS = 5
@@ -151,7 +153,8 @@ def main(local: bool, min_days: int) -> None:
         return
 
     # Ghi CSV
-    csv_path = Path(__file__).parent / "signal_eval.csv"
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    csv_path = OUTPUT_DIR / "signal_eval.csv"
     fieldnames = list(records[0].keys())
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -210,7 +213,7 @@ def main(local: bool, min_days: int) -> None:
             )
 
     report = "\n".join(lines)
-    md_path = Path(__file__).parent / "signal_eval.md"
+    md_path = OUTPUT_DIR / "signal_eval.md"
     md_path.write_text(report, encoding="utf-8")
     print(f"Báo cáo → {md_path}\n")
     print(report)
