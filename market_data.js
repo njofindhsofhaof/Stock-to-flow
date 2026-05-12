@@ -1,6 +1,6 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-12 10:53:00",
+  "updatedAt": "2026-05-12 10:56:18",
   "sections": {
     "Index": {
       "risk": "Neutral",
@@ -219,8 +219,8 @@ window.marketData = [
     "section": "Index",
     "name": "Crude Oil",
     "category": "Commodity",
-    "price": 98.85,
-    "change": 3.59,
+    "price": 98.88,
+    "change": 3.63,
     "mom": 43.5,
     "phase": "Mature",
     "volume": "Fading",
@@ -231,17 +231,17 @@ window.marketData = [
     "rsi": 52.1,
     "flow": 3,
     "perf": {
-      "w1": -7.11,
-      "m1": -0.23,
-      "m3": 57.3
+      "w1": -7.09,
+      "m1": -0.2,
+      "m3": 57.35
     },
     "returns": [
-      3.59,
-      3.97,
-      -7.11,
-      2.57,
-      -0.23,
-      57.3
+      3.63,
+      4.0,
+      -7.09,
+      2.6,
+      -0.2,
+      57.35
     ],
     "volumes": [
       84,
@@ -252,10 +252,10 @@ window.marketData = [
       93
     ],
     "rsiStack": [
-      51.8,
-      51.3,
+      51.9,
+      51.4,
       52.1,
-      53.0,
+      53.1,
       53.7,
       51.7
     ]
@@ -266,7 +266,7 @@ window.marketData = [
     "section": "Crypto",
     "name": "Bitcoin",
     "category": "Currency",
-    "price": 81070.3,
+    "price": 81074.5,
     "change": -1.3,
     "mom": 48.6,
     "phase": "Mature",
@@ -278,17 +278,17 @@ window.marketData = [
     "rsi": 62.6,
     "flow": 90,
     "perf": {
-      "w1": -0.44,
+      "w1": -0.43,
       "m1": 6.18,
-      "m3": 15.0
+      "m3": 15.01
     },
     "returns": [
       -1.3,
-      1.1,
-      -0.44,
+      1.11,
+      -0.43,
       3.7,
       6.18,
-      15.0
+      15.01
     ],
     "volumes": [
       81,
@@ -1013,97 +1013,97 @@ window.marketData = [
     ]
   },
   {
-    "symbol": "CRDO",
-    "dataSymbol": "CRDO",
+    "symbol": "FTAG",
+    "dataSymbol": "FTAG",
     "section": "Stock",
-    "name": "CRDO",
-    "category": "Semis",
-    "price": 210.22,
-    "change": 11.52,
-    "mom": 55.1,
-    "phase": "Mature",
-    "volume": "Fading",
-    "rotation": "Accumulation (Quiet)",
+    "name": "FTAG",
+    "category": "Agriculture",
+    "price": 30.09,
+    "change": 0.85,
+    "mom": 54.5,
+    "phase": "Early",
+    "volume": "Rising",
+    "rotation": "Neutral",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 69.0,
-    "flow": 107,
+    "rsi": 54.5,
+    "flow": 80,
     "perf": {
-      "w1": 16.75,
-      "m1": 56.46,
-      "m3": 72.62
+      "w1": 1.13,
+      "m1": -1.81,
+      "m3": -1.26
     },
     "returns": [
-      11.52,
-      6.02,
-      16.75,
-      16.47,
-      56.46,
-      72.62
+      0.85,
+      -0.61,
+      1.13,
+      1.54,
+      -1.81,
+      -1.26
     ],
     "volumes": [
-      66,
-      82,
-      49,
-      60,
-      90,
-      153
+      89,
+      13,
+      109,
+      48,
+      33,
+      45
     ],
     "rsiStack": [
-      75.2,
-      70.9,
-      69.0,
-      66.9,
-      62.0,
-      49.1
+      58.3,
+      55.4,
+      54.5,
+      54.3,
+      54.4,
+      53.7
     ]
   },
   {
-    "symbol": "MRVL",
-    "dataSymbol": "MRVL",
+    "symbol": "MOO",
+    "dataSymbol": "MOO",
     "section": "Stock",
-    "name": "MRVL",
-    "category": "Tech",
-    "price": 170.84,
-    "change": 0.42,
-    "mom": 45.9,
-    "phase": "Mature",
-    "volume": "Fading",
-    "rotation": "Accumulation (Quiet)",
-    "signal": "HOLD",
+    "name": "MOO",
+    "category": "Agriculture",
+    "price": 81.91,
+    "change": 0.31,
+    "mom": 44.4,
+    "phase": "Bottoming",
+    "volume": "Spike",
+    "rotation": "Accumulation (Day 1)",
+    "signal": "AVOID",
     "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 69.3,
-    "flow": 84,
+    "acc_streak": 1,
+    "rsi": 42.3,
+    "flow": 213,
     "perf": {
-      "w1": 4.39,
-      "m1": 30.11,
-      "m3": 118.38
+      "w1": -2.09,
+      "m1": -3.96,
+      "m3": -3.61
     },
     "returns": [
-      0.42,
-      -0.76,
-      4.39,
-      7.98,
-      30.11,
-      118.38
+      0.31,
+      -2.75,
+      -2.09,
+      -0.28,
+      -3.96,
+      -3.61
     ],
     "volumes": [
-      78,
-      83,
-      52,
-      70,
-      96,
-      127
+      548,
+      165,
+      94,
+      104,
+      66,
+      23
     ],
     "rsiStack": [
-      63.3,
-      66.7,
-      69.3,
-      70.3,
-      69.6,
-      65.4
+      35.5,
+      39.4,
+      42.3,
+      44.8,
+      47.6,
+      49.3
     ]
   },
   {
@@ -1201,194 +1201,6 @@ window.marketData = [
     ]
   },
   {
-    "symbol": "FPI",
-    "dataSymbol": "FPI",
-    "section": "Stock",
-    "name": "FPI",
-    "category": "Real Estate",
-    "price": 10.42,
-    "change": -1.51,
-    "mom": 39.3,
-    "phase": "Bottoming",
-    "volume": "Rising",
-    "rotation": "Distribution (Quiet)",
-    "signal": "AVOID",
-    "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 28.6,
-    "flow": 100,
-    "perf": {
-      "w1": -1.04,
-      "m1": -10.86,
-      "m3": -12.14
-    },
-    "returns": [
-      -1.51,
-      -2.43,
-      -1.04,
-      -10.71,
-      -10.86,
-      -12.14
-    ],
-    "volumes": [
-      87,
-      101,
-      108,
-      208,
-      71,
-      72
-    ],
-    "rsiStack": [
-      16.7,
-      22.6,
-      28.6,
-      33.8,
-      39.1,
-      44.5
-    ]
-  },
-  {
-    "symbol": "LAND",
-    "dataSymbol": "LAND",
-    "section": "Stock",
-    "name": "LAND",
-    "category": "Real Estate",
-    "price": 9.44,
-    "change": -2.98,
-    "mom": 44.1,
-    "phase": "Bottoming",
-    "volume": "Fading",
-    "rotation": "Distribution",
-    "signal": "AVOID",
-    "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 33.7,
-    "flow": 115,
-    "perf": {
-      "w1": -1.56,
-      "m1": -9.4,
-      "m3": -12.83
-    },
-    "returns": [
-      -2.98,
-      -3.58,
-      -1.56,
-      -4.74,
-      -9.4,
-      -12.83
-    ],
-    "volumes": [
-      78,
-      113,
-      112,
-      145,
-      135,
-      89
-    ],
-    "rsiStack": [
-      25.9,
-      30.9,
-      33.7,
-      36.5,
-      39.5,
-      39.8
-    ]
-  },
-  {
-    "symbol": "MOO",
-    "dataSymbol": "MOO",
-    "section": "Stock",
-    "name": "MOO",
-    "category": "Agriculture",
-    "price": 81.91,
-    "change": 0.31,
-    "mom": 44.4,
-    "phase": "Bottoming",
-    "volume": "Spike",
-    "rotation": "Accumulation (Day 1)",
-    "signal": "AVOID",
-    "dist_streak": 0,
-    "acc_streak": 1,
-    "rsi": 42.3,
-    "flow": 213,
-    "perf": {
-      "w1": -2.09,
-      "m1": -3.96,
-      "m3": -3.61
-    },
-    "returns": [
-      0.31,
-      -2.75,
-      -2.09,
-      -0.28,
-      -3.96,
-      -3.61
-    ],
-    "volumes": [
-      548,
-      165,
-      94,
-      104,
-      66,
-      23
-    ],
-    "rsiStack": [
-      35.5,
-      39.4,
-      42.3,
-      44.8,
-      47.6,
-      49.3
-    ]
-  },
-  {
-    "symbol": "FTAG",
-    "dataSymbol": "FTAG",
-    "section": "Stock",
-    "name": "FTAG",
-    "category": "Agriculture",
-    "price": 30.09,
-    "change": 0.85,
-    "mom": 54.5,
-    "phase": "Early",
-    "volume": "Rising",
-    "rotation": "Neutral",
-    "signal": "HOLD",
-    "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 54.5,
-    "flow": 80,
-    "perf": {
-      "w1": 1.13,
-      "m1": -1.81,
-      "m3": -1.26
-    },
-    "returns": [
-      0.85,
-      -0.61,
-      1.13,
-      1.54,
-      -1.81,
-      -1.26
-    ],
-    "volumes": [
-      89,
-      13,
-      109,
-      48,
-      33,
-      45
-    ],
-    "rsiStack": [
-      58.3,
-      55.4,
-      54.5,
-      54.3,
-      54.4,
-      53.7
-    ]
-  },
-  {
     "symbol": "TAGS",
     "dataSymbol": "TAGS",
     "section": "Stock",
@@ -1433,100 +1245,6 @@ window.marketData = [
       59.0,
       58.5,
       58.6
-    ]
-  },
-  {
-    "symbol": "NTR",
-    "dataSymbol": "NTR",
-    "section": "Stock",
-    "name": "NTR",
-    "category": "Materials",
-    "price": 71.29,
-    "change": 4.33,
-    "mom": 43.0,
-    "phase": "Bottoming",
-    "volume": "Spike",
-    "rotation": "Distribution",
-    "signal": "AVOID",
-    "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 45.4,
-    "flow": 127,
-    "perf": {
-      "w1": -5.97,
-      "m1": -4.15,
-      "m3": 1.22
-    },
-    "returns": [
-      4.33,
-      -3.41,
-      -5.97,
-      -1.49,
-      -4.15,
-      1.22
-    ],
-    "volumes": [
-      115,
-      178,
-      96,
-      121,
-      51,
-      66
-    ],
-    "rsiStack": [
-      44.9,
-      44.6,
-      45.4,
-      46.5,
-      47.6,
-      46.4
-    ]
-  },
-  {
-    "symbol": "MOS",
-    "dataSymbol": "MOS",
-    "section": "Stock",
-    "name": "MOS",
-    "category": "Materials",
-    "price": 21.79,
-    "change": -1.8,
-    "mom": 40.9,
-    "phase": "Bottoming",
-    "volume": "Spike",
-    "rotation": "Distribution",
-    "signal": "AVOID",
-    "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 31.7,
-    "flow": 197,
-    "perf": {
-      "w1": -5.14,
-      "m1": -11.21,
-      "m3": -26.81
-    },
-    "returns": [
-      -1.8,
-      -7.51,
-      -5.14,
-      -6.16,
-      -11.21,
-      -26.81
-    ],
-    "volumes": [
-      115,
-      95,
-      76,
-      93,
-      143,
-      94
-    ],
-    "rsiStack": [
-      18.2,
-      25.6,
-      31.7,
-      36.0,
-      39.9,
-      43.8
     ]
   },
   {
@@ -1621,6 +1339,288 @@ window.marketData = [
       59.1,
       56.9,
       54.6
+    ]
+  },
+  {
+    "symbol": "MOS",
+    "dataSymbol": "MOS",
+    "section": "Stock",
+    "name": "MOS",
+    "category": "Materials",
+    "price": 21.79,
+    "change": -1.8,
+    "mom": 40.9,
+    "phase": "Bottoming",
+    "volume": "Spike",
+    "rotation": "Distribution",
+    "signal": "AVOID",
+    "dist_streak": 0,
+    "acc_streak": 0,
+    "rsi": 31.7,
+    "flow": 197,
+    "perf": {
+      "w1": -5.14,
+      "m1": -11.21,
+      "m3": -26.81
+    },
+    "returns": [
+      -1.8,
+      -7.51,
+      -5.14,
+      -6.16,
+      -11.21,
+      -26.81
+    ],
+    "volumes": [
+      115,
+      95,
+      76,
+      93,
+      143,
+      94
+    ],
+    "rsiStack": [
+      18.2,
+      25.6,
+      31.7,
+      36.0,
+      39.9,
+      43.8
+    ]
+  },
+  {
+    "symbol": "NTR",
+    "dataSymbol": "NTR",
+    "section": "Stock",
+    "name": "NTR",
+    "category": "Materials",
+    "price": 71.29,
+    "change": 4.33,
+    "mom": 43.0,
+    "phase": "Bottoming",
+    "volume": "Spike",
+    "rotation": "Distribution",
+    "signal": "AVOID",
+    "dist_streak": 0,
+    "acc_streak": 0,
+    "rsi": 45.4,
+    "flow": 127,
+    "perf": {
+      "w1": -5.97,
+      "m1": -4.15,
+      "m3": 1.22
+    },
+    "returns": [
+      4.33,
+      -3.41,
+      -5.97,
+      -1.49,
+      -4.15,
+      1.22
+    ],
+    "volumes": [
+      115,
+      178,
+      96,
+      121,
+      51,
+      66
+    ],
+    "rsiStack": [
+      44.9,
+      44.6,
+      45.4,
+      46.5,
+      47.6,
+      46.4
+    ]
+  },
+  {
+    "symbol": "FPI",
+    "dataSymbol": "FPI",
+    "section": "Stock",
+    "name": "FPI",
+    "category": "Real Estate",
+    "price": 10.42,
+    "change": -1.51,
+    "mom": 39.3,
+    "phase": "Bottoming",
+    "volume": "Rising",
+    "rotation": "Distribution (Quiet)",
+    "signal": "AVOID",
+    "dist_streak": 0,
+    "acc_streak": 0,
+    "rsi": 28.6,
+    "flow": 100,
+    "perf": {
+      "w1": -1.04,
+      "m1": -10.86,
+      "m3": -12.14
+    },
+    "returns": [
+      -1.51,
+      -2.43,
+      -1.04,
+      -10.71,
+      -10.86,
+      -12.14
+    ],
+    "volumes": [
+      87,
+      101,
+      108,
+      208,
+      71,
+      72
+    ],
+    "rsiStack": [
+      16.7,
+      22.6,
+      28.6,
+      33.8,
+      39.1,
+      44.5
+    ]
+  },
+  {
+    "symbol": "LAND",
+    "dataSymbol": "LAND",
+    "section": "Stock",
+    "name": "LAND",
+    "category": "Real Estate",
+    "price": 9.44,
+    "change": -2.98,
+    "mom": 44.1,
+    "phase": "Bottoming",
+    "volume": "Fading",
+    "rotation": "Distribution",
+    "signal": "AVOID",
+    "dist_streak": 0,
+    "acc_streak": 0,
+    "rsi": 33.7,
+    "flow": 115,
+    "perf": {
+      "w1": -1.56,
+      "m1": -9.4,
+      "m3": -12.83
+    },
+    "returns": [
+      -2.98,
+      -3.58,
+      -1.56,
+      -4.74,
+      -9.4,
+      -12.83
+    ],
+    "volumes": [
+      78,
+      113,
+      112,
+      145,
+      135,
+      89
+    ],
+    "rsiStack": [
+      25.9,
+      30.9,
+      33.7,
+      36.5,
+      39.5,
+      39.8
+    ]
+  },
+  {
+    "symbol": "CRDO",
+    "dataSymbol": "CRDO",
+    "section": "Stock",
+    "name": "CRDO",
+    "category": "Semis",
+    "price": 210.22,
+    "change": 11.52,
+    "mom": 55.1,
+    "phase": "Mature",
+    "volume": "Fading",
+    "rotation": "Accumulation (Quiet)",
+    "signal": "HOLD",
+    "dist_streak": 0,
+    "acc_streak": 0,
+    "rsi": 69.0,
+    "flow": 107,
+    "perf": {
+      "w1": 16.75,
+      "m1": 56.46,
+      "m3": 72.62
+    },
+    "returns": [
+      11.52,
+      6.02,
+      16.75,
+      16.47,
+      56.46,
+      72.62
+    ],
+    "volumes": [
+      66,
+      82,
+      49,
+      60,
+      90,
+      153
+    ],
+    "rsiStack": [
+      75.2,
+      70.9,
+      69.0,
+      66.9,
+      62.0,
+      49.1
+    ]
+  },
+  {
+    "symbol": "MRVL",
+    "dataSymbol": "MRVL",
+    "section": "Stock",
+    "name": "MRVL",
+    "category": "Tech",
+    "price": 170.84,
+    "change": 0.42,
+    "mom": 45.9,
+    "phase": "Mature",
+    "volume": "Fading",
+    "rotation": "Accumulation (Quiet)",
+    "signal": "HOLD",
+    "dist_streak": 0,
+    "acc_streak": 0,
+    "rsi": 69.3,
+    "flow": 84,
+    "perf": {
+      "w1": 4.39,
+      "m1": 30.11,
+      "m3": 118.38
+    },
+    "returns": [
+      0.42,
+      -0.76,
+      4.39,
+      7.98,
+      30.11,
+      118.38
+    ],
+    "volumes": [
+      78,
+      83,
+      52,
+      70,
+      96,
+      127
+    ],
+    "rsiStack": [
+      63.3,
+      66.7,
+      69.3,
+      70.3,
+      69.6,
+      65.4
     ]
   }
 ];
