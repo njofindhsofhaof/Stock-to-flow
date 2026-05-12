@@ -4007,7 +4007,7 @@
     },
     {
       "date": "2026-05-12",
-      "updatedAt": "2026-05-12 13:44:44",
+      "updatedAt": "2026-05-12 13:56:28",
       "sections": {
         "Index": {
           "risk": "Risk Off",
@@ -4020,7 +4020,7 @@
           "watch": 3
         },
         "Crypto": {
-          "risk": "Risk Off",
+          "risk": "Risk On",
           "leader": "MSTR",
           "watch": 2
         },
@@ -4136,29 +4136,29 @@
           "section": "Index",
           "name": "Korea Index",
           "category": "Broad",
-          "price": 7690.59,
-          "change": -1.68,
-          "mom": 60.1,
+          "price": 7643.15,
+          "change": -2.29,
+          "mom": 58.6,
           "phase": "Exhaustion",
           "volume": "Fading",
           "rotation": "Trending up",
           "signal": "WATCH",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 78.5,
-          "flow": 117,
+          "rsi": 76.7,
+          "flow": 119,
           "perf": {
-            "w1": 10.86,
-            "m1": 31.26,
-            "m3": 45.16
+            "w1": 10.18,
+            "m1": 30.45,
+            "m3": 44.26
           },
           "returns": [
-            -1.68,
-            2.68,
-            10.86,
-            18.76,
-            31.26,
-            45.16
+            -2.29,
+            2.04,
+            10.18,
+            18.03,
+            30.45,
+            44.26
           ],
           "volumes": [
             86,
@@ -4169,12 +4169,12 @@
             94
           ],
           "rsiStack": [
-            80.9,
-            82.2,
-            78.5,
-            74.4,
-            70.5,
-            67.7
+            76.6,
+            79.4,
+            76.7,
+            73.2,
+            69.7,
+            67.2
           ]
         },
         {
@@ -4183,29 +4183,29 @@
           "section": "Index",
           "name": "Japan Index",
           "category": "Broad",
-          "price": 62716.75,
-          "change": 0.48,
-          "mom": 58.7,
+          "price": 62742.57,
+          "change": 0.52,
+          "mom": 58.8,
           "phase": "Mature",
           "volume": "Fading",
           "rotation": "Accumulation (Day 1)",
           "signal": "HOLD",
           "dist_streak": 0,
           "acc_streak": 1,
-          "rsi": 69.0,
+          "rsi": 69.1,
           "flow": 0,
           "perf": {
-            "w1": 5.79,
-            "m1": 11.38,
-            "m3": 15.6
+            "w1": 5.83,
+            "m1": 11.43,
+            "m3": 15.65
           },
           "returns": [
-            0.48,
-            -0.19,
-            5.79,
-            5.25,
-            11.38,
-            15.6
+            0.52,
+            -0.15,
+            5.83,
+            5.3,
+            11.43,
+            15.65
           ],
           "volumes": [
             124,
@@ -4216,12 +4216,12 @@
             125
           ],
           "rsiStack": [
-            76.0,
-            72.8,
-            69.0,
+            76.2,
+            72.9,
+            69.1,
             65.8,
             63.0,
-            61.4
+            61.5
           ]
         },
         {
@@ -4371,29 +4371,29 @@
           "section": "Commodity",
           "name": "Crude Oil",
           "category": "Energy",
-          "price": 99.53,
-          "change": 1.49,
-          "mom": 44.5,
+          "price": 99.92,
+          "change": 1.89,
+          "mom": 45.0,
           "phase": "Early",
           "volume": "Fading",
           "rotation": "Trending up",
           "signal": "BUY",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 52.8,
-          "flow": 6,
+          "rsi": 53.2,
+          "flow": 7,
           "perf": {
-            "w1": -2.68,
-            "m1": 9.04,
-            "m3": 58.26
+            "w1": -2.3,
+            "m1": 9.47,
+            "m3": 58.88
           },
           "returns": [
-            1.49,
-            4.98,
-            -2.68,
-            -0.4,
-            9.04,
-            58.26
+            1.89,
+            5.39,
+            -2.3,
+            -0.01,
+            9.47,
+            58.88
           ],
           "volumes": [
             86,
@@ -4404,12 +4404,12 @@
             87
           ],
           "rsiStack": [
+            56.2,
+            53.3,
+            53.2,
+            53.9,
             54.9,
-            52.7,
-            52.8,
-            53.6,
-            54.7,
-            56.1
+            56.2
           ]
         },
         {
@@ -4606,44 +4606,44 @@
           "section": "Crypto",
           "name": "Bitcoin",
           "category": "Currency",
-          "price": 81069.58,
-          "change": -1.3,
-          "mom": 48.5,
+          "price": 81036.13,
+          "change": -0.85,
+          "mom": 48.3,
           "phase": "Mature",
           "volume": "Fading",
-          "rotation": "Fading",
-          "signal": "SELL",
+          "rotation": "Accumulation (Quiet)",
+          "signal": "HOLD",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 62.6,
-          "flow": 89,
+          "rsi": 62.2,
+          "flow": 91,
           "perf": {
-            "w1": -0.44,
-            "m1": 6.18,
-            "m3": 15.0
+            "w1": 1.28,
+            "m1": 3.62,
+            "m3": 14.19
           },
           "returns": [
-            -1.3,
-            1.1,
-            -0.44,
-            3.7,
-            6.18,
-            15.0
+            -0.85,
+            0.46,
+            1.28,
+            3.02,
+            3.62,
+            14.19
           ],
           "volumes": [
-            81,
             98,
-            119,
-            156,
-            106,
-            100
+            53,
+            108,
+            113,
+            46,
+            131
           ],
           "rsiStack": [
-            59.3,
-            62.5,
-            62.6,
-            61.3,
-            58.2,
+            56.8,
+            61.6,
+            62.2,
+            61.0,
+            58.1,
             51.9
           ]
         },
@@ -5773,6 +5773,53 @@
             59.0,
             58.5,
             58.6
+          ]
+        },
+        {
+          "symbol": "PFE",
+          "dataSymbol": "PFE",
+          "section": "Stock",
+          "name": "PFE",
+          "category": "Healthcare",
+          "price": 25.81,
+          "change": 0.51,
+          "mom": 37.4,
+          "phase": "Bottoming",
+          "volume": "Fading",
+          "rotation": "Distribution",
+          "signal": "AVOID",
+          "dist_streak": 0,
+          "acc_streak": 0,
+          "rsi": 37.4,
+          "flow": 119,
+          "perf": {
+            "w1": -1.86,
+            "m1": -5.6,
+            "m3": -6.04
+          },
+          "returns": [
+            0.51,
+            -2.71,
+            -1.86,
+            -3.66,
+            -5.6,
+            -6.04
+          ],
+          "volumes": [
+            106,
+            115,
+            101,
+            116,
+            102,
+            111
+          ],
+          "rsiStack": [
+            28.5,
+            33.2,
+            37.4,
+            40.8,
+            43.9,
+            45.7
           ]
         },
         {

@@ -57,6 +57,7 @@ ASSETS = [
     {"symbol": "F",    "data_symbol": "F",    "name": "F",    "category": "Auto",        "section": "Stock"},
     {"symbol": "GM",   "data_symbol": "GM",   "name": "GM",   "category": "Auto",        "section": "Stock"},
     {"symbol": "TAGS", "data_symbol": "TAGS", "name": "TAGS", "category": "Commodity",   "section": "Stock"},
+    {"symbol": "PFE",  "data_symbol": "PFE",  "name": "PFE",  "category": "Healthcare",  "section": "Stock"},
     {"symbol": "FPI",  "data_symbol": "FPI",  "name": "FPI",  "category": "Real Estate", "section": "Stock"},
     {"symbol": "LAND", "data_symbol": "LAND", "name": "LAND", "category": "Real Estate", "section": "Stock"},
     {"symbol": "CRDO", "data_symbol": "CRDO", "name": "CRDO", "category": "Semis",       "section": "Stock"},
