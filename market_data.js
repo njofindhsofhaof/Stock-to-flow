@@ -1,9 +1,9 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-12 13:02:33",
+  "updatedAt": "2026-05-12 13:44:44",
   "sections": {
     "Index": {
-      "risk": "Neutral",
+      "risk": "Risk Off",
       "leader": "KOSPI",
       "watch": 2
     },
@@ -23,7 +23,7 @@ window.marketDataMeta = {
       "watch": 2
     },
     "Stock": {
-      "risk": "Risk On",
+      "risk": "Neutral",
       "leader": "CRDO",
       "watch": 1
     }
@@ -130,29 +130,29 @@ window.marketData = [
     "section": "Index",
     "name": "Korea Index",
     "category": "Broad",
-    "price": 7568.34,
-    "change": -3.25,
-    "mom": 56.5,
-    "phase": "Mature",
+    "price": 7690.59,
+    "change": -1.68,
+    "mom": 60.1,
+    "phase": "Exhaustion",
     "volume": "Fading",
-    "rotation": "Accumulation (Quiet)",
-    "signal": "HOLD",
+    "rotation": "Trending up",
+    "signal": "WATCH",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 74.1,
-    "flow": 110,
+    "rsi": 78.5,
+    "flow": 117,
     "perf": {
-      "w1": 9.1,
-      "m1": 29.18,
-      "m3": 42.85
+      "w1": 10.86,
+      "m1": 31.26,
+      "m3": 45.16
     },
     "returns": [
-      -3.25,
-      1.05,
-      9.1,
-      16.87,
-      29.18,
-      42.85
+      -1.68,
+      2.68,
+      10.86,
+      18.76,
+      31.26,
+      45.16
     ],
     "volumes": [
       86,
@@ -163,12 +163,12 @@ window.marketData = [
       94
     ],
     "rsiStack": [
-      70.6,
-      75.4,
-      74.1,
-      71.4,
-      68.5,
-      66.4
+      80.9,
+      82.2,
+      78.5,
+      74.4,
+      70.5,
+      67.7
     ]
   },
   {
@@ -177,29 +177,29 @@ window.marketData = [
     "section": "Index",
     "name": "Japan Index",
     "category": "Broad",
-    "price": 62684.48,
-    "change": 0.43,
-    "mom": 58.6,
+    "price": 62716.75,
+    "change": 0.48,
+    "mom": 58.7,
     "phase": "Mature",
     "volume": "Fading",
     "rotation": "Accumulation (Day 1)",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 1,
-    "rsi": 68.9,
+    "rsi": 69.0,
     "flow": 0,
     "perf": {
-      "w1": 5.73,
-      "m1": 11.32,
-      "m3": 15.54
+      "w1": 5.79,
+      "m1": 11.38,
+      "m3": 15.6
     },
     "returns": [
-      0.43,
-      -0.24,
-      5.73,
-      5.2,
-      11.32,
-      15.54
+      0.48,
+      -0.19,
+      5.79,
+      5.25,
+      11.38,
+      15.6
     ],
     "volumes": [
       124,
@@ -210,11 +210,11 @@ window.marketData = [
       125
     ],
     "rsiStack": [
-      75.8,
-      72.7,
-      68.9,
-      65.7,
-      62.9,
+      76.0,
+      72.8,
+      69.0,
+      65.8,
+      63.0,
       61.4
     ]
   },
@@ -365,29 +365,29 @@ window.marketData = [
     "section": "Commodity",
     "name": "Crude Oil",
     "category": "Energy",
-    "price": 99.24,
-    "change": 1.19,
-    "mom": 44.1,
+    "price": 99.53,
+    "change": 1.49,
+    "mom": 44.5,
     "phase": "Early",
     "volume": "Fading",
     "rotation": "Trending up",
     "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 52.5,
-    "flow": 4,
+    "rsi": 52.8,
+    "flow": 6,
     "perf": {
-      "w1": -2.96,
-      "m1": 8.72,
-      "m3": 57.8
+      "w1": -2.68,
+      "m1": 9.04,
+      "m3": 58.26
     },
     "returns": [
-      1.19,
-      4.67,
-      -2.96,
-      -0.69,
-      8.72,
-      57.8
+      1.49,
+      4.98,
+      -2.68,
+      -0.4,
+      9.04,
+      58.26
     ],
     "volumes": [
       86,
@@ -398,12 +398,12 @@ window.marketData = [
       87
     ],
     "rsiStack": [
-      53.9,
-      52.2,
-      52.5,
-      53.4,
-      54.6,
-      56.0
+      54.9,
+      52.7,
+      52.8,
+      53.6,
+      54.7,
+      56.1
     ]
   },
   {
@@ -600,29 +600,29 @@ window.marketData = [
     "section": "Crypto",
     "name": "Bitcoin",
     "category": "Currency",
-    "price": 81195.36,
-    "change": -1.15,
-    "mom": 49.3,
+    "price": 81069.58,
+    "change": -1.3,
+    "mom": 48.5,
     "phase": "Mature",
     "volume": "Fading",
     "rotation": "Fading",
     "signal": "SELL",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 63.2,
+    "rsi": 62.6,
     "flow": 89,
     "perf": {
-      "w1": -0.29,
-      "m1": 6.34,
-      "m3": 15.18
+      "w1": -0.44,
+      "m1": 6.18,
+      "m3": 15.0
     },
     "returns": [
-      -1.15,
-      1.26,
-      -0.29,
-      3.86,
-      6.34,
-      15.18
+      -1.3,
+      1.1,
+      -0.44,
+      3.7,
+      6.18,
+      15.0
     ],
     "volumes": [
       81,
@@ -633,12 +633,12 @@ window.marketData = [
       100
     ],
     "rsiStack": [
-      61.0,
-      63.4,
-      63.2,
-      61.6,
-      58.4,
-      52.0
+      59.3,
+      62.5,
+      62.6,
+      61.3,
+      58.2,
+      51.9
     ]
   },
   {
@@ -1532,6 +1532,53 @@ window.marketData = [
       54.4,
       54.5,
       53.7
+    ]
+  },
+  {
+    "symbol": "SBUX",
+    "dataSymbol": "SBUX",
+    "section": "Stock",
+    "name": "SBUX",
+    "category": "Consumer",
+    "price": 105.74,
+    "change": 0.77,
+    "mom": 55.0,
+    "phase": "Mature",
+    "volume": "Fading",
+    "rotation": "Fading",
+    "signal": "SELL",
+    "dist_streak": 0,
+    "acc_streak": 0,
+    "rsi": 64.3,
+    "flow": 87,
+    "perf": {
+      "w1": 0.73,
+      "m1": 8.47,
+      "m3": 9.28
+    },
+    "returns": [
+      0.77,
+      -0.66,
+      0.73,
+      8.02,
+      8.47,
+      9.28
+    ],
+    "volumes": [
+      61,
+      120,
+      76,
+      129,
+      84,
+      68
+    ],
+    "rsiStack": [
+      64.8,
+      65.8,
+      64.3,
+      62.2,
+      59.6,
+      55.1
     ]
   },
   {

@@ -51,7 +51,8 @@ ASSETS = [
     {"symbol": "VEGI", "data_symbol": "VEGI", "name": "Agriculture",             "category": "Agriculture", "section": "ETF"},
     {"symbol": "FTXR", "data_symbol": "FTXR", "name": "Transportation",          "category": "Auto",        "section": "ETF"},
     # Stock
-    {"symbol": "FTAG", "data_symbol": "FTAG", "name": "FTAG", "category": "Agriculture", "section": "Stock"},
+    {"symbol": "FTAG", "data_symbol": "FTAG", "name": "FTAG",  "category": "Agriculture", "section": "Stock"},
+    {"symbol": "SBUX", "data_symbol": "SBUX", "name": "SBUX",  "category": "Consumer",    "section": "Stock"},
     {"symbol": "MOO",  "data_symbol": "MOO",  "name": "MOO",  "category": "Agriculture", "section": "Stock"},
     {"symbol": "F",    "data_symbol": "F",    "name": "F",    "category": "Auto",        "section": "Stock"},
     {"symbol": "GM",   "data_symbol": "GM",   "name": "GM",   "category": "Auto",        "section": "Stock"},
