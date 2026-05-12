@@ -4007,10 +4007,10 @@
     },
     {
       "date": "2026-05-12",
-      "updatedAt": "2026-05-12 12:55:20",
+      "updatedAt": "2026-05-12 13:02:33",
       "sections": {
         "Index": {
-          "risk": "Risk Off",
+          "risk": "Neutral",
           "leader": "KOSPI",
           "watch": 2
         },
@@ -4040,7 +4040,7 @@
           "symbol": "SP500",
           "dataSymbol": "^GSPC",
           "section": "Index",
-          "name": "S&P 500",
+          "name": "US Index",
           "category": "Broad",
           "price": 7412.84,
           "change": 0.19,
@@ -4134,31 +4134,31 @@
           "symbol": "KOSPI",
           "dataSymbol": "^KS11",
           "section": "Index",
-          "name": "KOSPI",
+          "name": "Korea Index",
           "category": "Broad",
-          "price": 7597.55,
-          "change": -2.87,
-          "mom": 57.3,
-          "phase": "Exhaustion",
+          "price": 7568.34,
+          "change": -3.25,
+          "mom": 56.5,
+          "phase": "Mature",
           "volume": "Fading",
           "rotation": "Accumulation (Quiet)",
-          "signal": "WATCH",
+          "signal": "HOLD",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 75.1,
-          "flow": 109,
+          "rsi": 74.1,
+          "flow": 110,
           "perf": {
-            "w1": 9.52,
-            "m1": 29.68,
-            "m3": 43.4
+            "w1": 9.1,
+            "m1": 29.18,
+            "m3": 42.85
           },
           "returns": [
-            -2.87,
-            1.44,
-            9.52,
-            17.33,
-            29.68,
-            43.4
+            -3.25,
+            1.05,
+            9.1,
+            16.87,
+            29.18,
+            42.85
           ],
           "volumes": [
             86,
@@ -4169,43 +4169,43 @@
             94
           ],
           "rsiStack": [
-            72.8,
-            76.9,
-            75.1,
-            72.1,
-            68.9,
-            66.7
+            70.6,
+            75.4,
+            74.1,
+            71.4,
+            68.5,
+            66.4
           ]
         },
         {
           "symbol": "NI225",
           "dataSymbol": "^N225",
           "section": "Index",
-          "name": "Nikkei",
+          "name": "Japan Index",
           "category": "Broad",
-          "price": 62659.17,
-          "change": 0.39,
-          "mom": 58.5,
+          "price": 62684.48,
+          "change": 0.43,
+          "mom": 58.6,
           "phase": "Mature",
           "volume": "Fading",
           "rotation": "Accumulation (Day 1)",
           "signal": "HOLD",
           "dist_streak": 0,
           "acc_streak": 1,
-          "rsi": 68.8,
+          "rsi": 68.9,
           "flow": 0,
           "perf": {
-            "w1": 5.69,
-            "m1": 11.28,
-            "m3": 15.49
+            "w1": 5.73,
+            "m1": 11.32,
+            "m3": 15.54
           },
           "returns": [
-            0.39,
-            -0.28,
-            5.69,
-            5.16,
-            11.28,
-            15.49
+            0.43,
+            -0.24,
+            5.73,
+            5.2,
+            11.32,
+            15.54
           ],
           "volumes": [
             124,
@@ -4216,9 +4216,9 @@
             125
           ],
           "rsiStack": [
-            75.6,
-            72.6,
-            68.8,
+            75.8,
+            72.7,
+            68.9,
             65.7,
             62.9,
             61.4
@@ -4371,9 +4371,9 @@
           "section": "Commodity",
           "name": "Crude Oil",
           "category": "Energy",
-          "price": 99.16,
-          "change": 1.11,
-          "mom": 44.0,
+          "price": 99.24,
+          "change": 1.19,
+          "mom": 44.1,
           "phase": "Early",
           "volume": "Fading",
           "rotation": "Trending up",
@@ -4383,17 +4383,17 @@
           "rsi": 52.5,
           "flow": 4,
           "perf": {
-            "w1": -3.04,
-            "m1": 8.63,
-            "m3": 57.67
+            "w1": -2.96,
+            "m1": 8.72,
+            "m3": 57.8
           },
           "returns": [
-            1.11,
-            4.59,
-            -3.04,
-            -0.77,
-            8.63,
-            57.67
+            1.19,
+            4.67,
+            -2.96,
+            -0.69,
+            8.72,
+            57.8
           ],
           "volumes": [
             86,
@@ -4404,8 +4404,8 @@
             87
           ],
           "rsiStack": [
-            53.6,
-            52.0,
+            53.9,
+            52.2,
             52.5,
             53.4,
             54.6,
@@ -4606,7 +4606,7 @@
           "section": "Crypto",
           "name": "Bitcoin",
           "category": "Currency",
-          "price": 81191.88,
+          "price": 81195.36,
           "change": -1.15,
           "mom": 49.3,
           "phase": "Mature",
@@ -4624,9 +4624,9 @@
           },
           "returns": [
             -1.15,
-            1.25,
+            1.26,
             -0.29,
-            3.85,
+            3.86,
             6.34,
             15.18
           ],

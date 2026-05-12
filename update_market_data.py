@@ -16,10 +16,10 @@ except Exception:
 
 ASSETS = [
     # Index
-    {"symbol": "SP500", "data_symbol": "^GSPC",  "name": "S&P 500",  "category": "Broad", "section": "Index"},
-    {"symbol": "DJI",   "data_symbol": "^DJI",   "name": "Dow Jones", "category": "Broad", "section": "Index"},
-    {"symbol": "KOSPI", "data_symbol": "^KS11",  "name": "KOSPI",    "category": "Broad", "section": "Index"},
-    {"symbol": "NI225", "data_symbol": "^N225",  "name": "Nikkei",   "category": "Broad", "section": "Index"},
+    {"symbol": "SP500", "data_symbol": "^GSPC", "name": "US Index",    "category": "Broad", "section": "Index"},
+    {"symbol": "DJI",   "data_symbol": "^DJI",  "name": "Dow Jones",   "category": "Broad", "section": "Index"},
+    {"symbol": "KOSPI", "data_symbol": "^KS11", "name": "Korea Index", "category": "Broad", "section": "Index"},
+    {"symbol": "NI225", "data_symbol": "^N225", "name": "Japan Index", "category": "Broad", "section": "Index"},
     # Commodity
     {"symbol": "GLD",  "data_symbol": "GLD",   "name": "Gold",      "category": "Precious", "section": "Commodity"},
     {"symbol": "SLV",  "data_symbol": "SLV",   "name": "Silver",    "category": "Precious", "section": "Commodity"},
