@@ -6,7 +6,7 @@
     "acc_last_date": "2026-05-18"
   },
   "GLD": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-05-18",
     "acc_streak": 0,
     "acc_last_date": "2026-05-18"
@@ -110,7 +110,7 @@
   "XLY": {
     "dist_streak": 0,
     "dist_last_date": "2026-05-18",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-05-18"
   },
   "XLP": {
@@ -282,7 +282,7 @@
     "acc_last_date": "2026-05-18"
   },
   "FTAG": {
-    "dist_streak": 2,
+    "dist_streak": 0,
     "dist_last_date": "2026-05-18",
     "acc_streak": 0,
     "acc_last_date": "2026-05-18"
