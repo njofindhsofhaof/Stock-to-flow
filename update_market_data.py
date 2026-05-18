@@ -94,7 +94,7 @@ def download(ticker: str, period: str = "6mo") -> pd.DataFrame | None:
     return flatten_columns(df)
 
 
-def calculate_rotation_signals(df: pd.DataFrame, spy_df: pd.DataFrame | None = None) -> pd.DataFrame:
+def calculate_rotation_signals(df: pd.DataFrame, spy_df: pd.DataFrame | None = None, section: str = "ETF") -> pd.DataFrame:
     df = flatten_columns(df.copy())
 
     for n in [1, 3, 5, 10, 20, 60]:
@@ -146,11 +146,14 @@ def calculate_rotation_signals(df: pd.DataFrame, spy_df: pd.DataFrame | None = N
 
     def determine_rotation(row: pd.Series) -> str:
         v = row["V_current"]
+        acc_thresh       = 130 if section == "Stock" else 110
+        dist_thresh_vol  = 140 if section == "Stock" else 110
+        dist_thresh_spike = 150 if section == "Stock" else 130
         if v > 120 and row["RSI1"] < 35 and row["R1"] > 0:
             return "Reflex Setup"
-        if v > 110 and row["R5"] > 0 and row["MAX"] in ["Early", "Mature"]:
+        if v > acc_thresh and row["R5"] > 0 and row["MAX"] in ["Early", "Mature"]:
             return "Accumulation"
-        if (v > 110 and row["R5"] < 0) or (v > 130 and row["R1"] < 0):
+        if (v > dist_thresh_vol and row["R5"] < 0) or (v > dist_thresh_spike and row["R1"] < 0):
             return "Distribution"
         if 80 <= v <= 110 and row["R10"] > 2 and row["R5"] > 1:
             return "Accumulation (Quiet)"
@@ -172,9 +175,18 @@ def safe_float(value: object, default: float = 0) -> float:
     return float(value)
 
 
-def determine_signal_v3(phase: str, rotation: str, mom: float) -> str:
+def determine_signal_v3(phase: str, rotation: str, mom: float, rsi: float = 50, r20: float = 0) -> str:
+    # Fix 1: RSI overbought → hạ BUY xuống WATCH
+    _would_buy = (
+        (phase == "Bottoming" and rotation in ["Reflex Setup", "Accumulation", "Accumulation (Quiet)"]) or
+        (phase == "Early"     and rotation in ["Accumulation", "Accumulation (Quiet)", "Trending up"])
+    )
+    if _would_buy and rsi > 70:
+        return "WATCH"
+
+    # Fix 3: AVOID/SELL chỉ khi R20 <= 0
     if phase == "Bottoming" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
-        return "AVOID"
+        return "AVOID" if r20 <= 0 else "WATCH"
     if phase == "Exhaustion" and rotation in ["Accumulation (Quiet)", "Accumulation"]:
         return "SELL" if mom > 70 else "WATCH"
     if phase == "Exhaustion" and rotation in ["Trending up", "Neutral"]:
@@ -197,11 +209,11 @@ def determine_signal_v3(phase: str, rotation: str, mom: float) -> str:
         return "HOLD"
 
     if phase == "Mature" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
-        return "SELL"
+        return "SELL" if r20 <= 0 else "REDUCE"
     if phase == "Early" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
         return "REDUCE"
     if phase == "Exhaustion" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
-        return "SELL"
+        return "SELL" if r20 <= 0 else "REDUCE"
 
     if phase == "Bottoming" and rotation == "Neutral":
         return "WATCH"
@@ -387,6 +399,7 @@ def main() -> None:
     today = date.today()
     spy = download("SPY")
     rows = []
+    sp500_rotation = "Neutral"  # Fix 2: macro filter
 
     for asset in ASSETS:
         ticker = asset["data_symbol"]
@@ -394,11 +407,13 @@ def main() -> None:
         if df is None or len(df) < 65:
             continue
 
-        analyzed = calculate_rotation_signals(df, spy)
+        analyzed = calculate_rotation_signals(df, spy, section=asset["section"])
         latest = analyzed.iloc[-1]
         phase = str(latest["MAX"])
         rotation = str(latest["ROTATION"])
         mom = round(safe_float(latest["MOM"]), 1)
+        rsi = safe_float(latest["RSI"], 50)
+        r20 = safe_float(latest["R20"])
 
         r1 = safe_float(latest["R1"])
         v1 = safe_float(latest["V1"], 100)
@@ -406,7 +421,19 @@ def main() -> None:
         is_acc  = r1 > 0 and v1 > 120
         dist_streak, acc_streak = update_streaks(streak_data, asset["symbol"], is_dist, is_acc, today)
 
-        base_signal = determine_signal_v3(phase, rotation, mom)
+        # Fix 2: lưu rotation SP500 để dùng làm macro filter
+        if asset["symbol"] == "SP500":
+            sp500_rotation = rotation
+
+        base_signal = determine_signal_v3(phase, rotation, mom, rsi=rsi, r20=r20)
+
+        # Fix 2: nếu SP500 đang distribution → downgrade BUY→WATCH cho Stock/ETF
+        if (
+            asset["section"] in ("Stock", "ETF")
+            and base_signal == "BUY"
+            and sp500_rotation in ("Distribution", "Distribution (Quiet)", "Fading")
+        ):
+            base_signal = "WATCH"
         final_signal = apply_streaks_to_signal(base_signal, dist_streak, acc_streak)
         display_rotation = apply_streaks_to_rotation(rotation, dist_streak, acc_streak, is_dist, is_acc)
 
