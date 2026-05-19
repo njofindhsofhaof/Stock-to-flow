@@ -60,6 +60,7 @@
       <nav class="view-tabs" aria-label="Dashboard views">
         <button class="active" data-view="map">Rotation Map</button>
         <button data-view="basket">Basket Detail</button>
+        <button data-view="agri">Agri Research</button>
       </nav>
 
       <section class="toolbar" aria-label="Dashboard controls">
@@ -228,6 +229,89 @@
               <span>Contr</span>
             </div>
             <div id="holdingsTable" class="holdings-table"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="layout agri-view hidden" id="agriView">
+        <div class="agri-main">
+          <div class="table-panel">
+            <div class="section-head">
+              <h2>Agriculture Stock Universe</h2>
+              <span>25 tickers · 6 sectors</span>
+            </div>
+            <div class="data-table-wrap">
+              <table class="data-table" id="agriTable">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Ticker</th>
+                    <th>Company Name</th>
+                    <th>Exchange</th>
+                    <th>Sub-sector</th>
+                    <th>Mkt Cap</th>
+                    <th>P/E</th>
+                    <th>EV/EBITDA</th>
+                    <th>Drawdown</th>
+                    <th>D/E</th>
+                    <th>FCF</th>
+                    <th>Classification</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="table-panel agri-etf-panel">
+            <div class="section-head">
+              <h2>Agricultural ETFs</h2>
+              <span>4 funds</span>
+            </div>
+            <div class="data-table-wrap">
+              <table class="data-table" id="agriEtfTable">
+                <thead>
+                  <tr>
+                    <th>Ticker</th>
+                    <th>Name</th>
+                    <th>Exchange</th>
+                    <th>Focus</th>
+                    <th>Expense</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="agri-sensitivity">
+            <div class="section-head compact">
+              <h3>Sensitivity Map</h3>
+              <span>Crisis driver → beneficiary tickers</span>
+            </div>
+            <div id="sensitivityMap" class="sensitivity-grid"></div>
+          </div>
+        </div>
+
+        <aside class="agri-detail hidden" id="agriDetail">
+          <div class="detail-title">
+            <div>
+              <p class="eyebrow">Selected</p>
+              <h2 id="agriDetailTicker">–</h2>
+            </div>
+            <span id="agriDetailClass" class="badge">–</span>
+          </div>
+          <div class="agri-detail-section">
+            <h4>Why It Benefits</h4>
+            <p id="agriWhyBenefits"></p>
+          </div>
+          <div class="agri-detail-section">
+            <h4>Key Risks</h4>
+            <p id="agriKeyRisks"></p>
+          </div>
+          <div class="agri-detail-section">
+            <h4>Technical Setup</h4>
+            <p id="agriTechnical"></p>
           </div>
         </aside>
       </section>

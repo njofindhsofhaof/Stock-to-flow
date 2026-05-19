@@ -1114,3 +1114,151 @@ tbody tr.selected {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Agri Research ─────────────────────────────────────────────────────────── */
+
+.agri-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.agri-view.with-detail {
+  grid-template-columns: 1fr 360px;
+  gap: 16px;
+}
+
+.agri-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.agri-etf-panel .data-table th:nth-child(4),
+.agri-etf-panel .data-table td:nth-child(4) {
+  min-width: 260px;
+  max-width: 400px;
+}
+
+.agri-detail {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  position: sticky;
+  top: 16px;
+}
+
+.agri-detail-section {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.agri-detail-section h4 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+}
+
+.agri-detail-section p {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Sensitivity Map */
+.agri-sensitivity {
+  padding: 0;
+}
+
+.sensitivity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.sensitivity-card {
+  background: var(--panel-2);
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.sensitivity-card h5 {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin: 0 0 10px 0;
+}
+
+.sensitivity-tickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.sensitivity-ticker {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--cyan);
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 4px;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+}
+
+/* FCF colors */
+.fcf-positive  { color: #4ade80; }
+.fcf-negative  { color: #f87171; }
+.fcf-strongly  { color: #86efac; font-weight: 600; }
+
+/* Row highlight for agri */
+.text-red { color: var(--red); }
+
+#agriTable tr.data-row:hover {
+  background: var(--panel-2);
+}
+
+#agriTable tr.row-selected {
+  background: #1a2235;
+  outline: 1px solid var(--blue);
+  outline-offset: -1px;
+}
+
+/* Classification mini badge inside table */
+.agri-class-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: var(--panel-2);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+/* Detail sidebar badge variants */
+.badge-red   { background: rgba(239,111,122,.15); color: #ef6f7a; border-color: rgba(239,111,122,.3); }
+.badge-green { background: rgba(116,209,123,.15); color: #74d17b; border-color: rgba(116,209,123,.3); }
+.badge-amber { background: rgba(232,173,82,.15);  color: #e8ad52; border-color: rgba(232,173,82,.3);  }
+
+@media (max-width: 900px) {
+  .agri-view.with-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .sensitivity-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

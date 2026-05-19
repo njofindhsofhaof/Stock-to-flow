@@ -454,6 +454,7 @@ const phaseButtons = document.querySelectorAll("[data-phase]");
 const viewButtons = document.querySelectorAll("[data-view]");
 const mapView = document.querySelector("#mapView");
 const basketView = document.querySelector("#basketView");
+const agriView = document.querySelector("#agriView");
 
 function fmt(value, suffix = "%") {
   const sign = value > 0 ? "+" : "";
@@ -841,9 +842,11 @@ function setView(view) {
   activeView = view;
   mapView.classList.toggle("hidden", view !== "map");
   basketView.classList.toggle("hidden", view !== "basket");
+  agriView.classList.toggle("hidden", view !== "agri");
   viewButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.view === view);
   });
+  if (view === "agri") renderAgriView();
 }
 
 function renderDetail() {
@@ -930,6 +933,157 @@ function renderDetail() {
   document.querySelector("#asOf").textContent = window.marketDataMeta?.updatedAt
     ? `${window.marketDataMeta.source} | Updated ${window.marketDataMeta.updatedAt}`
     : "Static sample data";
+}
+
+// ─── Agri Research Data ────────────────────────────────────────────────────
+
+const AGRI_STOCKS = [
+  // Fertilizer & Chemicals
+  { sector:"Fertilizer & Chemicals", no:1, ticker:"NTR", name:"Nutrien Ltd.", exchange:"NYSE", subsector:"Potash, Nitrogen, Phosphate", marketCap:"~$36B", pe:"~10x", evEbitda:"~5.5x", drawdown:">30%", de:"~0.45x", fcf:"Positive", classification:"Deep Value / Commodity Beta", whyBenefits:"World's largest fertilizer producer; integrated model benefits from rising potash, nitrogen, and phosphate prices. Direct play on global crop input inflation.", keyRisks:"Commodity price volatility; geopolitical risk (Belarus/Russia).", technical:"Trading near multi-year support; deeply out-of-favor." },
+  { sector:"Fertilizer & Chemicals", no:2, ticker:"MOS", name:"The Mosaic Company", exchange:"NYSE", subsector:"Potash, Phosphate", marketCap:"~$7.6B", pe:"~11x", evEbitda:"~6x", drawdown:">40%", de:"~0.55x", fcf:"Positive", classification:"Deep Value / Cyclical Recovery", whyBenefits:"Pure-play on phosphate and potash; concentrated exposure to crop nutrient supply shocks. Phosphate has the most favorable supply-demand outlook.", keyRisks:"Earnings highly cyclical; sensitive to grain prices and farmer income.", technical:"Classic contrarian setup; sell-off may be overdone." },
+  { sector:"Fertilizer & Chemicals", no:3, ticker:"CF", name:"CF Industries Holdings", exchange:"NYSE", subsector:"Nitrogen", marketCap:"~$14B", pe:"~8x", evEbitda:"~5x", drawdown:"~30%", de:"~0.50x", fcf:"Strongly Positive", classification:"Deep Value / Crisis Hedge", whyBenefits:"Leading nitrogen producer; benefits from tight global nitrogen/ammonia markets and high natural gas prices in Europe.", keyRisks:"Natural gas cost volatility; carbon policy uncertainty.", technical:"Pulling back to value zone; recent downgrades create entry point." },
+  { sector:"Fertilizer & Chemicals", no:4, ticker:"ICL", name:"ICL Group Ltd.", exchange:"NYSE", subsector:"Potash, Phosphate, Specialty", marketCap:"~$9B", pe:"~9x", evEbitda:"~5x", drawdown:">30%", de:"~0.55x", fcf:"Positive", classification:"Deep Value / Commodity Beta", whyBenefits:"Diversified fertilizer producer with growing specialty fertilizer business. Secured large potash contract with China for 2026.", keyRisks:"Geopolitical risk (Israel-based operations).", technical:"Basing pattern near multi-year lows; high dividend yield supports valuation." },
+  { sector:"Fertilizer & Chemicals", no:5, ticker:"FMC", name:"FMC Corporation", exchange:"NYSE", subsector:"Crop Protection", marketCap:"~$2.2B", pe:"~12x", evEbitda:"~7x", drawdown:">78%", de:"~1.2x", fcf:"Negative", classification:"Deep Value / Cyclical Recovery (Spec.)", whyBenefits:"Pure-play crop protection chemicals; essential for maintaining yields under pest/disease pressure during climate stress.", keyRisks:"High debt; severe earnings contraction; dividend cut.", technical:"Extreme oversold; deeply contrarian but high-risk turnaround." },
+  { sector:"Fertilizer & Chemicals", no:6, ticker:"CTVA", name:"Corteva, Inc.", exchange:"NYSE", subsector:"Seeds & Crop Protection", marketCap:"~$49B", pe:"~37x", evEbitda:"~14.5x", drawdown:"~20%", de:"~0.30x", fcf:"Strongly Positive", classification:"Secular Compounder", whyBenefits:"Global leader in seeds and crop protection; innovative pipeline drives yield improvement. Seed business is a secular growth engine.", keyRisks:"Premium valuation; regulatory risk (GMO, pesticides).", technical:"Consolidating near highs; defensive growth profile." },
+  // Commodity Trading & Processing
+  { sector:"Commodity Trading & Processing", no:7, ticker:"ADM", name:"Archer-Daniels-Midland Co.", exchange:"NYSE", subsector:"Grain & Oilseed Processing", marketCap:"~$25B", pe:"~34x", evEbitda:"~9x", drawdown:">35%", de:"~0.42x", fcf:"Positive (norm.)", classification:"Cyclical Recovery / Crisis Hedge", whyBenefits:"Global agricultural supply chain manager; profits from grain merchandising, oilseed crushing, and trade flow disruptions.", keyRisks:"Biofuel policy uncertainty; trade disputes; weak crush margins.", technical:"Trading at multi-year lows; deep value if earnings normalize." },
+  { sector:"Commodity Trading & Processing", no:8, ticker:"BG", name:"Bunge Global SA", exchange:"NYSE", subsector:"Oilseed Processing", marketCap:"~$10B", pe:"~9x", evEbitda:"~4x", drawdown:">30%", de:"~0.93x", fcf:"Positive (norm.)", classification:"Deep Value / Commodity Beta", whyBenefits:"Leading oilseed processor; benefits from rising food oil demand, biofuel mandates, and trade flow shifts.", keyRisks:"High debt; volatile earnings tied to crush spreads.", technical:"Deep value territory; cyclical trough in earnings." },
+  { sector:"Commodity Trading & Processing", no:9, ticker:"INGR", name:"Ingredion Incorporated", exchange:"NYSE", subsector:"Starches & Sweeteners", marketCap:"~$6.2B", pe:"~10.7x", evEbitda:"~7x", drawdown:"~18%", de:"~0.50x", fcf:"Strongly Positive", classification:"Secular Compounder", whyBenefits:"Processes corn into starches, sweeteners, and biomaterials; benefits from rising grain prices and food inflation pass-through.", keyRisks:"Input cost volatility; FX risk.", technical:"Steady performer; defensive characteristics with growth upside." },
+  // Agriculture & Farmland
+  { sector:"Agriculture & Farmland", no:10, ticker:"FPI", name:"Farmland Partners Inc.", exchange:"NYSE", subsector:"Farmland REIT", marketCap:"~$600M", pe:"~25x", evEbitda:"~18x", drawdown:">30%", de:"~0.85x", fcf:"Positive", classification:"Deep Value / Crisis Hedge", whyBenefits:"Owns 190K acres of Midwest row-crop farmland; rental income rises with crop prices. Direct inflation hedge.", keyRisks:"Interest rate sensitivity; low liquidity.", technical:"Trading near book value; overlooked small-cap." },
+  { sector:"Agriculture & Farmland", no:11, ticker:"LAND", name:"Gladstone Land Corp.", exchange:"NASDAQ", subsector:"Farmland REIT", marketCap:"~$500M", pe:"~20x", evEbitda:"~22x", drawdown:">35%", de:"~0.70x", fcf:"Positive", classification:"Deep Value / Crisis Hedge", whyBenefits:"Owns 117K acres of specialty farmland (fruits, nuts, vegetables); higher-value crops with premium pricing.", keyRisks:"Variable rent structure; interest rate risk.", technical:"Trading below book value; monthly dividend payer." },
+  { sector:"Agriculture & Farmland", no:12, ticker:"DE", name:"Deere & Company", exchange:"NYSE", subsector:"Farm Equipment", marketCap:"~$140B", pe:"~14x", evEbitda:"~12x", drawdown:"~12%", de:"~1.3x", fcf:"Strongly Positive", classification:"Secular Compounder", whyBenefits:"Global leader in precision agriculture equipment; technology-driven farming solutions. Benefits from long-term food demand.", keyRisks:"Cyclical downturn in farm income; tariff costs.", technical:"Near highs but growth outlook pressured; premium for tech platform." },
+  { sector:"Agriculture & Farmland", no:13, ticker:"AGCO", name:"AGCO Corporation", exchange:"NYSE", subsector:"Farm Equipment / Precision Ag", marketCap:"~$8B", pe:"~12x", evEbitda:"~7x", drawdown:"~21%", de:"~0.55x", fcf:"Positive", classification:"Cyclical Recovery", whyBenefits:"Leading manufacturer of tractors and precision agriculture technology; JV with Trimble.", keyRisks:"Weak end-market demand; dealer inventory destocking.", technical:"Trading near support; value emerging as cycle troughs." },
+  { sector:"Agriculture & Farmland", no:14, ticker:"CNH", name:"CNH Industrial N.V.", exchange:"NYSE", subsector:"Farm Equipment", marketCap:"~$13B", pe:"~10x", evEbitda:"~6x", drawdown:">40%", de:"~0.95x", fcf:"Positive", classification:"Deep Value / Cyclical Recovery", whyBenefits:"Global agricultural and construction equipment; precision tech focus.", keyRisks:"Downgraded to Underweight by JPM; severe demand contraction.", technical:"Deeply out-of-favor; classic cyclical trough play." },
+  // Water Infrastructure
+  { sector:"Water Infrastructure", no:15, ticker:"XYL", name:"Xylem Inc.", exchange:"NYSE", subsector:"Water Treatment & Transport", marketCap:"~$32B", pe:"~30x", evEbitda:"~22x", drawdown:"~15%", de:"~0.18x", fcf:"Strongly Positive", classification:"Secular Compounder", whyBenefits:"Global water solutions leader; technology for water security, treatment, and efficiency. Essential for drought resilience.", keyRisks:"Premium valuation; moderate growth profile.", technical:"Steady uptrend; defensive growth compounder." },
+  { sector:"Water Infrastructure", no:16, ticker:"VMI", name:"Valmont Industries", exchange:"NYSE", subsector:"Irrigation Systems", marketCap:"~$5.5B", pe:"~25x", evEbitda:"~14x", drawdown:"~20%", de:"~0.58x", fcf:"Positive", classification:"Cyclical Recovery / Secular Compounder", whyBenefits:"Leading manufacturer of center-pivot irrigation systems; infrastructure & agriculture exposure.", keyRisks:"Weak domestic irrigation volumes; cyclical ag exposure.", technical:"Pulling back; balanced infrastructure/ag portfolio." },
+  { sector:"Water Infrastructure", no:17, ticker:"LNN", name:"Lindsay Corporation", exchange:"NYSE", subsector:"Irrigation Systems", marketCap:"~$1.3B", pe:"~20x", evEbitda:"~12x", drawdown:"~25%", de:"~0.26x", fcf:"Strongly Positive", classification:"Cyclical Recovery", whyBenefits:"Pure-play irrigation solutions; strong international growth in water-scarce regions.", keyRisks:"Project-based revenue lumpiness; MENA geopolitical risk.", technical:"Healthy balance sheet; undervalued small-cap." },
+  { sector:"Water Infrastructure", no:18, ticker:"MWA", name:"Mueller Water Products", exchange:"NYSE", subsector:"Flow Control", marketCap:"~$2.5B", pe:"~29x", evEbitda:"~15x", drawdown:"~10%", de:"~0.49x", fcf:"Strongly Positive", classification:"Secular Compounder", whyBenefits:"Provider of water infrastructure products; benefits from aging water system upgrades and drought-driven demand.", keyRisks:"Mature industry; modest growth.", technical:"Near highs; steady performer." },
+  { sector:"Water Infrastructure", no:19, ticker:"WTS", name:"Watts Water Technologies", exchange:"NYSE", subsector:"Water Treatment", marketCap:"~$7B", pe:"~27x", evEbitda:"~18x", drawdown:"~15%", de:"~0.14x", fcf:"Strongly Positive", classification:"Secular Compounder", whyBenefits:"Water quality and conservation solutions; global residential, commercial, and industrial exposure.", keyRisks:"Housing market sensitivity.", technical:"Consistent compounder; high-quality balance sheet." },
+  // Protein & Food Producers
+  { sector:"Protein & Food Producers", no:20, ticker:"TSN", name:"Tyson Foods, Inc.", exchange:"NYSE", subsector:"Meat & Poultry", marketCap:"~$20B", pe:"~53x", evEbitda:"~12x", drawdown:">40%", de:"~0.44x", fcf:"Positive (norm.)", classification:"Cyclical Recovery", whyBenefits:"Largest U.S. protein processor; diversified across beef, chicken, pork. Benefits from rising protein demand and pricing power.", keyRisks:"Margin pressure from livestock costs; cyclical earnings.", technical:"Deeply out-of-favor; DCF suggests 39% undervaluation." },
+  { sector:"Protein & Food Producers", no:21, ticker:"PPC", name:"Pilgrim's Pride Corp.", exchange:"NASDAQ", subsector:"Poultry", marketCap:"~$10B", pe:"~7.5x", evEbitda:"~6x", drawdown:"~30%", de:"~0.55x", fcf:"Strongly Positive", classification:"Cyclical Recovery / Commodity Beta", whyBenefits:"Leading poultry producer; benefits from shift toward lower-cost protein. Strong foodservice demand.", keyRisks:"Commodity input costs; avian flu risk.", technical:"Attractive valuation; steady margin profile." },
+  { sector:"Protein & Food Producers", no:22, ticker:"HRL", name:"Hormel Foods Corp.", exchange:"NYSE", subsector:"Packaged Food / Protein", marketCap:"~$10B", pe:"~27.6x", evEbitda:"~14x", drawdown:"~35%", de:"~0.50x", fcf:"Positive", classification:"Secular Compounder", whyBenefits:"Diversified protein and branded foods; strong pricing power and inflation pass-through. Organic growth improving.", keyRisks:"Rich valuation vs. peers; slow growth.", technical:"Pulling back to value zone; Barclays maintains Overweight." },
+  { sector:"Protein & Food Producers", no:23, ticker:"CAG", name:"Conagra Brands, Inc.", exchange:"NYSE", subsector:"Pantry Staples", marketCap:"~$13B", pe:"~8.7x", evEbitda:"~10x", drawdown:">40%", de:"~1.5x", fcf:"Strongly Positive", classification:"Deep Value / Crisis Hedge", whyBenefits:"Leading packaged food brand with pricing power; benefits from food-at-home demand during crises.", keyRisks:"High debt; tariff exposure; volume pressure.", technical:"Deep value in consumer staples; high dividend yield." },
+  { sector:"Protein & Food Producers", no:24, ticker:"CALM", name:"Cal-Maine Foods, Inc.", exchange:"NASDAQ", subsector:"Eggs & Feed", marketCap:"~$5.2B", pe:"~3.3x", evEbitda:"~2.5x", drawdown:">35%", de:"~0.05x", fcf:"Strongly Positive", classification:"Deep Value / Crisis Hedge", whyBenefits:"Largest U.S. egg producer; direct beneficiary of protein inflation and supply shocks (avian flu). DCF implies 68-70% undervaluation.", keyRisks:"Egg price volatility; disease risk.", technical:"Extremely undervalued on earnings; high-quality balance sheet." },
+];
+
+const AGRI_ETFS = [
+  { ticker:"DBA",  name:"Invesco DB Agriculture Fund",            exchange:"NYSE Arca", focus:"Broad agricultural commodities (corn, soybeans, wheat, livestock, softs)", expense:"0.85%", whyBenefits:"Direct play on rising food commodity prices; diversified across grains, proteins, and softs." },
+  { ticker:"MOO",  name:"VanEck Agribusiness ETF",                exchange:"NYSE Arca", focus:"Global agribusiness equities (chemicals, seeds, equipment, livestock)",        expense:"0.53%", whyBenefits:"Diversified equity exposure to the entire agricultural value chain." },
+  { ticker:"VEGI", name:"iShares MSCI Agriculture Producers ETF", exchange:"NYSE Arca", focus:"Global agricultural producers",                                                expense:"0.39%", whyBenefits:"Targeted exposure to companies that produce agricultural commodities and inputs." },
+  { ticker:"USAG", name:"United States Agriculture Index ETF",    exchange:"NYSE Arca", focus:"U.S. agricultural commodities futures",                                         expense:"0.75%", whyBenefits:"Pure-play on U.S. agricultural commodity prices." },
+];
+
+const SENSITIVITY_MAP = [
+  { driver:"Fertilizer Shortages", tickers:["MOS","CF","NTR","ICL"] },
+  { driver:"Grain Inflation",       tickers:["BG","ADM","INGR","DBA","MOO"] },
+  { driver:"Drought",               tickers:["LNN","VMI","XYL","FPI","LAND"] },
+  { driver:"Water Scarcity",        tickers:["XYL","WTS","MWA","LNN"] },
+  { driver:"Protein Inflation",     tickers:["CALM","TSN","PPC","HRL"] },
+  { driver:"Export Restrictions",   tickers:["BG","ADM","NTR","MOS"] },
+];
+
+// ─── Agri Research Render ───────────────────────────────────────────────────
+
+let selectedAgriTicker = null;
+
+function fcfClass(fcf) {
+  if (!fcf) return "";
+  const f = fcf.toLowerCase();
+  if (f.includes("strongly")) return "fcf-strongly";
+  if (f.includes("negative")) return "fcf-negative";
+  if (f.includes("positive")) return "fcf-positive";
+  return "";
+}
+
+function renderAgriDetail(stock) {
+  selectedAgriTicker = stock.ticker;
+  const detail = document.querySelector("#agriDetail");
+  detail.classList.remove("hidden");
+  agriView.classList.add("with-detail");
+  document.querySelector("#agriDetailTicker").textContent = `${stock.ticker} — ${stock.name}`;
+  const badge = document.querySelector("#agriDetailClass");
+  badge.textContent = stock.classification;
+  // Color badge by classification type
+  badge.className = "badge";
+  if (stock.classification.includes("Deep Value")) badge.classList.add("badge-red");
+  else if (stock.classification.includes("Secular")) badge.classList.add("badge-green");
+  else if (stock.classification.includes("Cyclical")) badge.classList.add("badge-amber");
+  document.querySelector("#agriWhyBenefits").textContent = stock.whyBenefits;
+  document.querySelector("#agriKeyRisks").textContent = stock.keyRisks;
+  document.querySelector("#agriTechnical").textContent = stock.technical;
+  // Highlight active row
+  document.querySelectorAll("#agriTable tbody tr.data-row").forEach(r => {
+    r.classList.toggle("row-selected", r.dataset.ticker === stock.ticker);
+  });
+}
+
+function renderAgriView() {
+  // ── Stock table ──
+  const sectors = [...new Set(AGRI_STOCKS.map(s => s.sector))];
+  const tbody = document.querySelector("#agriTable tbody");
+  tbody.innerHTML = sectors.map(sector => {
+    const rows = AGRI_STOCKS.filter(s => s.sector === sector);
+    const sectorRow = `<tr class="section-row"><td colspan="12">${sector}</td></tr>`;
+    const dataRows = rows.map(s => `
+      <tr class="data-row" data-ticker="${s.ticker}" style="cursor:pointer">
+        <td class="mono muted">${s.no}</td>
+        <td><strong>${s.ticker}</strong></td>
+        <td>${s.name}</td>
+        <td class="muted">${s.exchange}</td>
+        <td class="muted">${s.subsector}</td>
+        <td class="mono">${s.marketCap}</td>
+        <td class="mono">${s.pe}</td>
+        <td class="mono">${s.evEbitda}</td>
+        <td class="mono ${s.drawdown.startsWith('>') ? 'text-red' : ''}">${s.drawdown}</td>
+        <td class="mono">${s.de}</td>
+        <td class="mono ${fcfClass(s.fcf)}">${s.fcf}</td>
+        <td><span class="agri-class-badge">${s.classification}</span></td>
+      </tr>
+    `).join("");
+    return sectorRow + dataRows;
+  }).join("");
+
+  // Row click → detail
+  tbody.querySelectorAll("tr.data-row").forEach(row => {
+    row.addEventListener("click", () => {
+      const stock = AGRI_STOCKS.find(s => s.ticker === row.dataset.ticker);
+      if (stock) renderAgriDetail(stock);
+    });
+  });
+
+  // ── ETF table ──
+  document.querySelector("#agriEtfTable tbody").innerHTML = AGRI_ETFS.map(e => `
+    <tr>
+      <td><strong>${e.ticker}</strong></td>
+      <td>${e.name}</td>
+      <td class="muted">${e.exchange}</td>
+      <td>${e.focus}</td>
+      <td class="mono">${e.expense}</td>
+    </tr>
+  `).join("");
+
+  // ── Sensitivity Map ──
+  document.querySelector("#sensitivityMap").innerHTML = SENSITIVITY_MAP.map(item => `
+    <div class="sensitivity-card">
+      <h5>${item.driver}</h5>
+      <div class="sensitivity-tickers">
+        ${item.tickers.map(t => `<span class="sensitivity-ticker">${t}</span>`).join("")}
+      </div>
+    </div>
+  `).join("");
+
+  // Re-apply selection if any
+  if (selectedAgriTicker) {
+    const stock = AGRI_STOCKS.find(s => s.ticker === selectedAgriTicker);
+    if (stock) {
+      document.querySelectorAll("#agriTable tbody tr.data-row").forEach(r => {
+        r.classList.toggle("row-selected", r.dataset.ticker === selectedAgriTicker);
+      });
+    }
+  }
 }
 
 searchInput.addEventListener("input", (event) => {
