@@ -64,7 +64,16 @@ def fetch_agri_data() -> dict:
                 continue
             df = flatten_columns(df)
             price = round(float(df["Close"].iloc[-1]), 2)
-            chg = round(float(df["Close"].pct_change().iloc[-1] * 100), 2)
+            chg   = round(float(df["Close"].pct_change(1).iloc[-1]  * 100), 2)
+            chg_w = round(float(df["Close"].pct_change(5).iloc[-1]  * 100), 2) if len(df) >= 6  else None
+            chg_m = round(float(df["Close"].pct_change(20).iloc[-1] * 100), 2) if len(df) >= 21 else None
+            # YTD: last close of previous calendar year → today
+            current_year = pd.Timestamp.now().year
+            prev_yr = df[df.index.year < current_year]
+            if len(prev_yr) > 0:
+                chg_ytd = round((price - float(prev_yr["Close"].iloc[-1])) / float(prev_yr["Close"].iloc[-1]) * 100, 2)
+            else:
+                chg_ytd = round(float(df["Close"].pct_change(len(df) - 1).iloc[-1] * 100), 2)
             high_52w = float(df["High"].max())
             drawdown_pct = round((price - high_52w) / high_52w * 100, 1)
 
@@ -86,6 +95,9 @@ def fetch_agri_data() -> dict:
             result[ticker] = {
                 "price": price,
                 "chg": chg,
+                "chgW": chg_w,
+                "chgM": chg_m,
+                "chgYTD": chg_ytd,
                 "marketCap": mktcap,
                 "pe": pe_str,
                 "evEbitda": ev_str,

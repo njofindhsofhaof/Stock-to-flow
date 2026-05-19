@@ -1185,6 +1185,37 @@ tbody tr.selected {
   top: 16px;
 }
 
+/* Performance grid: 1D / 1W / 1M / YTD */
+.agri-perf-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.agri-perf-cell {
+  background: var(--panel-2);
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  padding: 8px 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.agri-perf-cell span {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.agri-perf-cell strong {
+  font-size: 12px;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+}
+
 .agri-detail-section {
   margin-top: 18px;
   padding-top: 14px;

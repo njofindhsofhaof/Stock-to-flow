@@ -1,6 +1,6 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-19 10:49:55",
+  "updatedAt": "2026-05-19 10:59:33",
   "sections": {
     "Index": {
       "risk": "Neutral",
@@ -130,29 +130,29 @@ window.marketData = [
     "section": "Index",
     "name": "Korea Index",
     "category": "Broad",
-    "price": 7299.44,
-    "change": -2.88,
-    "mom": 40.4,
+    "price": 7324.42,
+    "change": -2.55,
+    "mom": 40.8,
     "phase": "Early",
     "volume": "Rising",
     "rotation": "Trending up",
     "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 58.8,
-    "flow": 46,
+    "rsi": 59.4,
+    "flow": 47,
     "perf": {
-      "w1": -4.5,
-      "m1": 17.89,
-      "m3": 28.57
+      "w1": -4.17,
+      "m1": 18.29,
+      "m3": 29.01
     },
     "returns": [
-      -2.88,
-      -8.54,
-      -4.5,
-      5.22,
-      17.89,
-      28.57
+      -2.55,
+      -8.23,
+      -4.17,
+      5.58,
+      18.29,
+      29.01
     ],
     "volumes": [
       69,
@@ -163,12 +163,12 @@ window.marketData = [
       69
     ],
     "rsiStack": [
-      39.7,
-      53.1,
-      58.8,
-      60.9,
-      61.8,
-      63.5
+      40.7,
+      53.9,
+      59.4,
+      61.3,
+      62.2,
+      63.7
     ]
   },
   {
@@ -177,29 +177,29 @@ window.marketData = [
     "section": "Index",
     "name": "Japan Index",
     "category": "Broad",
-    "price": 60676.44,
-    "change": -0.23,
-    "mom": 40.0,
+    "price": 60657.41,
+    "change": -0.26,
+    "mom": 39.9,
     "phase": "Early",
     "volume": "Fading",
     "rotation": "Neutral",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 55.2,
+    "rsi": 55.1,
     "flow": 0,
     "perf": {
-      "w1": -3.29,
-      "m1": 4.37,
-      "m3": 6.81
+      "w1": -3.32,
+      "m1": 4.34,
+      "m3": 6.78
     },
     "returns": [
-      -0.23,
-      -3.16,
-      -3.29,
-      2.35,
-      4.37,
-      6.81
+      -0.26,
+      -3.19,
+      -3.32,
+      2.32,
+      4.34,
+      6.78
     ],
     "volumes": [
       98,
@@ -210,11 +210,11 @@ window.marketData = [
       106
     ],
     "rsiStack": [
-      35.3,
-      49.8,
-      55.2,
-      56.9,
-      58.4,
+      35.0,
+      49.6,
+      55.1,
+      56.8,
+      58.3,
       63.3
     ]
   },
@@ -365,29 +365,29 @@ window.marketData = [
     "section": "Commodity",
     "name": "Crude Oil",
     "category": "Energy",
-    "price": 102.69,
-    "change": -2.59,
-    "mom": 45.9,
+    "price": 102.8,
+    "change": -2.49,
+    "mom": 46.1,
     "phase": "Early",
     "volume": "Rising",
     "rotation": "Trending up",
     "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 54.9,
+    "rsi": 55.0,
     "flow": 4,
     "perf": {
-      "w1": 4.71,
-      "m1": 14.6,
-      "m3": 54.68
+      "w1": 4.82,
+      "m1": 14.72,
+      "m3": 54.84
     },
     "returns": [
-      -2.59,
-      1.65,
-      4.71,
-      -3.5,
-      14.6,
-      54.68
+      -2.49,
+      1.76,
+      4.82,
+      -3.4,
+      14.72,
+      54.84
     ],
     "volumes": [
       35,
@@ -398,10 +398,10 @@ window.marketData = [
       34
     ],
     "rsiStack": [
-      56.7,
-      55.5,
-      54.9,
+      57.2,
+      55.8,
       55.0,
+      55.1,
       55.3,
       54.3
     ]
@@ -600,29 +600,29 @@ window.marketData = [
     "section": "Crypto",
     "name": "Bitcoin",
     "category": "Currency",
-    "price": 76768.37,
-    "change": -0.85,
-    "mom": 33.9,
+    "price": 76725.99,
+    "change": -0.91,
+    "mom": 33.8,
     "phase": "Bottoming",
     "volume": "Fading",
     "rotation": "Distribution",
     "signal": "WATCH",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 44.4,
+    "rsi": 44.3,
     "flow": 118,
     "perf": {
-      "w1": -3.16,
-      "m1": 0.55,
-      "m3": 9.81
+      "w1": -3.22,
+      "m1": 0.49,
+      "m3": 9.75
     },
     "returns": [
-      -0.85,
-      -2.91,
-      -3.16,
-      -4.26,
-      0.55,
-      9.81
+      -0.91,
+      -2.96,
+      -3.22,
+      -4.32,
+      0.49,
+      9.75
     ],
     "volumes": [
       63,
@@ -633,12 +633,12 @@ window.marketData = [
       88
     ],
     "rsiStack": [
-      25.4,
-      36.9,
-      44.4,
-      48.5,
+      25.2,
+      36.7,
+      44.3,
+      48.4,
       50.1,
-      45.4
+      45.3
     ]
   },
   {
@@ -2009,6 +2009,9 @@ window.agriData = {
   "NTR": {
     "price": 71.62,
     "chg": 0.08,
+    "chgW": 0.46,
+    "chgM": 0.63,
+    "chgYTD": 16.04,
     "marketCap": "$34.4B",
     "pe": "14.6x",
     "evEbitda": "8.5x",
@@ -2018,6 +2021,9 @@ window.agriData = {
   "MOS": {
     "price": 21.41,
     "chg": -1.61,
+    "chgW": -1.74,
+    "chgM": -11.2,
+    "chgYTD": -11.12,
     "marketCap": "$6.8B",
     "pe": "152.9x",
     "evEbitda": "6.2x",
@@ -2027,6 +2033,9 @@ window.agriData = {
   "CF": {
     "price": 125.22,
     "chg": -0.02,
+    "chgW": 0.59,
+    "chgM": 8.0,
+    "chgYTD": 61.91,
     "marketCap": "$19.2B",
     "pe": "11.3x",
     "evEbitda": "6.9x",
@@ -2036,6 +2045,9 @@ window.agriData = {
   "ICL": {
     "price": 6.42,
     "chg": 0.16,
+    "chgW": -1.23,
+    "chgM": 23.22,
+    "chgYTD": 12.43,
     "marketCap": "$8.3B",
     "pe": "30.6x",
     "evEbitda": "8.7x",
@@ -2045,6 +2057,9 @@ window.agriData = {
   "FMC": {
     "price": 13.55,
     "chg": -4.38,
+    "chgW": 3.36,
+    "chgM": -21.9,
+    "chgYTD": -2.31,
     "marketCap": "$1.7B",
     "pe": "6.2x",
     "evEbitda": "18.0x",
@@ -2054,6 +2069,9 @@ window.agriData = {
   "CTVA": {
     "price": 81.08,
     "chg": -1.37,
+    "chgW": -2.11,
+    "chgM": 0.98,
+    "chgYTD": 20.96,
     "marketCap": "$54.2B",
     "pe": "43.8x",
     "evEbitda": "13.5x",
@@ -2063,6 +2081,9 @@ window.agriData = {
   "ADM": {
     "price": 80.91,
     "chg": 0.63,
+    "chgW": 1.34,
+    "chgM": 18.34,
+    "chgYTD": 40.74,
     "marketCap": "$39.0B",
     "pe": "36.1x",
     "evEbitda": "19.4x",
@@ -2072,6 +2093,9 @@ window.agriData = {
   "BG": {
     "price": 124.64,
     "chg": 1.79,
+    "chgW": -1.19,
+    "chgM": 1.78,
+    "chgYTD": 39.92,
     "marketCap": "$24.2B",
     "pe": "32.8x",
     "evEbitda": "18.0x",
@@ -2081,6 +2105,9 @@ window.agriData = {
   "INGR": {
     "price": 101.42,
     "chg": -1.17,
+    "chgW": -4.5,
+    "chgM": -11.2,
+    "chgYTD": -8.02,
     "marketCap": "$6.4B",
     "pe": "9.8x",
     "evEbitda": "6.1x",
@@ -2090,6 +2117,9 @@ window.agriData = {
   "FPI": {
     "price": 10.39,
     "chg": 2.26,
+    "chgW": -0.29,
+    "chgM": -11.65,
+    "chgYTD": 7.22,
     "marketCap": "$461M",
     "pe": "17.6x",
     "evEbitda": "25.4x",
@@ -2099,6 +2129,9 @@ window.agriData = {
   "LAND": {
     "price": 9.66,
     "chg": 2.77,
+    "chgW": 2.33,
+    "chgM": -5.85,
+    "chgYTD": 5.57,
     "marketCap": "$417M",
     "pe": "-20.3x",
     "evEbitda": "19.2x",
@@ -2108,6 +2141,9 @@ window.agriData = {
   "DE": {
     "price": 564.49,
     "chg": 0.47,
+    "chgW": -4.12,
+    "chgM": -5.05,
+    "chgYTD": 21.25,
     "marketCap": "$152.5B",
     "pe": "31.8x",
     "evEbitda": "22.4x",
@@ -2117,6 +2153,9 @@ window.agriData = {
   "AGCO": {
     "price": 113.17,
     "chg": -0.1,
+    "chgW": -4.76,
+    "chgM": -5.9,
+    "chgYTD": 8.48,
     "marketCap": "$8.2B",
     "pe": "10.9x",
     "evEbitda": "10.2x",
@@ -2126,6 +2165,9 @@ window.agriData = {
   "CNH": {
     "price": 10.5,
     "chg": 0.67,
+    "chgW": -4.28,
+    "chgM": -3.14,
+    "chgYTD": 13.88,
     "marketCap": "$13.0B",
     "pe": "32.8x",
     "evEbitda": "35.1x",
@@ -2135,6 +2177,9 @@ window.agriData = {
   "XYL": {
     "price": 108.3,
     "chg": 0.17,
+    "chgW": -3.3,
+    "chgM": -10.09,
+    "chgYTD": -20.47,
     "marketCap": "$25.7B",
     "pe": "26.9x",
     "evEbitda": "14.3x",
@@ -2144,6 +2189,9 @@ window.agriData = {
   "VMI": {
     "price": 500.68,
     "chg": -1.2,
+    "chgW": -2.97,
+    "chgM": 22.15,
+    "chgYTD": 24.45,
     "marketCap": "$9.7B",
     "pe": "27.8x",
     "evEbitda": "16.4x",
@@ -2153,6 +2201,9 @@ window.agriData = {
   "LNN": {
     "price": 108.12,
     "chg": 2.65,
+    "chgW": -0.68,
+    "chgM": -0.06,
+    "chgYTD": -8.27,
     "marketCap": "$1.1B",
     "pe": "19.8x",
     "evEbitda": "12.1x",
@@ -2162,6 +2213,9 @@ window.agriData = {
   "MWA": {
     "price": 25.72,
     "chg": 0.82,
+    "chgW": -0.5,
+    "chgM": -6.57,
+    "chgYTD": 7.98,
     "marketCap": "$4.0B",
     "pe": "19.5x",
     "evEbitda": "11.9x",
@@ -2171,6 +2225,9 @@ window.agriData = {
   "WTS": {
     "price": 301.94,
     "chg": 1.73,
+    "chgW": 1.27,
+    "chgM": 2.76,
+    "chgYTD": 9.39,
     "marketCap": "$10.1B",
     "pe": "27.7x",
     "evEbitda": "17.9x",
@@ -2180,6 +2237,9 @@ window.agriData = {
   "TSN": {
     "price": 66.68,
     "chg": 1.35,
+    "chgW": -0.6,
+    "chgM": 4.73,
+    "chgYTD": 13.75,
     "marketCap": "$23.5B",
     "pe": "52.5x",
     "evEbitda": "11.5x",
@@ -2189,6 +2249,9 @@ window.agriData = {
   "PPC": {
     "price": 28.36,
     "chg": 2.9,
+    "chgW": -1.05,
+    "chgM": -14.14,
+    "chgYTD": -27.26,
     "marketCap": "$6.7B",
     "pe": "7.6x",
     "evEbitda": "4.7x",
@@ -2198,6 +2261,9 @@ window.agriData = {
   "HRL": {
     "price": 20.38,
     "chg": 3.24,
+    "chgW": 1.09,
+    "chgM": -4.45,
+    "chgYTD": -14.01,
     "marketCap": "$11.2B",
     "pe": "22.2x",
     "evEbitda": "9.0x",
@@ -2207,6 +2273,9 @@ window.agriData = {
   "CAG": {
     "price": 13.79,
     "chg": 2.68,
+    "chgW": -1.01,
+    "chgM": -7.08,
+    "chgYTD": -20.34,
     "marketCap": "$6.6B",
     "pe": "8.2x",
     "evEbitda": "8.0x",
@@ -2216,6 +2285,9 @@ window.agriData = {
   "CALM": {
     "price": 77.61,
     "chg": 0.95,
+    "chgW": 2.86,
+    "chgM": 3.31,
+    "chgYTD": -2.46,
     "marketCap": "$3.7B",
     "pe": "5.4x",
     "evEbitda": "2.6x",
@@ -2225,6 +2297,9 @@ window.agriData = {
   "DBA": {
     "price": 28.2,
     "chg": 1.33,
+    "chgW": -0.46,
+    "chgM": 4.48,
+    "chgYTD": 10.5,
     "marketCap": "–",
     "pe": "11.9x",
     "evEbitda": "–",
@@ -2234,6 +2309,9 @@ window.agriData = {
   "MOO": {
     "price": 81.61,
     "chg": 0.55,
+    "chgW": -0.37,
+    "chgM": -2.59,
+    "chgYTD": 12.12,
     "marketCap": "–",
     "pe": "19.6x",
     "evEbitda": "–",
@@ -2243,6 +2321,9 @@ window.agriData = {
   "VEGI": {
     "price": 45.04,
     "chg": 0.02,
+    "chgW": -2.24,
+    "chgM": -0.86,
+    "chgYTD": 16.77,
     "marketCap": "–",
     "pe": "21.1x",
     "evEbitda": "–",

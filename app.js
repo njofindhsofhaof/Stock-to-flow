@@ -1006,11 +1006,26 @@ function renderAgriDetail(stock) {
   document.querySelector("#agriDetailTicker").textContent = `${stock.ticker} — ${stock.name}`;
   const badge = document.querySelector("#agriDetailClass");
   badge.textContent = stock.classification;
-  // Color badge by classification type
   badge.className = "badge";
   if (stock.classification.includes("Deep Value")) badge.classList.add("badge-red");
   else if (stock.classification.includes("Secular")) badge.classList.add("badge-green");
   else if (stock.classification.includes("Cyclical")) badge.classList.add("badge-amber");
+
+  // Performance grid (1D / 1W / 1M / YTD)
+  const d = (window.agriData || {})[stock.ticker] || {};
+  const perf = [
+    { label: "1D",  value: d.chg },
+    { label: "1W",  value: d.chgW },
+    { label: "1M",  value: d.chgM },
+    { label: "YTD", value: d.chgYTD },
+  ];
+  document.querySelector("#agriPerfGrid").innerHTML = perf.map(p => {
+    const v = p.value;
+    const cls = v == null ? "" : v > 0 ? "positive" : v < 0 ? "negative" : "";
+    const txt = v == null ? "–" : `${v > 0 ? "+" : ""}${v.toFixed(2)}%`;
+    return `<div class="agri-perf-cell"><span>${p.label}</span><strong class="${cls}">${txt}</strong></div>`;
+  }).join("");
+
   document.querySelector("#agriWhyBenefits").textContent = stock.whyBenefits;
   document.querySelector("#agriKeyRisks").textContent = stock.keyRisks;
   document.querySelector("#agriTechnical").textContent = stock.technical;
