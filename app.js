@@ -1030,9 +1030,48 @@ function renderAgriDetail(stock) {
   document.querySelector("#agriWhyBenefits").textContent = stock.whyBenefits;
   document.querySelector("#agriKeyRisks").textContent = stock.keyRisks;
   document.querySelector("#agriTechnical").textContent = stock.technical;
-  // Highlight active row
+  // Highlight active row, clear ETF rows
+  document.querySelectorAll("#agriEtfTable tbody tr.data-row").forEach(r => r.classList.remove("row-selected"));
   document.querySelectorAll("#agriTable tbody tr.data-row").forEach(r => {
     r.classList.toggle("row-selected", r.dataset.ticker === stock.ticker);
+  });
+}
+
+function renderAgriEtfDetail(etf) {
+  selectedAgriTicker = etf.ticker;
+  const detail = document.querySelector("#agriDetail");
+  detail.classList.remove("hidden");
+  agriView.classList.add("with-detail");
+
+  document.querySelector("#agriDetailTicker").textContent = `${etf.ticker} — ${etf.name}`;
+  const badge = document.querySelector("#agriDetailClass");
+  badge.textContent = etf.exchange;
+  badge.className = "badge badge-amber";
+
+  // Performance grid using dataKey (e.g. COCO.L) or ticker
+  const d = (window.agriData || {})[etf.dataKey || etf.ticker] || {};
+  const perf = [
+    { label: "1D",  value: d.chg },
+    { label: "1W",  value: d.chgW },
+    { label: "1M",  value: d.chgM },
+    { label: "YTD", value: d.chgYTD },
+  ];
+  document.querySelector("#agriPerfGrid").innerHTML = perf.map(p => {
+    const v = p.value;
+    const cls = v == null ? "" : v > 0 ? "positive" : v < 0 ? "negative" : "";
+    const txt = v == null ? "–" : `${v > 0 ? "+" : ""}${v.toFixed(2)}%`;
+    return `<div class="agri-perf-cell"><span>${p.label}</span><strong class="${cls}">${txt}</strong></div>`;
+  }).join("");
+
+  // Reuse the three text sections: Why Benefits / Key Risks / Technical
+  document.querySelector("#agriWhyBenefits").textContent = etf.whyBenefits || "–";
+  document.querySelector("#agriKeyRisks").textContent    = `Expense ratio: ${etf.expense} · Focus: ${etf.focus}`;
+  document.querySelector("#agriTechnical").textContent   = "–";
+
+  // Highlight active ETF row, clear stock rows
+  document.querySelectorAll("#agriTable tbody tr.data-row").forEach(r => r.classList.remove("row-selected"));
+  document.querySelectorAll("#agriEtfTable tbody tr.data-row").forEach(r => {
+    r.classList.toggle("row-selected", r.dataset.etfTicker === etf.ticker);
   });
 }
 
@@ -1051,11 +1090,12 @@ function renderAgriView() {
   const live = window.agriData || {};
 
   // ── ETF table ──
-  document.querySelector("#agriEtfTable tbody").innerHTML = AGRI_ETFS.map(e => {
+  const etfTbody = document.querySelector("#agriEtfTable tbody");
+  etfTbody.innerHTML = AGRI_ETFS.map(e => {
     const d = live[e.dataKey || e.ticker] || {};
     const chgCls = d.chg > 0 ? "positive" : d.chg < 0 ? "negative" : "";
     return `
-      <tr>
+      <tr class="data-row" data-etf-ticker="${e.ticker}" style="cursor:pointer">
         <td><strong>${e.ticker}</strong></td>
         <td class="mono">${d.price != null ? fmtPrice(d.price) : "–"}</td>
         <td class="mono ${chgCls}">${d.chg != null ? fmtChg(d.chg) : "–"}</td>
@@ -1066,6 +1106,14 @@ function renderAgriView() {
       </tr>
     `;
   }).join("");
+
+  // ETF row click → detail sidebar
+  etfTbody.querySelectorAll("tr.data-row").forEach(row => {
+    row.addEventListener("click", () => {
+      const etf = AGRI_ETFS.find(e => e.ticker === row.dataset.etfTicker);
+      if (etf) renderAgriEtfDetail(etf);
+    });
+  });
 
   // ── Stock table ──
   const sectors = [...new Set(AGRI_STOCKS.map(s => s.sector))];
@@ -1124,12 +1172,12 @@ function renderAgriView() {
 
   // Re-apply selection if any
   if (selectedAgriTicker) {
-    const stock = AGRI_STOCKS.find(s => s.ticker === selectedAgriTicker);
-    if (stock) {
-      document.querySelectorAll("#agriTable tbody tr.data-row").forEach(r => {
-        r.classList.toggle("row-selected", r.dataset.ticker === selectedAgriTicker);
-      });
-    }
+    document.querySelectorAll("#agriTable tbody tr.data-row").forEach(r => {
+      r.classList.toggle("row-selected", r.dataset.ticker === selectedAgriTicker);
+    });
+    document.querySelectorAll("#agriEtfTable tbody tr.data-row").forEach(r => {
+      r.classList.toggle("row-selected", r.dataset.etfTicker === selectedAgriTicker);
+    });
   }
 }
 
