@@ -20,7 +20,7 @@ AGRI_TICKERS = [
     "FPI", "LAND", "DE", "AGCO", "CNH",
     "XYL", "VMI", "LNN", "MWA", "WTS",
     "TSN", "PPC", "HRL", "CAG", "CALM",
-    "DBA", "MOO", "VEGI", "USAG",
+    "DBA", "MOO", "VEGI", "USAG", "COCO.L",
 ]
 
 
@@ -145,7 +145,6 @@ ASSETS = [
     {"symbol": "DBA",  "data_symbol": "DBA",  "name": "Agriculture",             "category": "Agriculture", "section": "ETF"},
     {"symbol": "VEGI", "data_symbol": "VEGI", "name": "Agriculture",             "category": "Agriculture", "section": "ETF"},
     {"symbol": "FTXR", "data_symbol": "FTXR", "name": "Transportation",          "category": "Auto",        "section": "ETF"},
-    {"symbol": "COCO", "data_symbol": "COCO.L", "name": "Cocoa",               "category": "Commodity",   "section": "ETF"},
     # Stock
     {"symbol": "FTAG", "data_symbol": "FTAG", "name": "FTAG",  "category": "Agriculture", "section": "Stock"},
     {"symbol": "SBUX", "data_symbol": "SBUX", "name": "SBUX",  "category": "Consumer",    "section": "Stock"},

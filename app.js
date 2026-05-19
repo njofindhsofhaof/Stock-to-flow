@@ -974,6 +974,7 @@ const AGRI_ETFS = [
   { ticker:"MOO",  name:"VanEck Agribusiness ETF",                exchange:"NYSE Arca", focus:"Global agribusiness equities (chemicals, seeds, equipment, livestock)",        expense:"0.53%", whyBenefits:"Diversified equity exposure to the entire agricultural value chain." },
   { ticker:"VEGI", name:"iShares MSCI Agriculture Producers ETF", exchange:"NYSE Arca", focus:"Global agricultural producers",                                                expense:"0.39%", whyBenefits:"Targeted exposure to companies that produce agricultural commodities and inputs." },
   { ticker:"USAG", name:"United States Agriculture Index ETF",    exchange:"NYSE Arca", focus:"U.S. agricultural commodities futures",                                         expense:"0.75%", whyBenefits:"Pure-play on U.S. agricultural commodity prices." },
+  { ticker:"COCO", dataKey:"COCO.L", name:"WisdomTree Cocoa ETC", exchange:"LSE",       focus:"Cocoa commodity futures (USD-denominated, London-listed)",                     expense:"0.49%", whyBenefits:"Pure-play exposure to cocoa price moves; USD-denominated on LSE." },
 ];
 
 const SENSITIVITY_MAP = [
@@ -1051,7 +1052,7 @@ function renderAgriView() {
 
   // ── ETF table ──
   document.querySelector("#agriEtfTable tbody").innerHTML = AGRI_ETFS.map(e => {
-    const d = live[e.ticker] || {};
+    const d = live[e.dataKey || e.ticker] || {};
     const chgCls = d.chg > 0 ? "positive" : d.chg < 0 ? "negative" : "";
     return `
       <tr>

@@ -1,6 +1,6 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-05-19 16:51:41",
+  "updatedAt": "2026-05-19 16:54:55",
   "sections": {
     "Index": {
       "risk": "Neutral",
@@ -365,8 +365,8 @@ window.marketData = [
     "section": "Commodity",
     "name": "Crude Oil",
     "category": "Energy",
-    "price": 103.31,
-    "change": -4.92,
+    "price": 103.32,
+    "change": -4.91,
     "mom": 45.4,
     "phase": "Early",
     "volume": "Fading",
@@ -377,17 +377,17 @@ window.marketData = [
     "rsi": 54.5,
     "flow": 13,
     "perf": {
-      "w1": 1.11,
-      "m1": 12.14,
-      "m3": 55.8
+      "w1": 1.12,
+      "m1": 12.15,
+      "m3": 55.81
     },
     "returns": [
-      -4.92,
-      2.12,
-      1.11,
-      1.02,
-      12.14,
-      55.8
+      -4.91,
+      2.13,
+      1.12,
+      1.03,
+      12.15,
+      55.81
     ],
     "volumes": [
       35,
@@ -600,29 +600,29 @@ window.marketData = [
     "section": "Crypto",
     "name": "Bitcoin",
     "category": "Currency",
-    "price": 76719.99,
-    "change": -0.3,
-    "mom": 32.6,
+    "price": 76752.98,
+    "change": -0.26,
+    "mom": 32.7,
     "phase": "Bottoming",
     "volume": "Rising",
     "rotation": "Distribution",
     "signal": "WATCH",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 44.2,
+    "rsi": 44.3,
     "flow": 113,
     "perf": {
-      "w1": -5.34,
-      "m1": 1.25,
-      "m3": 8.79
+      "w1": -5.3,
+      "m1": 1.29,
+      "m3": 8.83
     },
     "returns": [
-      -0.3,
-      -1.81,
-      -5.34,
-      -4.89,
-      1.25,
-      8.79
+      -0.26,
+      -1.76,
+      -5.3,
+      -4.85,
+      1.29,
+      8.83
     ],
     "volumes": [
       124,
@@ -633,12 +633,12 @@ window.marketData = [
       113
     ],
     "rsiStack": [
-      24.9,
-      36.6,
-      44.2,
-      48.4,
+      25.1,
+      36.8,
+      44.3,
+      48.5,
       50.1,
-      45.3
+      45.4
     ]
   },
   {
@@ -1488,53 +1488,6 @@ window.marketData = [
     ]
   },
   {
-    "symbol": "COCO",
-    "dataSymbol": "COCO.L",
-    "section": "ETF",
-    "name": "Cocoa",
-    "category": "Commodity",
-    "price": 6.28,
-    "change": 1.05,
-    "mom": 37.5,
-    "phase": "Early",
-    "volume": "Rising",
-    "rotation": "Accumulation (Day 1)",
-    "signal": "WATCH",
-    "dist_streak": 0,
-    "acc_streak": 1,
-    "rsi": 49.2,
-    "flow": 32,
-    "perf": {
-      "w1": -16.38,
-      "m1": 12.44,
-      "m3": 20.77
-    },
-    "returns": [
-      1.05,
-      -8.65,
-      -16.38,
-      -7.55,
-      12.44,
-      20.77
-    ],
-    "volumes": [
-      138,
-      213,
-      171,
-      187,
-      268,
-      43
-    ],
-    "rsiStack": [
-      33.7,
-      44.7,
-      49.2,
-      50.6,
-      51.1,
-      54.5
-    ]
-  },
-  {
     "symbol": "FTAG",
     "dataSymbol": "FTAG",
     "section": "Stock",
@@ -2377,5 +2330,17 @@ window.agriData = {
     "de": "–",
     "drawdown": "-4.7%"
   },
-  "USAG": {}
+  "USAG": {},
+  "COCO.L": {
+    "price": 6.28,
+    "chg": 1.05,
+    "chgW": -16.38,
+    "chgM": 12.44,
+    "chgYTD": -39.96,
+    "marketCap": "–",
+    "pe": "36.7x",
+    "evEbitda": "–",
+    "de": "–",
+    "drawdown": "-64.1%"
+  }
 };
