@@ -1136,10 +1136,44 @@ tbody tr.selected {
   min-width: 0;
 }
 
-.agri-etf-panel .data-table th:nth-child(4),
-.agri-etf-panel .data-table td:nth-child(4) {
-  min-width: 260px;
-  max-width: 400px;
+/* Override shared data-table defaults for agri tables */
+#agriTable,
+#agriEtfTable {
+  min-width: unset;
+  table-layout: auto;
+  width: 100%;
+}
+
+/* Stock table column widths */
+#agriTable th:nth-child(1)  { width: 36px;  } /* No */
+#agriTable th:nth-child(2)  { width: 66px;  } /* Ticker */
+#agriTable th:nth-child(3)  { width: 76px;  } /* Price */
+#agriTable th:nth-child(4)  { width: 72px;  } /* Chg% */
+#agriTable th:nth-child(5)  { min-width: 160px; } /* Company */
+#agriTable th:nth-child(6)  { width: 76px;  } /* Exchange */
+#agriTable th:nth-child(7)  { min-width: 130px; } /* Sub-sector */
+#agriTable th:nth-child(8)  { width: 76px;  } /* Mkt Cap */
+#agriTable th:nth-child(9)  { width: 58px;  } /* P/E */
+#agriTable th:nth-child(10) { width: 86px;  } /* EV/EBITDA */
+#agriTable th:nth-child(11) { width: 86px;  } /* Drawdown */
+#agriTable th:nth-child(12) { width: 60px;  } /* D/E */
+#agriTable th:nth-child(13) { width: 110px; } /* FCF */
+#agriTable th:nth-child(14) { min-width: 160px; } /* Classification */
+
+/* ETF table column widths */
+#agriEtfTable th:nth-child(1) { width: 66px;  } /* Ticker */
+#agriEtfTable th:nth-child(2) { width: 76px;  } /* Price */
+#agriEtfTable th:nth-child(3) { width: 72px;  } /* Chg% */
+#agriEtfTable th:nth-child(4) { min-width: 200px; } /* Name */
+#agriEtfTable th:nth-child(5) { width: 100px; } /* Exchange */
+#agriEtfTable th:nth-child(6) { min-width: 280px; } /* Focus */
+#agriEtfTable th:nth-child(7) { width: 76px;  } /* Expense */
+
+/* Prevent focus/subsector cells from overflowing */
+.agri-focus-cell,
+.agri-subsector {
+  white-space: normal;
+  line-height: 1.4;
 }
 
 .agri-detail {

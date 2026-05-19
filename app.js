@@ -1020,29 +1020,71 @@ function renderAgriDetail(stock) {
   });
 }
 
+function fmtPrice(p) {
+  if (p == null || isNaN(p)) return "–";
+  return p >= 100 ? p.toFixed(2) : p.toFixed(2);
+}
+
+function fmtChg(c) {
+  if (c == null || isNaN(c)) return "–";
+  const sign = c > 0 ? "+" : "";
+  return `${sign}${c.toFixed(2)}%`;
+}
+
 function renderAgriView() {
+  const live = window.agriData || {};
+
+  // ── ETF table ──
+  document.querySelector("#agriEtfTable tbody").innerHTML = AGRI_ETFS.map(e => {
+    const d = live[e.ticker] || {};
+    const chgCls = d.chg > 0 ? "positive" : d.chg < 0 ? "negative" : "";
+    return `
+      <tr>
+        <td><strong>${e.ticker}</strong></td>
+        <td class="mono">${d.price != null ? fmtPrice(d.price) : "–"}</td>
+        <td class="mono ${chgCls}">${d.chg != null ? fmtChg(d.chg) : "–"}</td>
+        <td>${e.name}</td>
+        <td class="muted">${e.exchange}</td>
+        <td class="agri-focus-cell">${e.focus}</td>
+        <td class="mono muted">${e.expense}</td>
+      </tr>
+    `;
+  }).join("");
+
   // ── Stock table ──
   const sectors = [...new Set(AGRI_STOCKS.map(s => s.sector))];
   const tbody = document.querySelector("#agriTable tbody");
   tbody.innerHTML = sectors.map(sector => {
     const rows = AGRI_STOCKS.filter(s => s.sector === sector);
-    const sectorRow = `<tr class="section-row"><td colspan="12">${sector}</td></tr>`;
-    const dataRows = rows.map(s => `
-      <tr class="data-row" data-ticker="${s.ticker}" style="cursor:pointer">
-        <td class="mono muted">${s.no}</td>
-        <td><strong>${s.ticker}</strong></td>
-        <td>${s.name}</td>
-        <td class="muted">${s.exchange}</td>
-        <td class="muted">${s.subsector}</td>
-        <td class="mono">${s.marketCap}</td>
-        <td class="mono">${s.pe}</td>
-        <td class="mono">${s.evEbitda}</td>
-        <td class="mono ${s.drawdown.startsWith('>') ? 'text-red' : ''}">${s.drawdown}</td>
-        <td class="mono">${s.de}</td>
-        <td class="mono ${fcfClass(s.fcf)}">${s.fcf}</td>
-        <td><span class="agri-class-badge">${s.classification}</span></td>
-      </tr>
-    `).join("");
+    const sectorRow = `<tr class="section-row"><td colspan="14">${sector}</td></tr>`;
+    const dataRows = rows.map(s => {
+      const d = live[s.ticker] || {};
+      const chgCls = d.chg > 0 ? "positive" : d.chg < 0 ? "negative" : "";
+      const mktCap   = d.marketCap  || s.marketCap;
+      const pe       = d.pe         || s.pe;
+      const evEbitda = d.evEbitda   || s.evEbitda;
+      const drawdown = d.drawdown   || s.drawdown;
+      const de       = d.de         || s.de;
+      const ddClass  = drawdown && (drawdown.startsWith("-") || drawdown.startsWith(">") || parseFloat(drawdown) < -10) ? "text-red" : "";
+      return `
+        <tr class="data-row" data-ticker="${s.ticker}">
+          <td class="mono muted">${s.no}</td>
+          <td><strong>${s.ticker}</strong></td>
+          <td class="mono">${d.price != null ? fmtPrice(d.price) : "–"}</td>
+          <td class="mono ${chgCls}">${d.chg != null ? fmtChg(d.chg) : "–"}</td>
+          <td>${s.name}</td>
+          <td class="muted">${s.exchange}</td>
+          <td class="muted agri-subsector">${s.subsector}</td>
+          <td class="mono">${mktCap}</td>
+          <td class="mono">${pe}</td>
+          <td class="mono">${evEbitda}</td>
+          <td class="mono ${ddClass}">${drawdown}</td>
+          <td class="mono">${de}</td>
+          <td class="mono ${fcfClass(s.fcf)}">${s.fcf}</td>
+          <td><span class="agri-class-badge">${s.classification}</span></td>
+        </tr>
+      `;
+    }).join("");
     return sectorRow + dataRows;
   }).join("");
 
@@ -1053,17 +1095,6 @@ function renderAgriView() {
       if (stock) renderAgriDetail(stock);
     });
   });
-
-  // ── ETF table ──
-  document.querySelector("#agriEtfTable tbody").innerHTML = AGRI_ETFS.map(e => `
-    <tr>
-      <td><strong>${e.ticker}</strong></td>
-      <td>${e.name}</td>
-      <td class="muted">${e.exchange}</td>
-      <td>${e.focus}</td>
-      <td class="mono">${e.expense}</td>
-    </tr>
-  `).join("");
 
   // ── Sensitivity Map ──
   document.querySelector("#sensitivityMap").innerHTML = SENSITIVITY_MAP.map(item => `

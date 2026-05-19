@@ -14,6 +14,89 @@ except Exception:
     ta = None
 
 
+AGRI_TICKERS = [
+    "NTR", "MOS", "CF", "ICL", "FMC", "CTVA",
+    "ADM", "BG", "INGR",
+    "FPI", "LAND", "DE", "AGCO", "CNH",
+    "XYL", "VMI", "LNN", "MWA", "WTS",
+    "TSN", "PPC", "HRL", "CAG", "CALM",
+    "DBA", "MOO", "VEGI", "USAG",
+]
+
+
+def fmt_market_cap(v: object) -> str:
+    if v is None:
+        return "–"
+    try:
+        v = float(v)
+    except (TypeError, ValueError):
+        return "–"
+    if pd.isna(v):
+        return "–"
+    if v >= 1e12:
+        return f"${v / 1e12:.1f}T"
+    if v >= 1e9:
+        return f"${v / 1e9:.1f}B"
+    if v >= 1e6:
+        return f"${v / 1e6:.0f}M"
+    return "–"
+
+
+def fmt_ratio(v: object, suffix: str = "x") -> str:
+    if v is None:
+        return "–"
+    try:
+        fv = float(v)
+    except (TypeError, ValueError):
+        return "–"
+    if pd.isna(fv):
+        return "–"
+    return f"{fv:.1f}{suffix}"
+
+
+def fetch_agri_data() -> dict:
+    result: dict = {}
+    for ticker in AGRI_TICKERS:
+        try:
+            df = yf.download(ticker, period="1y", interval="1d", progress=False, auto_adjust=False)
+            if df.empty or len(df) < 2:
+                result[ticker] = {}
+                continue
+            df = flatten_columns(df)
+            price = round(float(df["Close"].iloc[-1]), 2)
+            chg = round(float(df["Close"].pct_change().iloc[-1] * 100), 2)
+            high_52w = float(df["High"].max())
+            drawdown_pct = round((price - high_52w) / high_52w * 100, 1)
+
+            info: dict = {}
+            try:
+                info = yf.Ticker(ticker).info or {}
+            except Exception:
+                pass
+
+            mktcap = fmt_market_cap(info.get("marketCap"))
+            pe_raw = info.get("trailingPE") or info.get("forwardPE")
+            pe_str = fmt_ratio(pe_raw)
+            ev_raw = info.get("enterpriseToEbitda")
+            ev_str = fmt_ratio(ev_raw)
+            de_raw = info.get("debtToEquity")
+            # yfinance returns D/E as percentage (45.3 = 0.45x ratio)
+            de_str = fmt_ratio(de_raw / 100 if de_raw and not pd.isna(float(de_raw)) else None)
+
+            result[ticker] = {
+                "price": price,
+                "chg": chg,
+                "marketCap": mktcap,
+                "pe": pe_str,
+                "evEbitda": ev_str,
+                "de": de_str,
+                "drawdown": f"{drawdown_pct:.1f}%",
+            }
+        except Exception:
+            result[ticker] = {}
+    return result
+
+
 ASSETS = [
     # Index
     {"symbol": "SP500", "data_symbol": "^GSPC", "name": "US Index",    "category": "Broad", "section": "Index"},
@@ -500,6 +583,10 @@ def main() -> None:
     sections = build_section_summaries(rows)
     updated_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
+    print("Fetching Agri Research data...")
+    agri_data = fetch_agri_data()
+    print(f"Agri data fetched for {len(agri_data)} tickers")
+
     payload = {
         "source": "Yahoo Finance via yfinance (delayed daily data)",
         "updatedAt": updated_at,
@@ -537,6 +624,8 @@ def main() -> None:
         + json.dumps({k: payload[k] for k in ["source", "updatedAt", "sections"]}, ensure_ascii=False, indent=2)
         + ";\nwindow.marketData = "
         + json.dumps(rows, ensure_ascii=False, indent=2)
+        + ";\nwindow.agriData = "
+        + json.dumps(agri_data, ensure_ascii=False, indent=2)
         + ";\n"
     )
     output_path = root_dir / "market_data.js"
