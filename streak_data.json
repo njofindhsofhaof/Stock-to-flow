@@ -18,7 +18,7 @@
     "acc_last_date": "2026-06-04"
   },
   "URA": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-06-04",
     "acc_streak": 0,
     "acc_last_date": "2026-06-04"
@@ -26,7 +26,7 @@
   "CL": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-04",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-04"
   },
   "BTC": {
@@ -48,7 +48,7 @@
     "acc_last_date": "2026-06-04"
   },
   "MSTR": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-06-04",
     "acc_streak": 0,
     "acc_last_date": "2026-06-04"
@@ -66,7 +66,7 @@
     "acc_last_date": "2026-06-04"
   },
   "XLU": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-06-04",
     "acc_streak": 0,
     "acc_last_date": "2026-06-04"
@@ -74,11 +74,11 @@
   "XLV": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-04",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-04"
   },
   "XLC": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-06-04",
     "acc_streak": 0,
     "acc_last_date": "2026-06-04"
@@ -92,7 +92,7 @@
   "XLRE": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-04",
-    "acc_streak": 2,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-04"
   },
   "XLI": {
@@ -104,7 +104,7 @@
   "XLB": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-04",
-    "acc_streak": 2,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-04"
   },
   "XLY": {
@@ -116,7 +116,7 @@
   "XLP": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-04",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-04"
   },
   "SOX": {
@@ -138,7 +138,7 @@
     "acc_last_date": "2026-05-10"
   },
   "CRDO": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-06-04",
     "acc_streak": 0,
     "acc_last_date": "2026-06-04"
@@ -258,7 +258,7 @@
     "acc_last_date": "2026-06-04"
   },
   "GM": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-06-04",
     "acc_streak": 0,
     "acc_last_date": "2026-06-04"
@@ -362,7 +362,7 @@
   "SBUX": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-04",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-04"
   },
   "PFE": {
