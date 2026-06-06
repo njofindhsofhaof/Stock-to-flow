@@ -279,6 +279,11 @@ def determine_signal_v3(phase: str, rotation: str, mom: float, rsi: float = 50, 
     if _would_buy and rsi > 70:
         return "WATCH"
 
+    # Fix A: BUY trong downtrend rõ (R20 < -8%) → hạ xuống WATCH
+    # Backtest evidence: CL BUY -12.7%, CRCL BUY -10%, URA BUY -10.4%
+    if _would_buy and r20 < -8:
+        return "WATCH"
+
     # Fix 3: AVOID/SELL chỉ khi R20 <= 0
     if phase == "Bottoming" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
         return "AVOID" if r20 <= 0 else "WATCH"
@@ -304,9 +309,13 @@ def determine_signal_v3(phase: str, rotation: str, mom: float, rsi: float = 50, 
         return "HOLD"
 
     if phase == "Mature" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
+        # Fix B: Distribution nhưng R20 vẫn dương mạnh → giảm REDUCE thành HOLD
+        # Backtest evidence: SOX REDUCE +8.4%, F REDUCE +14.6%, GM AVOID +7.8%
+        if r20 > 5:
+            return "HOLD"
         return "SELL" if r20 <= 0 else "REDUCE"
     if phase == "Early" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
-        return "REDUCE"
+        return "HOLD" if r20 > 5 else "REDUCE"
     if phase == "Exhaustion" and rotation in ["Distribution", "Distribution (Quiet)", "Fading"]:
         return "SELL" if r20 <= 0 else "REDUCE"
 
