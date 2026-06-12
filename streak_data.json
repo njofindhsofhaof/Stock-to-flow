@@ -20,11 +20,11 @@
   "URA": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-12",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-12"
   },
   "CL": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-06-12",
     "acc_streak": 0,
     "acc_last_date": "2026-06-12"
@@ -62,7 +62,7 @@
   "XLK": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-12",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-12"
   },
   "XLU": {
@@ -122,7 +122,7 @@
   "SOX": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-12",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-12"
   },
   "AVGO": {
@@ -140,7 +140,7 @@
   "CRDO": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-12",
-    "acc_streak": 2,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-12"
   },
   "ALAB": {
@@ -260,11 +260,11 @@
   "GM": {
     "dist_streak": 0,
     "dist_last_date": "2026-06-12",
-    "acc_streak": 1,
+    "acc_streak": 0,
     "acc_last_date": "2026-06-12"
   },
   "FPI": {
-    "dist_streak": 1,
+    "dist_streak": 0,
     "dist_last_date": "2026-06-12",
     "acc_streak": 0,
     "acc_last_date": "2026-06-12"
