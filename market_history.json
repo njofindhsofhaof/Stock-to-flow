@@ -52175,12 +52175,12 @@
     },
     {
       "date": "2026-06-19",
-      "updatedAt": "2026-06-19 00:08:42",
+      "updatedAt": "2026-06-19 23:35:49",
       "sections": {
         "Index": {
           "risk": "Strong ON",
-          "leader": "KOSPI",
-          "watch": 3
+          "leader": "DJI",
+          "watch": 2
         },
         "Commodity": {
           "risk": "Neutral",
@@ -52200,7 +52200,7 @@
         "Stock": {
           "risk": "Neutral",
           "leader": "MRVL",
-          "watch": 2
+          "watch": 3
         }
       },
       "rows": [
@@ -52214,13 +52214,13 @@
           "change": 1.08,
           "mom": 45.3,
           "phase": "Early",
-          "volume": "Rising",
+          "volume": "Spike",
           "rotation": "Accumulation",
           "signal": "BUY",
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 55.1,
-          "flow": 111,
+          "flow": 155,
           "perf": {
             "w1": 1.44,
             "m1": 0.91,
@@ -52304,45 +52304,45 @@
           "section": "Index",
           "name": "Korea Index",
           "category": "Broad",
-          "price": 8864.24,
-          "change": 1.58,
-          "mom": 53.7,
+          "price": 0,
+          "change": 0,
+          "mom": 50.0,
           "phase": "Mature",
           "volume": "Rising",
-          "rotation": "Trending up",
+          "rotation": "Neutral",
           "signal": "HOLD",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 64.1,
-          "flow": 106,
+          "rsi": 66.2,
+          "flow": 96,
           "perf": {
-            "w1": 14.66,
-            "m1": 17.94,
-            "m3": 53.81
+            "w1": 0,
+            "m1": 0,
+            "m3": 0
           },
           "returns": [
-            1.58,
-            9.12,
-            14.66,
-            0.71,
-            17.94,
-            53.81
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "volumes": [
+            95,
             109,
             86,
             75,
             72,
-            91,
-            69
+            62
           ],
           "rsiStack": [
-            72.5,
-            65.7,
-            64.1,
-            63.8,
-            63.8,
-            64.9
+            76.8,
+            68.6,
+            66.2,
+            65.3,
+            64.9,
+            65.6
           ]
         },
         {
@@ -52351,45 +52351,45 @@
           "section": "Index",
           "name": "Japan Index",
           "category": "Broad",
-          "price": 69902.25,
-          "change": 0.72,
-          "mom": 58.1,
+          "price": 0,
+          "change": 0,
+          "mom": 50.0,
           "phase": "Mature",
-          "volume": "Fading",
-          "rotation": "Accumulation (Quiet)",
+          "volume": "Rising",
+          "rotation": "Neutral",
           "signal": "HOLD",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 67.9,
-          "flow": 83,
+          "rsi": 70.4,
+          "flow": 0,
           "perf": {
-            "w1": 8.92,
-            "m1": 16.88,
-            "m3": 26.54
+            "w1": 0,
+            "m1": 0,
+            "m3": 0
           },
           "returns": [
-            0.72,
-            5.88,
-            8.92,
-            2.19,
-            16.88,
-            26.54
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "volumes": [
+            90,
             88,
             108,
             95,
-            99,
-            90,
-            105
+            81,
+            90
           ],
           "rsiStack": [
-            77.5,
-            70.5,
-            67.9,
-            66.4,
-            65.2,
-            66.3
+            82.0,
+            73.9,
+            70.4,
+            68.2,
+            66.6,
+            67.2
           ]
         },
         {
@@ -52408,7 +52408,7 @@
           "dist_streak": 1,
           "acc_streak": 0,
           "rsi": 38.2,
-          "flow": 94,
+          "flow": 97,
           "perf": {
             "w1": 0.21,
             "m1": -7.25,
@@ -52455,7 +52455,7 @@
           "dist_streak": 1,
           "acc_streak": 0,
           "rsi": 37.8,
-          "flow": 131,
+          "flow": 136,
           "perf": {
             "w1": -2.15,
             "m1": -13.41,
@@ -52502,7 +52502,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 47.4,
-          "flow": 89,
+          "flow": 93,
           "perf": {
             "w1": 6.58,
             "m1": -0.54,
@@ -52539,45 +52539,45 @@
           "section": "Commodity",
           "name": "Crude Oil",
           "category": "Energy",
-          "price": 75.4,
-          "change": -1.81,
-          "mom": 33.2,
+          "price": 76.54,
+          "change": -0.08,
+          "mom": 36.7,
           "phase": "Bottoming",
           "volume": "Fading",
           "rotation": "Neutral",
           "signal": "WATCH",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 30.3,
-          "flow": 1,
+          "rsi": 31.2,
+          "flow": 36,
           "perf": {
-            "w1": -14.03,
-            "m1": -23.26,
-            "m3": -18.35
+            "w1": -9.83,
+            "m1": -20.56,
+            "m3": -15.26
           },
           "returns": [
-            -1.81,
-            -6.63,
-            -14.03,
-            -18.96,
-            -23.26,
-            -18.35
+            -0.08,
+            0.64,
+            -9.83,
+            -15.46,
+            -20.56,
+            -15.26
           ],
           "volumes": [
+            39,
             76,
-            78,
-            123,
-            123,
-            87,
-            119
+            90,
+            115,
+            103,
+            129
           ],
           "rsiStack": [
-            15.4,
-            23.3,
-            30.3,
-            35.8,
-            41.3,
-            46.7
+            17.0,
+            24.5,
+            31.2,
+            36.6,
+            42.1,
+            48.4
           ]
         },
         {
@@ -52590,13 +52590,13 @@
           "change": -2.76,
           "mom": 37.3,
           "phase": "Bottoming",
-          "volume": "Fading",
-          "rotation": "Distribution (Quiet)",
+          "volume": "Spike",
+          "rotation": "Distribution",
           "signal": "AVOID",
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 33.1,
-          "flow": 102,
+          "flow": 187,
           "perf": {
             "w1": -3.41,
             "m1": -16.52,
@@ -52643,7 +52643,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 39.9,
-          "flow": 78,
+          "flow": 106,
           "perf": {
             "w1": 0.38,
             "m1": -14.42,
@@ -52690,7 +52690,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 52.5,
-          "flow": 247,
+          "flow": 259,
           "perf": {
             "w1": 8.58,
             "m1": 4.76,
@@ -52737,7 +52737,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 31.0,
-          "flow": 131,
+          "flow": 135,
           "perf": {
             "w1": -4.12,
             "m1": -10.34,
@@ -52774,45 +52774,45 @@
           "section": "Crypto",
           "name": "Bitcoin",
           "category": "Currency",
-          "price": 62788.38,
-          "change": -4.29,
-          "mom": 48.9,
+          "price": 63287.01,
+          "change": -1.76,
+          "mom": 49.4,
           "phase": "Bottoming",
           "volume": "Fading",
           "rotation": "Neutral",
           "signal": "WATCH",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 34.8,
-          "flow": 86,
+          "rsi": 35.7,
+          "flow": 65,
           "perf": {
-            "w1": -1.19,
-            "m1": -14.62,
-            "m3": -17.09
+            "w1": -1.76,
+            "m1": -13.75,
+            "m3": -14.31
           },
           "returns": [
-            -4.29,
-            -4.45,
-            -1.19,
-            -0.71,
-            -14.62,
-            -17.09
+            -1.76,
+            -4.53,
+            -1.76,
+            0.31,
+            -13.75,
+            -14.31
           ],
           "volumes": [
-            70,
-            59,
-            74,
-            75,
-            102,
-            133
+            89,
+            91,
+            47,
+            80,
+            95,
+            111
           ],
           "rsiStack": [
-            34.1,
-            35.6,
-            34.8,
+            35.3,
+            36.8,
             35.7,
-            38.1,
-            41.6
+            36.3,
+            38.6,
+            42.0
           ]
         },
         {
@@ -52831,7 +52831,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 43.2,
-          "flow": 112,
+          "flow": 114,
           "perf": {
             "w1": 1.76,
             "m1": -14.65,
@@ -52873,12 +52873,12 @@
           "mom": 48.2,
           "phase": "Bottoming",
           "volume": "Rising",
-          "rotation": "Distribution (Quiet)",
+          "rotation": "Distribution",
           "signal": "AVOID",
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 38.2,
-          "flow": 110,
+          "flow": 111,
           "perf": {
             "w1": -2.9,
             "m1": -28.12,
@@ -52925,7 +52925,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 34.0,
-          "flow": 174,
+          "flow": 176,
           "perf": {
             "w1": -6.34,
             "m1": -32.13,
@@ -52972,7 +52972,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 33.9,
-          "flow": 101,
+          "flow": 102,
           "perf": {
             "w1": -5.86,
             "m1": -10.08,
@@ -53066,7 +53066,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 51.7,
-          "flow": 176,
+          "flow": 177,
           "perf": {
             "w1": 1.61,
             "m1": 0.56,
@@ -53207,7 +53207,7 @@
           "dist_streak": 1,
           "acc_streak": 0,
           "rsi": 61.5,
-          "flow": 96,
+          "flow": 97,
           "perf": {
             "w1": 1.81,
             "m1": 3.7,
@@ -53348,7 +53348,7 @@
           "dist_streak": 1,
           "acc_streak": 0,
           "rsi": 53.4,
-          "flow": 92,
+          "flow": 96,
           "perf": {
             "w1": 1.15,
             "m1": 4.2,
@@ -53390,12 +53390,12 @@
           "mom": 49.5,
           "phase": "Early",
           "volume": "Fading",
-          "rotation": "Neutral",
-          "signal": "HOLD",
+          "rotation": "Accumulation",
+          "signal": "BUY",
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 49.9,
-          "flow": 109,
+          "flow": 115,
           "perf": {
             "w1": 0.74,
             "m1": -0.66,
@@ -53432,29 +53432,29 @@
           "section": "ETF",
           "name": "Consumer Staples",
           "category": "Defensive",
-          "price": 83.3,
-          "change": -0.45,
-          "mom": 38.4,
+          "price": 0,
+          "change": 0,
+          "mom": 50.0,
           "phase": "Early",
           "volume": "Rising",
           "rotation": "Neutral",
           "signal": "HOLD",
-          "dist_streak": 1,
+          "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 45.5,
+          "rsi": 47.5,
           "flow": 82,
           "perf": {
-            "w1": -2.31,
-            "m1": -2.6,
-            "m3": 2.7
+            "w1": 0,
+            "m1": 0,
+            "m3": 0
           },
           "returns": [
-            -0.45,
-            -2.55,
-            -2.31,
-            1.54,
-            -2.6,
-            2.7
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "volumes": [
             140,
@@ -53465,12 +53465,12 @@
             119
           ],
           "rsiStack": [
-            32.1,
-            41.9,
-            45.5,
-            47.2,
-            47.6,
-            44.1
+            35.9,
+            44.6,
+            47.5,
+            48.6,
+            48.5,
+            44.6
           ]
         },
         {
@@ -53489,7 +53489,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 64.4,
-          "flow": 86,
+          "flow": 88,
           "perf": {
             "w1": 8.95,
             "m1": 22.9,
@@ -53536,7 +53536,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 41.9,
-          "flow": 82,
+          "flow": 83,
           "perf": {
             "w1": 1.25,
             "m1": -4.79,
@@ -53573,29 +53573,29 @@
           "section": "ETF",
           "name": "Agriculture",
           "category": "Agriculture",
-          "price": 43.1,
-          "change": -0.23,
-          "mom": 42.9,
+          "price": 0,
+          "change": 0,
+          "mom": 50.0,
           "phase": "Bottoming",
           "volume": "Rising",
-          "rotation": "Distribution (Quiet)",
-          "signal": "AVOID",
+          "rotation": "Neutral",
+          "signal": "WATCH",
           "dist_streak": 0,
           "acc_streak": 0,
-          "rsi": 38.7,
+          "rsi": 39.5,
           "flow": 108,
           "perf": {
-            "w1": -0.55,
-            "m1": -3.08,
-            "m3": -4.05
+            "w1": 0,
+            "m1": 0,
+            "m3": 0
           },
           "returns": [
-            -0.23,
-            -0.76,
-            -0.55,
-            -3.84,
-            -3.08,
-            -4.05
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
           ],
           "volumes": [
             61,
@@ -53606,12 +53606,12 @@
             55
           ],
           "rsiStack": [
-            33.5,
-            36.8,
-            38.7,
-            40.6,
-            43.6,
-            48.0
+            35.9,
+            38.1,
+            39.5,
+            41.3,
+            44.1,
+            48.3
           ]
         },
         {
@@ -53630,7 +53630,7 @@
           "dist_streak": 0,
           "acc_streak": 1,
           "rsi": 54.7,
-          "flow": 70,
+          "flow": 71,
           "perf": {
             "w1": -1.26,
             "m1": 6.41,
@@ -53668,8 +53668,8 @@
           "name": "FTAG",
           "category": "Agriculture",
           "price": 28.32,
-          "change": -0.58,
-          "mom": 47.5,
+          "change": -0.6,
+          "mom": 47.4,
           "phase": "Bottoming",
           "volume": "Fading",
           "rotation": "Neutral",
@@ -53679,17 +53679,17 @@
           "rsi": 39.0,
           "flow": 42,
           "perf": {
-            "w1": -0.23,
-            "m1": -3.59,
-            "m3": -1.79
+            "w1": -0.25,
+            "m1": -3.61,
+            "m3": -1.8
           },
           "returns": [
-            -0.58,
-            -0.86,
-            -0.23,
-            -0.65,
-            -3.59,
-            -1.79
+            -0.6,
+            -0.88,
+            -0.25,
+            -0.67,
+            -3.61,
+            -1.8
           ],
           "volumes": [
             7,
@@ -53700,10 +53700,10 @@
             8
           ],
           "rsiStack": [
-            38.3,
-            38.7,
+            38.2,
+            38.6,
             39.0,
-            40.6,
+            40.5,
             43.6,
             49.0
           ]
@@ -53718,13 +53718,13 @@
           "change": 0.83,
           "mom": 52.1,
           "phase": "Early",
-          "volume": "Rising",
+          "volume": "Spike",
           "rotation": "Neutral",
           "signal": "HOLD",
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 51.0,
-          "flow": 118,
+          "flow": 129,
           "perf": {
             "w1": -1.59,
             "m1": -5.49,
@@ -53859,13 +53859,13 @@
           "change": -0.36,
           "mom": 37.7,
           "phase": "Early",
-          "volume": "Rising",
-          "rotation": "Distribution (Quiet)",
+          "volume": "Spike",
+          "rotation": "Distribution",
           "signal": "REDUCE",
           "dist_streak": 1,
           "acc_streak": 0,
           "rsi": 47.0,
-          "flow": 99,
+          "flow": 210,
           "perf": {
             "w1": -1.93,
             "m1": 4.14,
@@ -53912,7 +53912,7 @@
           "dist_streak": 1,
           "acc_streak": 0,
           "rsi": 39.8,
-          "flow": 29,
+          "flow": 30,
           "perf": {
             "w1": 0.68,
             "m1": -6.62,
@@ -53959,7 +53959,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 38.7,
-          "flow": 193,
+          "flow": 317,
           "perf": {
             "w1": -3.67,
             "m1": -2.25,
@@ -54002,11 +54002,11 @@
           "phase": "Bottoming",
           "volume": "Rising",
           "rotation": "Accumulation (Day 1)",
-          "signal": "WATCH",
+          "signal": "AVOID",
           "dist_streak": 0,
           "acc_streak": 1,
           "rsi": 33.4,
-          "flow": 74,
+          "flow": 108,
           "perf": {
             "w1": -1.31,
             "m1": -6.42,
@@ -54053,7 +54053,7 @@
           "dist_streak": 0,
           "acc_streak": 1,
           "rsi": 31.3,
-          "flow": 127,
+          "flow": 160,
           "perf": {
             "w1": -3.78,
             "m1": -8.26,
@@ -54147,7 +54147,7 @@
           "dist_streak": 0,
           "acc_streak": 0,
           "rsi": 64.6,
-          "flow": 354,
+          "flow": 355,
           "perf": {
             "w1": 10.64,
             "m1": 66.26,
