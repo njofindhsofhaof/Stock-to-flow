@@ -1,31 +1,31 @@
 window.marketDataMeta = {
   "source": "Yahoo Finance via yfinance (delayed daily data)",
-  "updatedAt": "2026-08-28 06:13:52",
+  "updatedAt": "2026-08-29 03:47:50",
   "sections": {
     "Index": {
       "risk": "Strong ON",
-      "leader": "KOSPI",
+      "leader": "SP500",
       "watch": 1
     },
     "Commodity": {
-      "risk": "Risk Off",
+      "risk": "Neutral",
       "leader": "URA",
-      "watch": 1
+      "watch": 3
     },
     "Crypto": {
-      "risk": "Neutral",
+      "risk": "Risk Off",
       "leader": "CRCL",
-      "watch": 2
+      "watch": 3
     },
     "ETF": {
       "risk": "Neutral",
-      "leader": "XLK",
-      "watch": 6
+      "leader": "DBA",
+      "watch": 3
     },
     "Stock": {
-      "risk": "Neutral",
+      "risk": "Risk Off",
       "leader": "MRVL",
-      "watch": 4
+      "watch": 5
     }
   }
 };
@@ -36,45 +36,45 @@ window.marketData = [
     "section": "Index",
     "name": "US Index",
     "category": "Broad",
-    "price": 7730.99,
-    "change": 0.72,
-    "mom": 55.2,
+    "price": 7711.76,
+    "change": -0.25,
+    "mom": 50.7,
     "phase": "Early",
     "volume": "Fading",
     "rotation": "Neutral",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 58.5,
-    "flow": 91,
+    "rsi": 56.3,
+    "flow": 55,
     "perf": {
-      "w1": 1.18,
-      "m1": 3.94,
-      "m3": 1.59
+      "w1": 0.49,
+      "m1": 2.96,
+      "m3": 2.09
     },
     "returns": [
-      0.72,
-      1.02,
-      1.18,
-      -0.87,
-      3.94,
-      1.59
+      -0.25,
+      0.45,
+      0.49,
+      -0.95,
+      2.96,
+      2.09
     ],
     "volumes": [
-      84,
-      88,
-      94,
-      90,
-      93,
-      110
+      91,
+      86,
+      89,
+      101,
+      81,
+      106
     ],
     "rsiStack": [
-      64.4,
-      59.4,
-      58.5,
-      57.8,
+      56.2,
+      55.7,
+      56.3,
       56.4,
-      51.0
+      55.5,
+      50.6
     ]
   },
   {
@@ -83,44 +83,44 @@ window.marketData = [
     "section": "Index",
     "name": "Dow Jones",
     "category": "Broad",
-    "price": 53569.44,
-    "change": 0.2,
-    "mom": 50.6,
+    "price": 53559.99,
+    "change": -0.02,
+    "mom": 49.5,
     "phase": "Early",
-    "volume": "Spike",
+    "volume": "Fading",
     "rotation": "Accumulation",
     "signal": "BUY",
-    "dist_streak": 0,
+    "dist_streak": 1,
     "acc_streak": 0,
-    "rsi": 55.4,
-    "flow": 140,
+    "rsi": 55.2,
+    "flow": 113,
     "perf": {
-      "w1": 1.54,
-      "m1": 2.61,
-      "m3": 4.41
+      "w1": 0.53,
+      "m1": 2.05,
+      "m3": 5.67
     },
     "returns": [
-      0.2,
-      0.29,
-      1.54,
-      -0.5,
-      2.61,
-      4.41
+      -0.02,
+      -0.03,
+      0.53,
+      -0.32,
+      2.05,
+      5.67
     ],
     "volumes": [
-      93,
-      88,
-      91,
+      140,
+      85,
       89,
-      86,
-      131
+      94,
+      67,
+      143
     ],
     "rsiStack": [
-      56.8,
-      54.8,
-      55.4,
-      56.0,
-      55.7,
+      56.1,
+      54.6,
+      55.2,
+      55.9,
+      55.6,
       51.1
     ]
   },
@@ -130,29 +130,29 @@ window.marketData = [
     "section": "Index",
     "name": "Korea Index",
     "category": "Broad",
-    "price": 6791.14,
-    "change": -1.75,
-    "mom": 51.6,
+    "price": 0,
+    "change": 0,
+    "mom": 50.0,
     "phase": "Early",
     "volume": "Fading",
-    "rotation": "Trending up",
-    "signal": "BUY",
+    "rotation": "Neutral",
+    "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 50.3,
-    "flow": 79,
+    "rsi": 52.5,
+    "flow": 89,
     "perf": {
-      "w1": -1.76,
-      "m1": 21.41,
-      "m3": -22.84
+      "w1": 0,
+      "m1": 0,
+      "m3": 0
     },
     "returns": [
-      -1.75,
-      0.72,
-      -1.76,
-      -0.33,
-      21.41,
-      -22.84
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "volumes": [
       81,
@@ -163,12 +163,12 @@ window.marketData = [
       88
     ],
     "rsiStack": [
-      51.7,
-      52.3,
-      50.3,
-      48.8,
-      46.5,
-      38.8
+      62.3,
+      56.6,
+      52.5,
+      50.1,
+      47.3,
+      39.1
     ]
   },
   {
@@ -177,29 +177,29 @@ window.marketData = [
     "section": "Index",
     "name": "Japan Index",
     "category": "Broad",
-    "price": 66294.38,
-    "change": 0.25,
-    "mom": 48.3,
+    "price": 0,
+    "change": 0,
+    "mom": 50.0,
     "phase": "Early",
     "volume": "Fading",
-    "rotation": "Trending up",
-    "signal": "BUY",
+    "rotation": "Neutral",
+    "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 50.0,
+    "rsi": 49.3,
     "flow": 0,
     "perf": {
-      "w1": 0.42,
-      "m1": 7.16,
-      "m3": -3.08
+      "w1": 0,
+      "m1": 0,
+      "m3": 0
     },
     "returns": [
-      0.25,
-      0.67,
-      0.42,
-      -3.52,
-      7.16,
-      -3.08
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "volumes": [
       78,
@@ -210,12 +210,12 @@ window.marketData = [
       129
     ],
     "rsiStack": [
-      50.9,
-      50.2,
-      50.0,
-      50.0,
-      49.4,
-      44.5
+      47.4,
+      48.9,
+      49.3,
+      49.5,
+      49.1,
+      44.3
     ]
   },
   {
@@ -224,45 +224,45 @@ window.marketData = [
     "section": "Commodity",
     "name": "Gold",
     "category": "Precious",
-    "price": 422.6,
-    "change": 0.3,
-    "mom": 56.3,
-    "phase": "Mature",
-    "volume": "Fading",
-    "rotation": "Fading",
+    "price": 408.89,
+    "change": -3.24,
+    "mom": 42.0,
+    "phase": "Early",
+    "volume": "Spike",
+    "rotation": "Distribution",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 66.6,
-    "flow": 66,
+    "rsi": 54.5,
+    "flow": 209,
     "perf": {
-      "w1": 1.77,
-      "m1": 12.05,
-      "m3": 2.59
+      "w1": -3.42,
+      "m1": 10.05,
+      "m3": 0.25
     },
     "returns": [
-      0.3,
-      -0.96,
-      1.77,
-      5.93,
-      12.05,
-      2.59
+      -3.24,
+      -4.48,
+      -3.42,
+      1.85,
+      10.05,
+      0.25
     ],
     "volumes": [
-      92,
-      182,
-      152,
-      127,
-      110,
-      93
+      66,
+      115,
+      150,
+      196,
+      85,
+      107
     ],
     "rsiStack": [
-      64.7,
-      68.2,
-      66.6,
-      62.9,
-      55.0,
-      38.4
+      36.4,
+      50.0,
+      54.5,
+      54.7,
+      50.3,
+      36.8
     ]
   },
   {
@@ -271,45 +271,45 @@ window.marketData = [
     "section": "Commodity",
     "name": "Silver",
     "category": "Precious",
-    "price": 62.77,
-    "change": 1.92,
-    "mom": 58.8,
-    "phase": "Mature",
-    "volume": "Fading",
-    "rotation": "Accumulation (Quiet)",
+    "price": 60.02,
+    "change": -4.38,
+    "mom": 47.2,
+    "phase": "Early",
+    "volume": "Spike",
+    "rotation": "Distribution",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 64.8,
-    "flow": 89,
+    "rsi": 54.4,
+    "flow": 207,
     "perf": {
-      "w1": 1.8,
-      "m1": 17.33,
-      "m3": -7.68
+      "w1": -4.3,
+      "m1": 14.63,
+      "m3": -9.35
     },
     "returns": [
-      1.92,
-      0.92,
-      1.8,
-      7.93,
-      17.33,
-      -7.68
+      -4.38,
+      -3.69,
+      -4.3,
+      2.63,
+      14.63,
+      -9.35
     ],
     "volumes": [
-      79,
-      121,
-      155,
-      92,
-      78,
-      110
+      89,
+      85,
+      141,
+      141,
+      70,
+      80
     ],
     "rsiStack": [
-      69.9,
-      68.4,
-      64.8,
-      59.8,
-      51.1,
-      35.0
+      41.4,
+      51.7,
+      54.4,
+      53.2,
+      47.7,
+      33.9
     ]
   },
   {
@@ -318,45 +318,45 @@ window.marketData = [
     "section": "Commodity",
     "name": "Uranium",
     "category": "Energy",
-    "price": 48.37,
-    "change": 0.67,
-    "mom": 63.9,
-    "phase": "Mature",
-    "volume": "Rising",
-    "rotation": "Accumulation (Day 1)",
+    "price": 45.57,
+    "change": -5.79,
+    "mom": 48.8,
+    "phase": "Early",
+    "volume": "Spike",
+    "rotation": "Distribution",
     "signal": "HOLD",
     "dist_streak": 0,
-    "acc_streak": 1,
-    "rsi": 65.4,
-    "flow": 103,
+    "acc_streak": 0,
+    "rsi": 53.3,
+    "flow": 179,
     "perf": {
-      "w1": 10.33,
-      "m1": 21.78,
-      "m3": -9.45
+      "w1": -1.09,
+      "m1": 16.64,
+      "m3": -9.57
     },
     "returns": [
-      0.67,
-      5.87,
-      10.33,
-      6.9,
-      21.78,
-      -9.45
+      -5.79,
+      -5.34,
+      -1.09,
+      1.42,
+      16.64,
+      -9.57
     ],
     "volumes": [
-      179,
-      84,
-      97,
-      94,
-      99,
-      98
+      103,
+      132,
+      131,
+      75,
+      53,
+      124
     ],
     "rsiStack": [
-      75.9,
-      70.4,
-      65.4,
-      60.3,
-      52.5,
-      38.0
+      43.1,
+      51.3,
+      53.3,
+      52.4,
+      48.1,
+      36.5
     ]
   },
   {
@@ -365,29 +365,29 @@ window.marketData = [
     "section": "Commodity",
     "name": "Crude Oil",
     "category": "Energy",
-    "price": 83.16,
-    "change": -0.44,
-    "mom": 48.2,
+    "price": 83.44,
+    "change": -0.11,
+    "mom": 48.8,
     "phase": "Early",
     "volume": "Rising",
     "rotation": "Neutral",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 50.9,
-    "flow": 5,
+    "rsi": 51.5,
+    "flow": 61,
     "perf": {
-      "w1": -4.48,
-      "m1": -1.78,
-      "m3": -13.39
+      "w1": -4.16,
+      "m1": -1.45,
+      "m3": -13.1
     },
     "returns": [
-      -0.44,
-      0.97,
-      -4.48,
-      0.92,
-      -1.78,
-      -13.39
+      -0.11,
+      1.31,
+      -4.16,
+      1.26,
+      -1.45,
+      -13.1
     ],
     "volumes": [
       107,
@@ -398,12 +398,12 @@ window.marketData = [
       90
     ],
     "rsiStack": [
-      44.4,
-      49.4,
-      50.9,
-      50.9,
+      46.6,
+      50.5,
+      51.5,
       51.2,
-      55.3
+      51.4,
+      55.5
     ]
   },
   {
@@ -412,45 +412,45 @@ window.marketData = [
     "section": "Commodity",
     "name": "CF",
     "category": "Materials",
-    "price": 125.71,
-    "change": 0.01,
-    "mom": 52.6,
+    "price": 125.79,
+    "change": 0.06,
+    "mom": 50.9,
     "phase": "Early",
-    "volume": "Rising",
+    "volume": "Fading",
     "rotation": "Neutral",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 56.8,
-    "flow": 89,
+    "rsi": 57.0,
+    "flow": 64,
     "perf": {
-      "w1": 0.01,
-      "m1": -0.05,
-      "m3": 10.78
+      "w1": -2.94,
+      "m1": 0.48,
+      "m3": 7.88
     },
     "returns": [
-      0.01,
-      -2.73,
-      0.01,
-      7.4,
-      -0.05,
-      10.78
+      0.06,
+      -1.16,
+      -2.94,
+      6.33,
+      0.48,
+      7.88
     ],
     "volumes": [
-      80,
-      84,
-      143,
-      109,
-      88,
-      68
+      89,
+      89,
+      160,
+      105,
+      56,
+      101
     ],
     "rsiStack": [
-      56.5,
-      57.7,
-      56.8,
-      55.9,
-      55.2,
-      56.5
+      57.0,
+      57.9,
+      57.0,
+      56.0,
+      55.3,
+      56.6
     ]
   },
   {
@@ -459,45 +459,45 @@ window.marketData = [
     "section": "Commodity",
     "name": "IPI",
     "category": "Materials",
-    "price": 37.68,
-    "change": 0.8,
-    "mom": 52.8,
+    "price": 37.6,
+    "change": -0.21,
+    "mom": 49.8,
     "phase": "Early",
     "volume": "Fading",
     "rotation": "Trending up",
     "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 58.0,
-    "flow": 78,
+    "rsi": 57.4,
+    "flow": 72,
     "perf": {
-      "w1": -1.57,
-      "m1": 6.68,
-      "m3": -1.02
+      "w1": -3.54,
+      "m1": 10.72,
+      "m3": 3.27
     },
     "returns": [
-      0.8,
-      -0.55,
-      -1.57,
-      4.72,
-      6.68,
-      -1.02
+      -0.21,
+      -0.56,
+      -3.54,
+      2.68,
+      10.72,
+      3.27
     ],
     "volumes": [
-      74,
-      148,
-      176,
-      70,
-      71,
-      75
+      78,
+      78,
+      158,
+      157,
+      98,
+      89
     ],
     "rsiStack": [
-      55.3,
-      58.4,
-      58.0,
-      56.2,
-      53.6,
-      51.0
+      53.3,
+      57.5,
+      57.4,
+      55.8,
+      53.4,
+      50.9
     ]
   },
   {
@@ -506,45 +506,45 @@ window.marketData = [
     "section": "Commodity",
     "name": "MOS",
     "category": "Materials",
-    "price": 23.76,
-    "change": -1.66,
-    "mom": 57.0,
+    "price": 23.6,
+    "change": -0.67,
+    "mom": 53.0,
     "phase": "Early",
-    "volume": "Rising",
-    "rotation": "Neutral",
-    "signal": "HOLD",
+    "volume": "Fading",
+    "rotation": "Trending up",
+    "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 56.8,
-    "flow": 68,
+    "rsi": 55.4,
+    "flow": 67,
     "perf": {
-      "w1": 1.76,
-      "m1": 4.35,
-      "m3": 1.97
+      "w1": -3.32,
+      "m1": 6.69,
+      "m3": 1.29
     },
     "returns": [
-      -1.66,
-      -1.0,
-      1.76,
-      9.09,
-      4.35,
-      1.97
+      -0.67,
+      -2.76,
+      -3.32,
+      9.21,
+      6.69,
+      1.29
     ],
     "volumes": [
-      96,
-      104,
-      159,
-      77,
-      106,
-      79
+      68,
+      71,
+      163,
+      115,
+      81,
+      153
     ],
     "rsiStack": [
-      57.2,
-      58.1,
-      56.8,
-      55.2,
-      52.3,
-      45.4
+      52.7,
+      55.8,
+      55.4,
+      54.3,
+      51.7,
+      45.1
     ]
   },
   {
@@ -553,45 +553,45 @@ window.marketData = [
     "section": "Commodity",
     "name": "NTR",
     "category": "Materials",
-    "price": 73.06,
-    "change": -0.75,
-    "mom": 54.2,
+    "price": 73.51,
+    "change": 0.62,
+    "mom": 53.8,
     "phase": "Mature",
     "volume": "Fading",
     "rotation": "Fading",
-    "signal": "REDUCE",
+    "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 61.7,
-    "flow": 49,
+    "rsi": 62.9,
+    "flow": 67,
     "perf": {
-      "w1": -0.08,
-      "m1": 3.31,
-      "m3": 6.66
+      "w1": -2.34,
+      "m1": 6.43,
+      "m3": 6.83
     },
     "returns": [
-      -0.75,
-      -1.66,
-      -0.08,
-      8.29,
-      3.31,
-      6.66
+      0.62,
+      0.92,
+      -2.34,
+      7.72,
+      6.43,
+      6.83
     ],
     "volumes": [
-      79,
-      82,
-      117,
-      88,
+      49,
       92,
-      83
+      109,
+      132,
+      68,
+      94
     ],
     "rsiStack": [
-      59.8,
-      62.8,
-      61.7,
-      59.6,
-      55.8,
-      48.3
+      63.5,
+      64.7,
+      62.9,
+      60.5,
+      56.4,
+      48.8
     ]
   },
   {
@@ -600,45 +600,45 @@ window.marketData = [
     "section": "Crypto",
     "name": "Bitcoin",
     "category": "Currency",
-    "price": 79889.64,
-    "change": 1.09,
-    "mom": 65.2,
-    "phase": "Exhaustion",
-    "volume": "Spike",
-    "rotation": "Fading",
-    "signal": "REDUCE",
+    "price": 77582.59,
+    "change": -3.33,
+    "mom": 54.1,
+    "phase": "Mature",
+    "volume": "Rising",
+    "rotation": "Distribution",
+    "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 81.9,
-    "flow": 124,
+    "rsi": 69.9,
+    "flow": 110,
     "perf": {
-      "w1": 3.64,
-      "m1": 23.13,
-      "m3": 34.2
+      "w1": -0.22,
+      "m1": 19.53,
+      "m3": 29.01
     },
     "returns": [
-      1.09,
-      1.17,
-      3.64,
-      23.85,
-      23.13,
-      34.2
+      -3.33,
+      -1.25,
+      -0.22,
+      19.95,
+      19.53,
+      29.01
     ],
     "volumes": [
-      99,
-      198,
-      161,
-      255,
-      108,
-      96
+      112,
+      160,
+      118,
+      300,
+      96,
+      54
     ],
     "rsiStack": [
-      87.5,
-      85.6,
-      81.9,
-      77.3,
-      70.6,
-      61.0
+      58.1,
+      68.2,
+      69.9,
+      68.7,
+      65.0,
+      58.1
     ]
   },
   {
@@ -647,45 +647,45 @@ window.marketData = [
     "section": "Crypto",
     "name": "Coinbase",
     "category": "Exchange",
-    "price": 190.72,
-    "change": 4.92,
-    "mom": 67.6,
-    "phase": "Mature",
+    "price": 178.64,
+    "change": -6.33,
+    "mom": 56.1,
+    "phase": "Early",
     "volume": "Fading",
-    "rotation": "Accumulation (Quiet)",
-    "signal": "HOLD",
+    "rotation": "Trending up",
+    "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 64.8,
-    "flow": 92,
+    "rsi": 56.8,
+    "flow": 105,
     "perf": {
-      "w1": 10.66,
-      "m1": 16.59,
-      "m3": 9.62
+      "w1": -4.21,
+      "m1": 22.14,
+      "m3": 9.45
     },
     "returns": [
-      4.92,
-      6.26,
-      10.66,
-      23.92,
-      16.59,
-      9.62
+      -6.33,
+      -4.55,
+      -4.21,
+      20.32,
+      22.14,
+      9.45
     ],
     "volumes": [
-      63,
-      136,
-      205,
-      91,
-      96,
-      118
+      92,
+      106,
+      241,
+      213,
+      93,
+      288
     ],
     "rsiStack": [
-      73.5,
-      69.4,
-      64.8,
-      60.9,
+      53.1,
+      57.2,
       56.8,
-      51.7
+      55.4,
+      53.1,
+      49.6
     ]
   },
   {
@@ -694,45 +694,45 @@ window.marketData = [
     "section": "Crypto",
     "name": "Circle",
     "category": "Stablecoin",
-    "price": 94.24,
-    "change": 4.82,
-    "mom": 65.3,
+    "price": 87.14,
+    "change": -7.53,
+    "mom": 56.3,
     "phase": "Mature",
-    "volume": "Rising",
-    "rotation": "Accumulation (Quiet)",
+    "volume": "Fading",
+    "rotation": "Fading",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 71.6,
-    "flow": 97,
+    "rsi": 60.9,
+    "flow": 99,
     "perf": {
-      "w1": 12.65,
-      "m1": 46.7,
-      "m3": -6.55
+      "w1": -0.95,
+      "m1": 39.18,
+      "m3": -3.32
     },
     "returns": [
-      4.82,
-      7.43,
-      12.65,
-      25.02,
-      46.7,
-      -6.55
+      -7.53,
+      -5.3,
+      -0.95,
+      21.7,
+      39.18,
+      -3.32
     ],
     "volumes": [
-      107,
+      98,
       130,
-      183,
-      82,
-      93,
-      66
+      200,
+      201,
+      74,
+      112
     ],
     "rsiStack": [
-      81.9,
-      77.8,
-      71.6,
-      65.4,
-      59.5,
-      57.5
+      53.7,
+      60.9,
+      60.9,
+      58.4,
+      55.4,
+      55.2
     ]
   },
   {
@@ -741,45 +741,45 @@ window.marketData = [
     "section": "Crypto",
     "name": "MicroStrategy",
     "category": "Fund",
-    "price": 137.4,
-    "change": 11.54,
-    "mom": 73.8,
+    "price": 127.31,
+    "change": -7.34,
+    "mom": 64.2,
     "phase": "Mature",
     "volume": "Spike",
     "rotation": "Accumulation",
     "signal": "HOLD",
-    "dist_streak": 0,
+    "dist_streak": 1,
     "acc_streak": 0,
-    "rsi": 72.8,
-    "flow": 179,
+    "rsi": 63.0,
+    "flow": 123,
     "perf": {
-      "w1": 22.25,
-      "m1": 40.58,
-      "m3": 0.97
+      "w1": 6.76,
+      "m1": 36.48,
+      "m3": 0.6
     },
     "returns": [
-      11.54,
-      12.04,
-      22.25,
-      41.5,
-      40.58,
-      0.97
+      -7.34,
+      0.38,
+      6.76,
+      36.83,
+      36.48,
+      0.6
     ],
     "volumes": [
-      74,
-      187,
-      246,
-      106,
-      118,
-      80
+      180,
+      138,
+      222,
+      278,
+      130,
+      128
     ],
     "rsiStack": [
-      84.9,
-      79.3,
-      72.8,
-      66.4,
-      58.9,
-      49.9
+      61.7,
+      64.7,
+      63.0,
+      59.7,
+      54.8,
+      47.9
     ]
   },
   {
@@ -788,45 +788,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Energy",
     "category": "Energy",
-    "price": 62.29,
-    "change": -0.22,
-    "mom": 44.4,
+    "price": 62.68,
+    "change": 0.63,
+    "mom": 47.4,
     "phase": "Mature",
     "volume": "Rising",
-    "rotation": "Distribution",
+    "rotation": "Fading",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 60.1,
-    "flow": 113,
+    "rsi": 62.1,
+    "flow": 79,
     "perf": {
-      "w1": -2.29,
-      "m1": 5.65,
-      "m3": 7.47
+      "w1": -1.51,
+      "m1": 5.26,
+      "m3": 6.76
     },
     "returns": [
-      -0.22,
-      -1.3,
-      -2.29,
-      2.01,
-      5.65,
-      7.47
+      0.63,
+      1.0,
+      -1.51,
+      1.24,
+      5.26,
+      6.76
     ],
     "volumes": [
-      95,
-      88,
-      90,
-      98,
-      73,
-      75
+      113,
+      105,
+      104,
+      92,
+      82,
+      78
     ],
     "rsiStack": [
-      46.3,
-      57.2,
-      60.1,
-      60.0,
-      57.8,
-      52.7
+      55.6,
+      60.7,
+      62.1,
+      61.3,
+      58.7,
+      53.3
     ]
   },
   {
@@ -835,45 +835,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Technology",
     "category": "Tech",
-    "price": 188.61,
-    "change": 3.16,
-    "mom": 58.8,
+    "price": 185.69,
+    "change": -1.55,
+    "mom": 51.9,
     "phase": "Early",
-    "volume": "Fading",
-    "rotation": "Accumulation",
+    "volume": "Rising",
+    "rotation": "Trending up",
     "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 57.8,
-    "flow": 119,
+    "rsi": 53.0,
+    "flow": 94,
     "perf": {
-      "w1": 3.01,
-      "m1": 7.33,
-      "m3": -4.84
+      "w1": 1.3,
+      "m1": 5.9,
+      "m3": -5.37
     },
     "returns": [
-      3.16,
-      4.75,
-      3.01,
-      -1.13,
-      7.33,
-      -4.84
+      -1.55,
+      2.17,
+      1.3,
+      -2.27,
+      5.9,
+      -5.37
     ],
     "volumes": [
-      65,
-      83,
-      62,
-      104,
-      57,
-      161
+      119,
+      70,
+      72,
+      89,
+      45,
+      100
     ],
     "rsiStack": [
-      70.3,
-      61.6,
-      57.8,
-      55.9,
-      54.6,
-      52.1
+      54.4,
+      53.4,
+      53.0,
+      52.8,
+      52.6,
+      50.9
     ]
   },
   {
@@ -882,45 +882,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Utilities",
     "category": "Defensive",
-    "price": 43.18,
-    "change": -0.76,
-    "mom": 44.5,
+    "price": 42.73,
+    "change": -1.04,
+    "mom": 40.1,
     "phase": "Bottoming",
     "volume": "Fading",
-    "rotation": "Neutral",
-    "signal": "WATCH",
+    "rotation": "Distribution (Quiet)",
+    "signal": "AVOID",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 39.7,
-    "flow": 81,
+    "rsi": 35.8,
+    "flow": 103,
     "perf": {
-      "w1": -1.35,
-      "m1": -3.31,
-      "m3": -1.64
+      "w1": -0.09,
+      "m1": -3.65,
+      "m3": -2.24
     },
     "returns": [
-      -0.76,
+      -1.04,
+      -1.34,
       -0.09,
-      -1.35,
-      -1.95,
-      -3.31,
-      -1.64
+      -3.57,
+      -3.65,
+      -2.24
     ],
     "volumes": [
-      61,
-      96,
-      84,
-      96,
-      88,
-      131
+      81,
+      65,
+      107,
+      79,
+      85,
+      117
     ],
     "rsiStack": [
-      37.6,
-      38.5,
-      39.7,
-      41.2,
-      42.4,
-      41.1
+      27.5,
+      32.5,
+      35.8,
+      38.4,
+      40.5,
+      40.0
     ]
   },
   {
@@ -929,45 +929,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Health Care",
     "category": "Health",
-    "price": 171.58,
-    "change": -1.13,
-    "mom": 39.3,
+    "price": 171.16,
+    "change": -0.24,
+    "mom": 37.3,
     "phase": "Early",
     "volume": "Fading",
-    "rotation": "Neutral",
-    "signal": "HOLD",
+    "rotation": "Trending up",
+    "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 58.3,
-    "flow": 81,
+    "rsi": 57.1,
+    "flow": 57,
     "perf": {
-      "w1": -0.47,
-      "m1": 4.93,
-      "m3": 17.2
+      "w1": -1.98,
+      "m1": 5.3,
+      "m3": 16.0
     },
     "returns": [
-      -1.13,
-      -1.79,
-      -0.47,
-      1.9,
-      4.93,
-      17.2
+      -0.24,
+      -2.36,
+      -1.98,
+      2.26,
+      5.3,
+      16.0
     ],
     "volumes": [
-      62,
-      61,
-      99,
-      84,
-      74,
-      125
+      81,
+      58,
+      103,
+      173,
+      56,
+      99
     ],
     "rsiStack": [
-      44.6,
-      54.7,
-      58.3,
-      59.4,
-      58.7,
-      53.1
+      42.1,
+      53.0,
+      57.1,
+      58.6,
+      58.2,
+      52.8
     ]
   },
   {
@@ -976,45 +976,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Communication Services",
     "category": "Comm",
-    "price": 111.41,
-    "change": -1.07,
-    "mom": 48.1,
+    "price": 112.99,
+    "change": 1.42,
+    "mom": 55.8,
     "phase": "Early",
-    "volume": "Fading",
+    "volume": "Rising",
     "rotation": "Neutral",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 51.0,
-    "flow": 101,
+    "rsi": 56.3,
+    "flow": 87,
     "perf": {
-      "w1": 0.66,
-      "m1": 4.53,
-      "m3": -1.9
+      "w1": 1.43,
+      "m1": 4.39,
+      "m3": 0.81
     },
     "returns": [
-      -1.07,
-      -0.81,
-      0.66,
-      -1.01,
-      4.53,
-      -1.9
+      1.42,
+      -0.17,
+      1.43,
+      0.04,
+      4.39,
+      0.81
     ],
     "volumes": [
-      79,
-      83,
-      70,
-      71,
-      94,
-      151
+      101,
+      56,
+      99,
+      61,
+      53,
+      77
     ],
     "rsiStack": [
-      44.4,
-      49.8,
-      51.0,
-      50.9,
-      50.2,
-      49.6
+      61.3,
+      58.4,
+      56.3,
+      54.5,
+      52.7,
+      51.3
     ]
   },
   {
@@ -1023,45 +1023,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Financials",
     "category": "Financial",
-    "price": 57.88,
-    "change": -0.65,
-    "mom": 40.7,
+    "price": 58.1,
+    "change": 0.38,
+    "mom": 44.4,
     "phase": "Early",
     "volume": "Fading",
     "rotation": "Neutral",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 56.4,
-    "flow": 93,
+    "rsi": 58.5,
+    "flow": 91,
     "perf": {
-      "w1": 1.63,
-      "m1": 1.54,
-      "m3": 12.48
+      "w1": 1.08,
+      "m1": 2.04,
+      "m3": 14.21
     },
     "returns": [
-      -0.65,
-      -0.58,
-      1.63,
-      -0.65,
-      1.54,
-      12.48
+      0.38,
+      -0.36,
+      1.08,
+      -0.1,
+      2.04,
+      14.21
     ],
     "volumes": [
-      71,
-      104,
-      101,
-      86,
-      77,
+      93,
+      80,
+      90,
+      118,
+      96,
       97
     ],
     "rsiStack": [
-      49.3,
-      53.5,
-      56.4,
-      58.3,
-      59.3,
-      58.5
+      56.6,
+      57.0,
+      58.5,
+      59.7,
+      60.2,
+      59.1
     ]
   },
   {
@@ -1070,45 +1070,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Real Estate",
     "category": "Real Estate",
-    "price": 44.66,
-    "change": -0.95,
-    "mom": 37.2,
+    "price": 44.48,
+    "change": -0.4,
+    "mom": 33.7,
     "phase": "Bottoming",
     "volume": "Fading",
     "rotation": "Neutral",
     "signal": "WATCH",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 45.5,
-    "flow": 89,
+    "rsi": 43.3,
+    "flow": 75,
     "perf": {
-      "w1": -0.93,
-      "m1": -1.41,
-      "m3": 2.69
+      "w1": -1.33,
+      "m1": -1.31,
+      "m3": 2.23
     },
     "returns": [
-      -0.95,
-      -1.48,
-      -0.93,
-      -1.02,
-      -1.41,
-      2.69
+      -0.4,
+      -1.94,
+      -1.33,
+      -1.75,
+      -1.31,
+      2.23
     ],
     "volumes": [
-      65,
-      72,
-      79,
-      110,
-      112,
+      89,
+      58,
+      71,
+      82,
+      88,
       142
     ],
     "rsiStack": [
-      32.8,
-      41.8,
-      45.5,
-      47.6,
-      48.8,
-      47.6
+      27.9,
+      38.5,
+      43.3,
+      46.0,
+      47.8,
+      47.0
     ]
   },
   {
@@ -1117,45 +1117,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Industrials",
     "category": "Industrial",
-    "price": 178.8,
-    "change": -0.85,
-    "mom": 39.0,
+    "price": 177.14,
+    "change": -0.93,
+    "mom": 35.0,
     "phase": "Bottoming",
-    "volume": "Rising",
-    "rotation": "Distribution (Quiet)",
-    "signal": "WATCH",
-    "dist_streak": 1,
+    "volume": "Spike",
+    "rotation": "Distribution",
+    "signal": "AVOID",
+    "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 41.4,
-    "flow": 91,
+    "rsi": 37.8,
+    "flow": 135,
     "perf": {
-      "w1": -0.54,
-      "m1": 0.23,
-      "m3": 2.65
+      "w1": -1.73,
+      "m1": -1.5,
+      "m3": 1.78
     },
     "returns": [
-      -0.85,
-      -0.11,
-      -0.54,
-      -3.76,
-      0.23,
-      2.65
+      -0.93,
+      -0.71,
+      -1.73,
+      -5.02,
+      -1.5,
+      1.78
     ],
     "volumes": [
-      133,
-      85,
-      105,
-      76,
-      78,
-      113
+      91,
+      106,
+      88,
+      132,
+      58,
+      110
     ],
     "rsiStack": [
-      32.5,
-      36.5,
-      41.4,
-      44.9,
-      46.4,
-      41.5
+      24.7,
+      31.5,
+      37.8,
+      42.2,
+      44.6,
+      40.7
     ]
   },
   {
@@ -1164,45 +1164,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Materials",
     "category": "Materials",
-    "price": 53.23,
-    "change": -0.82,
-    "mom": 51.5,
+    "price": 53.18,
+    "change": -0.09,
+    "mom": 48.2,
     "phase": "Early",
-    "volume": "Fading",
-    "rotation": "Neutral",
+    "volume": "Spike",
+    "rotation": "Distribution",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 57.4,
-    "flow": 71,
+    "rsi": 56.9,
+    "flow": 127,
     "perf": {
-      "w1": 1.55,
-      "m1": 3.08,
-      "m3": 3.32
+      "w1": -0.67,
+      "m1": 5.45,
+      "m3": 3.0
     },
     "returns": [
-      -0.82,
-      -0.65,
-      1.55,
-      1.76,
-      3.08,
-      3.32
+      -0.09,
+      -0.75,
+      -0.67,
+      1.22,
+      5.45,
+      3.0
     ],
     "volumes": [
-      64,
-      111,
-      83,
-      69,
-      90,
-      99
+      71,
+      72,
+      127,
+      96,
+      65,
+      162
     ],
     "rsiStack": [
-      54.4,
-      57.7,
-      57.4,
-      56.1,
-      52.8,
-      42.9
+      52.4,
+      56.8,
+      56.9,
+      55.8,
+      52.6,
+      42.8
     ]
   },
   {
@@ -1211,45 +1211,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Consumer Discretionary",
     "category": "Consumer",
-    "price": 115.88,
-    "change": -1.09,
-    "mom": 40.9,
+    "price": 117.21,
+    "change": 1.15,
+    "mom": 48.9,
     "phase": "Early",
     "volume": "Fading",
-    "rotation": "Distribution (Quiet)",
-    "signal": "REDUCE",
+    "rotation": "Neutral",
+    "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 46.1,
-    "flow": 88,
+    "rsi": 50.8,
+    "flow": 80,
     "perf": {
       "w1": -0.69,
-      "m1": 3.11,
-      "m3": -1.45
+      "m1": 0.96,
+      "m3": 0.41
     },
     "returns": [
-      -1.09,
-      -2.05,
+      1.15,
+      -0.63,
       -0.69,
-      -2.17,
-      3.11,
-      -1.45
+      -0.84,
+      0.96,
+      0.41
     ],
     "volumes": [
-      53,
-      73,
-      78,
-      76,
-      61,
-      96
+      88,
+      66,
+      100,
+      108,
+      54,
+      155
     ],
     "rsiStack": [
-      31.8,
-      41.8,
-      46.1,
-      47.8,
-      48.3,
-      45.9
+      49.1,
+      49.9,
+      50.8,
+      50.9,
+      50.3,
+      47.1
     ]
   },
   {
@@ -1258,45 +1258,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Consumer Staples",
     "category": "Defensive",
-    "price": 85.08,
-    "change": -1.38,
-    "mom": 39.8,
+    "price": 85.45,
+    "change": 0.43,
+    "mom": 42.7,
     "phase": "Early",
     "volume": "Fading",
     "rotation": "Neutral",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 47.9,
-    "flow": 92,
+    "rsi": 49.8,
+    "flow": 76,
     "perf": {
-      "w1": -0.28,
-      "m1": -0.46,
-      "m3": 3.97
+      "w1": -0.63,
+      "m1": 0.47,
+      "m3": 4.0
     },
     "returns": [
-      -1.38,
-      -2.71,
-      -0.28,
-      -1.07,
-      -0.46,
-      3.97
+      0.43,
+      -1.24,
+      -0.63,
+      -0.74,
+      0.47,
+      4.0
     ],
     "volumes": [
-      76,
-      85,
-      106,
-      101,
-      97,
-      142
+      92,
+      70,
+      103,
+      104,
+      68,
+      100
     ],
     "rsiStack": [
-      38.0,
-      45.0,
-      47.9,
-      49.3,
-      49.2,
-      44.9
+      43.9,
+      48.0,
+      49.8,
+      50.5,
+      50.0,
+      45.4
     ]
   },
   {
@@ -1305,45 +1305,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Semiconductors",
     "category": "Semis",
-    "price": 525.43,
-    "change": 1.95,
-    "mom": 50.9,
-    "phase": "Early",
+    "price": 508.62,
+    "change": -3.2,
+    "mom": 43.2,
+    "phase": "Bottoming",
     "volume": "Fading",
-    "rotation": "Accumulation",
-    "signal": "BUY",
+    "rotation": "Distribution",
+    "signal": "WATCH",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 48.1,
-    "flow": 116,
+    "rsi": 43.1,
+    "flow": 111,
     "perf": {
-      "w1": 0.59,
-      "m1": 4.14,
-      "m3": -13.15
+      "w1": -2.2,
+      "m1": 0.74,
+      "m3": -17.39
     },
     "returns": [
-      1.95,
-      3.8,
-      0.59,
-      -4.6,
-      4.14,
-      -13.15
+      -3.2,
+      -1.06,
+      -2.2,
+      -7.59,
+      0.74,
+      -17.39
     ],
     "volumes": [
-      53,
-      84,
-      64,
-      102,
-      57,
-      161
+      117,
+      72,
+      65,
+      85,
+      44,
+      123
     ],
     "rsiStack": [
-      54.2,
-      49.2,
-      48.1,
-      48.1,
-      48.4,
-      46.2
+      35.9,
+      40.4,
+      43.1,
+      45.0,
+      46.5,
+      45.2
     ]
   },
   {
@@ -1352,45 +1352,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Agriculture",
     "category": "Agriculture",
-    "price": 28.82,
-    "change": 0.8,
-    "mom": 63.4,
+    "price": 29.19,
+    "change": 1.28,
+    "mom": 65.9,
     "phase": "Mature",
     "volume": "Spike",
-    "rotation": "Accumulation (Day 2)",
-    "signal": "BUY",
+    "rotation": "Confirmed Accumulation",
+    "signal": "STRONG BUY",
     "dist_streak": 0,
-    "acc_streak": 2,
-    "rsi": 68.3,
-    "flow": 262,
+    "acc_streak": 3,
+    "rsi": 72.8,
+    "flow": 304,
     "perf": {
-      "w1": 1.55,
-      "m1": 4.88,
-      "m3": 6.27
+      "w1": 3.07,
+      "m1": 6.11,
+      "m3": 8.67
     },
     "returns": [
-      0.8,
-      1.84,
-      1.55,
-      4.34,
-      4.88,
-      6.27
+      1.28,
+      3.22,
+      3.07,
+      5.11,
+      6.11,
+      8.67
     ],
     "volumes": [
-      218,
-      117,
-      169,
-      194,
-      66,
-      148
+      262,
+      129,
+      128,
+      96,
+      63,
+      48
     ],
     "rsiStack": [
-      84.6,
-      74.5,
-      68.3,
-      64.5,
-      61.4,
-      59.4
+      90.1,
+      80.0,
+      72.8,
+      68.1,
+      64.0,
+      61.2
     ]
   },
   {
@@ -1399,45 +1399,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Agriculture",
     "category": "Agriculture",
-    "price": 45.96,
-    "change": -1.23,
-    "mom": 51.1,
-    "phase": "Early",
-    "volume": "Spike",
-    "rotation": "Accumulation",
-    "signal": "BUY",
+    "price": 46.58,
+    "change": 1.35,
+    "mom": 56.8,
+    "phase": "Mature",
+    "volume": "Rising",
+    "rotation": "Accumulation (Day 1)",
+    "signal": "HOLD",
     "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 57.7,
-    "flow": 122,
+    "acc_streak": 1,
+    "rsi": 62.5,
+    "flow": 57,
     "perf": {
-      "w1": 0.57,
-      "m1": 1.46,
-      "m3": 2.45
+      "w1": -0.3,
+      "m1": 5.43,
+      "m3": 3.24
     },
     "returns": [
-      -1.23,
-      -1.37,
-      0.57,
-      3.14,
-      1.46,
-      2.45
+      1.35,
+      0.67,
+      -0.3,
+      4.6,
+      5.43,
+      3.24
     ],
     "volumes": [
-      97,
-      145,
-      254,
-      55,
-      30,
-      36
+      122,
+      61,
+      134,
+      29,
+      56,
+      42
     ],
     "rsiStack": [
-      54.3,
-      58.1,
-      57.7,
-      56.4,
-      53.2,
-      44.3
+      66.5,
+      65.0,
+      62.5,
+      60.0,
+      55.8,
+      46.1
     ]
   },
   {
@@ -1446,45 +1446,45 @@ window.marketData = [
     "section": "ETF",
     "name": "Transportation",
     "category": "Auto",
-    "price": 44.14,
-    "change": -0.54,
-    "mom": 40.1,
+    "price": 43.86,
+    "change": -0.64,
+    "mom": 32.8,
     "phase": "Bottoming",
     "volume": "Rising",
     "rotation": "Neutral",
     "signal": "WATCH",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 44.0,
-    "flow": 20,
+    "rsi": 41.3,
+    "flow": 38,
     "perf": {
-      "w1": 0.25,
-      "m1": -0.72,
-      "m3": -0.53
+      "w1": -2.02,
+      "m1": -0.87,
+      "m3": -1.15
     },
     "returns": [
-      -0.54,
-      -0.24,
-      0.25,
-      -2.35,
-      -0.72,
-      -0.53
+      -0.64,
+      -1.11,
+      -2.02,
+      -3.04,
+      -0.87,
+      -1.15
     ],
     "volumes": [
-      23,
-      45,
-      19,
-      9,
-      24,
-      15
+      20,
+      27,
+      46,
+      4,
+      37,
+      10
     ],
     "rsiStack": [
-      37.1,
-      41.1,
-      44.0,
-      46.3,
-      47.5,
-      43.7
+      29.6,
+      36.9,
+      41.3,
+      44.5,
+      46.4,
+      43.1
     ]
   },
   {
@@ -1493,45 +1493,45 @@ window.marketData = [
     "section": "Stock",
     "name": "FTAG",
     "category": "Agriculture",
-    "price": 29.96,
-    "change": -0.7,
-    "mom": 53.5,
-    "phase": "Early",
-    "volume": "Rising",
-    "rotation": "Neutral",
-    "signal": "HOLD",
+    "price": 30.18,
+    "change": 0.73,
+    "mom": 57.3,
+    "phase": "Mature",
+    "volume": "Fading",
+    "rotation": "Fading",
+    "signal": "REDUCE",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 58.1,
-    "flow": 15,
+    "rsi": 61.5,
+    "flow": 30,
     "perf": {
-      "w1": 0.74,
-      "m1": 0.77,
-      "m3": 3.27
+      "w1": -0.27,
+      "m1": 3.7,
+      "m3": 3.77
     },
     "returns": [
-      -0.7,
-      -0.86,
-      0.74,
+      0.73,
+      -0.04,
+      -0.27,
       3.38,
-      0.77,
-      3.27
+      3.7,
+      3.77
     ],
     "volumes": [
-      79,
-      66,
-      102,
+      15,
       44,
-      148,
-      31
+      142,
+      66,
+      20,
+      32
     ],
     "rsiStack": [
-      56.9,
-      59.3,
-      58.1,
-      56.4,
-      51.7,
-      38.5
+      67.1,
+      64.4,
+      61.5,
+      58.8,
+      53.4,
+      39.6
     ]
   },
   {
@@ -1540,45 +1540,45 @@ window.marketData = [
     "section": "Stock",
     "name": "SBUX",
     "category": "Consumer",
-    "price": 107.26,
-    "change": -1.13,
-    "mom": 49.9,
+    "price": 107.85,
+    "change": 0.55,
+    "mom": 50.3,
     "phase": "Early",
     "volume": "Fading",
     "rotation": "Neutral",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 53.9,
-    "flow": 99,
+    "rsi": 55.4,
+    "flow": 79,
     "perf": {
-      "w1": 3.14,
-      "m1": 1.33,
-      "m3": 12.3
+      "w1": 0.72,
+      "m1": 2.47,
+      "m3": 12.47
     },
     "returns": [
-      -1.13,
-      -0.21,
-      3.14,
-      -1.19,
-      1.33,
-      12.3
+      0.55,
+      1.98,
+      0.72,
+      0.15,
+      2.47,
+      12.47
     ],
     "volumes": [
-      82,
-      88,
-      98,
-      70,
-      66,
-      313
+      99,
+      75,
+      72,
+      89,
+      46,
+      161
     ],
     "rsiStack": [
-      53.5,
-      53.7,
-      53.9,
-      53.9,
-      53.8,
-      53.5
+      57.5,
+      56.1,
+      55.4,
+      55.0,
+      54.6,
+      54.0
     ]
   },
   {
@@ -1587,45 +1587,45 @@ window.marketData = [
     "section": "Stock",
     "name": "MOO",
     "category": "Agriculture",
-    "price": 84.27,
-    "change": -0.94,
-    "mom": 52.3,
+    "price": 84.99,
+    "change": 0.85,
+    "mom": 55.5,
     "phase": "Mature",
-    "volume": "Spike",
-    "rotation": "Accumulation",
-    "signal": "HOLD",
+    "volume": "Rising",
+    "rotation": "Accumulation (Day 1)",
+    "signal": "REDUCE",
     "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 61.7,
-    "flow": 185,
+    "acc_streak": 1,
+    "rsi": 65.3,
+    "flow": 120,
     "perf": {
-      "w1": 0.91,
-      "m1": 0.9,
-      "m3": 5.65
+      "w1": -0.23,
+      "m1": 4.0,
+      "m3": 6.05
     },
     "returns": [
-      -0.94,
-      -0.85,
-      0.91,
-      4.09,
-      0.9,
-      5.65
+      0.85,
+      0.05,
+      -0.23,
+      4.45,
+      4.0,
+      6.05
     ],
     "volumes": [
-      60,
-      149,
-      298,
-      181,
-      87,
-      192
+      185,
+      148,
+      316,
+      88,
+      130,
+      174
     ],
     "rsiStack": [
-      59.3,
-      62.9,
-      61.7,
-      59.6,
-      54.5,
-      41.1
+      69.5,
+      68.2,
+      65.3,
+      62.3,
+      56.5,
+      42.4
     ]
   },
   {
@@ -1634,45 +1634,45 @@ window.marketData = [
     "section": "Stock",
     "name": "F",
     "category": "Auto",
-    "price": 13.95,
-    "change": 0.36,
-    "mom": 51.7,
+    "price": 13.88,
+    "change": -0.5,
+    "mom": 46.4,
     "phase": "Early",
     "volume": "Fading",
-    "rotation": "Neutral",
-    "signal": "HOLD",
+    "rotation": "Distribution (Quiet)",
+    "signal": "REDUCE",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 47.1,
-    "flow": 91,
+    "rsi": 46.1,
+    "flow": 99,
     "perf": {
-      "w1": -0.29,
-      "m1": -6.12,
-      "m3": -13.62
+      "w1": -3.68,
+      "m1": -5.45,
+      "m3": -11.65
     },
     "returns": [
-      0.36,
-      0.14,
-      -0.29,
-      0.43,
-      -6.12,
-      -13.62
+      -0.5,
+      -0.5,
+      -3.68,
+      -3.41,
+      -5.45,
+      -11.65
     ],
     "volumes": [
-      67,
-      111,
-      83,
-      50,
-      50,
-      110
+      91,
+      77,
+      93,
+      100,
+      93,
+      102
     ],
     "rsiStack": [
-      45.0,
-      46.2,
+      41.6,
+      44.6,
+      46.1,
       47.1,
-      47.8,
-      47.2,
-      40.6
+      46.8,
+      40.4
     ]
   },
   {
@@ -1681,45 +1681,45 @@ window.marketData = [
     "section": "Stock",
     "name": "GM",
     "category": "Auto",
-    "price": 86.18,
-    "change": -0.17,
-    "mom": 48.2,
+    "price": 86.27,
+    "change": 0.1,
+    "mom": 47.5,
     "phase": "Early",
     "volume": "Spike",
-    "rotation": "Accumulation",
-    "signal": "BUY",
+    "rotation": "Accumulation (Day 1)",
+    "signal": "HOLD",
     "dist_streak": 0,
-    "acc_streak": 0,
-    "rsi": 52.6,
-    "flow": 153,
+    "acc_streak": 1,
+    "rsi": 52.9,
+    "flow": 129,
     "perf": {
-      "w1": 0.03,
-      "m1": -2.51,
-      "m3": 5.44
+      "w1": -1.89,
+      "m1": -2.91,
+      "m3": 5.59
     },
     "returns": [
-      -0.17,
-      -0.92,
-      0.03,
-      -0.24,
-      -2.51,
-      5.44
+      0.1,
+      0.54,
+      -1.89,
+      -0.58,
+      -2.91,
+      5.59
     ],
     "volumes": [
-      110,
-      87,
-      86,
-      59,
+      153,
+      97,
+      92,
+      79,
       50,
-      83
+      89
     ],
     "rsiStack": [
-      48.5,
-      50.5,
-      52.6,
-      53.7,
+      49.7,
+      51.0,
+      52.9,
       53.9,
-      52.2
+      54.0,
+      52.3
     ]
   },
   {
@@ -1728,45 +1728,45 @@ window.marketData = [
     "section": "Stock",
     "name": "TAGS",
     "category": "Commodity",
-    "price": 28.0,
-    "change": 0.43,
-    "mom": 64.6,
+    "price": 28.24,
+    "change": 0.84,
+    "mom": 64.1,
     "phase": "Exhaustion",
-    "volume": "Rising",
-    "rotation": "Accumulation (Day 1)",
+    "volume": "Spike",
+    "rotation": "Trending up",
     "signal": "WATCH",
     "dist_streak": 0,
-    "acc_streak": 1,
-    "rsi": 82.9,
-    "flow": 72,
+    "acc_streak": 0,
+    "rsi": 84.2,
+    "flow": 138,
     "perf": {
-      "w1": 4.13,
-      "m1": 12.27,
-      "m3": 13.77
+      "w1": 4.58,
+      "m1": 14.22,
+      "m3": 16.1
     },
     "returns": [
-      0.43,
-      3.74,
-      4.13,
-      8.61,
-      12.27,
-      13.77
+      0.84,
+      3.92,
+      4.58,
+      8.1,
+      14.22,
+      16.1
     ],
     "volumes": [
-      169,
-      137,
-      114,
-      159,
-      71,
-      150
+      72,
+      35,
+      184,
+      89,
+      100,
+      175
     ],
     "rsiStack": [
-      97.3,
-      90.2,
-      82.9,
-      76.9,
-      70.9,
-      65.9
+      97.8,
+      91.4,
+      84.2,
+      78.2,
+      72.0,
+      66.7
     ]
   },
   {
@@ -1775,45 +1775,45 @@ window.marketData = [
     "section": "Stock",
     "name": "PFE",
     "category": "Healthcare",
-    "price": 28.02,
-    "change": -0.99,
-    "mom": 50.4,
+    "price": 27.96,
+    "change": -0.21,
+    "mom": 48.6,
     "phase": "Mature",
     "volume": "Fading",
     "rotation": "Fading",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 64.3,
-    "flow": 80,
+    "rsi": 63.4,
+    "flow": 71,
     "perf": {
-      "w1": 0.83,
-      "m1": 12.48,
-      "m3": 9.67
+      "w1": -0.39,
+      "m1": 11.8,
+      "m3": 10.34
     },
     "returns": [
-      -0.99,
-      0.18,
-      0.83,
-      4.55,
-      12.48,
-      9.67
+      -0.21,
+      -2.14,
+      -0.39,
+      4.37,
+      11.8,
+      10.34
     ],
     "volumes": [
-      88,
+      80,
+      81,
+      90,
+      147,
       59,
-      72,
-      88,
-      87,
-      113
+      114
     ],
     "rsiStack": [
-      56.5,
-      63.3,
-      64.3,
-      62.9,
-      58.5,
-      47.4
+      54.2,
+      61.9,
+      63.4,
+      62.3,
+      58.1,
+      47.2
     ]
   },
   {
@@ -1823,36 +1823,36 @@ window.marketData = [
     "name": "FPI",
     "category": "Real Estate",
     "price": 10.25,
-    "change": -1.06,
-    "mom": 57.8,
+    "change": 0.0,
+    "mom": 56.1,
     "phase": "Mature",
-    "volume": "Spike",
+    "volume": "Fading",
     "rotation": "Fading",
     "signal": "HOLD",
-    "dist_streak": 1,
+    "dist_streak": 0,
     "acc_streak": 0,
     "rsi": 61.7,
-    "flow": 124,
+    "flow": 101,
     "perf": {
-      "w1": 1.28,
-      "m1": 8.81,
-      "m3": -1.25
+      "w1": 0.89,
+      "m1": 9.63,
+      "m3": -0.58
     },
     "returns": [
-      -1.06,
-      -1.06,
-      1.28,
-      5.13,
-      8.81,
-      -1.25
+      0.0,
+      -0.19,
+      0.89,
+      3.33,
+      9.63,
+      -0.58
     ],
     "volumes": [
-      172,
-      116,
-      103,
-      114,
-      70,
-      157
+      124,
+      83,
+      102,
+      101,
+      108,
+      132
     ],
     "rsiStack": [
       60.6,
@@ -1869,45 +1869,45 @@ window.marketData = [
     "section": "Stock",
     "name": "LAND",
     "category": "Real Estate",
-    "price": 8.87,
-    "change": 0.0,
-    "mom": 66.9,
+    "price": 8.97,
+    "change": 1.13,
+    "mom": 68.9,
     "phase": "Mature",
     "volume": "Fading",
-    "rotation": "Accumulation (Quiet)",
+    "rotation": "Trending up",
     "signal": "HOLD",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 64.0,
-    "flow": 101,
+    "rsi": 66.9,
+    "flow": 111,
     "perf": {
-      "w1": 2.07,
-      "m1": 7.13,
-      "m3": -4.83
+      "w1": 3.7,
+      "m1": 10.6,
+      "m3": -2.39
     },
     "returns": [
-      0.0,
-      0.45,
-      2.07,
-      7.0,
-      7.13,
-      -4.83
+      1.13,
+      2.16,
+      3.7,
+      7.94,
+      10.6,
+      -2.39
     ],
     "volumes": [
+      101,
+      93,
+      91,
+      102,
       97,
-      142,
-      103,
-      84,
-      129,
-      162
+      167
     ],
     "rsiStack": [
-      79.3,
-      71.5,
-      64.0,
-      58.0,
-      51.0,
-      41.5
+      84.2,
+      75.0,
+      66.9,
+      60.3,
+      52.7,
+      42.6
     ]
   },
   {
@@ -1916,45 +1916,45 @@ window.marketData = [
     "section": "Stock",
     "name": "CRDO",
     "category": "Semis",
-    "price": 240.24,
-    "change": 6.07,
-    "mom": 48.3,
+    "price": 232.75,
+    "change": -3.12,
+    "mom": 45.6,
     "phase": "Early",
     "volume": "Fading",
     "rotation": "Trending up",
     "signal": "BUY",
     "dist_streak": 0,
     "acc_streak": 0,
-    "rsi": 51.6,
-    "flow": 96,
+    "rsi": 49.0,
+    "flow": 83,
     "perf": {
-      "w1": 3.84,
-      "m1": 19.47,
-      "m3": 4.91
+      "w1": 0.95,
+      "m1": 12.45,
+      "m3": 8.46
     },
     "returns": [
-      6.07,
-      7.92,
-      3.84,
-      -9.68,
-      19.47,
-      4.91
+      -3.12,
+      2.75,
+      0.95,
+      -10.45,
+      12.45,
+      8.46
     ],
     "volumes": [
-      50,
-      86,
-      63,
-      149,
-      82,
-      112
+      96,
+      55,
+      54,
+      94,
+      68,
+      106
     ],
     "rsiStack": [
-      56.9,
-      52.3,
-      51.6,
-      51.3,
-      50.7,
-      46.6
+      46.7,
+      47.9,
+      49.0,
+      49.6,
+      49.6,
+      46.0
     ]
   },
   {
@@ -1963,79 +1963,79 @@ window.marketData = [
     "section": "Stock",
     "name": "MRVL",
     "category": "Tech",
-    "price": 241.45,
-    "change": -1.49,
-    "mom": 50.6,
+    "price": 216.62,
+    "change": -10.28,
+    "mom": 44.1,
     "phase": "Early",
     "volume": "Spike",
     "rotation": "Distribution",
     "signal": "HOLD",
-    "dist_streak": 0,
+    "dist_streak": 1,
     "acc_streak": 0,
-    "rsi": 56.3,
-    "flow": 167,
+    "rsi": 47.2,
+    "flow": 196,
     "perf": {
-      "w1": -3.81,
-      "m1": 31.72,
-      "m3": -16.97
+      "w1": -8.61,
+      "m1": 15.49,
+      "m3": -28.19
     },
     "returns": [
-      -1.49,
-      5.3,
-      -3.81,
-      8.67,
-      31.72,
-      -16.97
+      -10.28,
+      -9.88,
+      -8.61,
+      -2.43,
+      15.49,
+      -28.19
     ],
     "volumes": [
-      74,
-      78,
-      123,
-      118,
-      85,
-      118
+      173,
+      90,
+      106,
+      190,
+      66,
+      108
     ],
     "rsiStack": [
-      58.2,
-      58.4,
-      56.3,
-      54.5,
-      53.5,
-      52.6
+      34.1,
+      43.9,
+      47.2,
+      48.4,
+      49.5,
+      50.1
     ]
   }
 ];
 window.agriData = {
   "NTR": {
-    "price": 73.06,
-    "chg": -0.75,
-    "chgW": -0.08,
-    "chgM": 3.31,
-    "chgYTD": 18.37,
-    "marketCap": "$34.9B",
+    "price": 73.51,
+    "chg": 0.62,
+    "chgW": -2.34,
+    "chgM": 6.43,
+    "chgYTD": 19.1,
+    "marketCap": "$35.1B",
     "pe": "14.9x",
     "evEbitda": "8.3x",
     "de": "0.5x",
-    "drawdown": "-14.4%"
+    "drawdown": "-13.9%"
   },
   "MOS": {
-    "price": 23.76,
-    "chg": -1.66,
-    "chgW": 1.76,
-    "chgM": 4.35,
-    "chgYTD": -1.37,
-    "marketCap": "$7.6B",
-    "pe": "14.8x",
+    "price": 23.6,
+    "chg": -0.67,
+    "chgW": -3.32,
+    "chgM": 6.69,
+    "chgYTD": -2.03,
+    "marketCap": "$7.5B",
+    "pe": "14.7x",
     "evEbitda": "7.9x",
     "de": "0.5x",
-    "drawdown": "-35.8%"
+    "drawdown": "-36.2%"
   },
   "CF": {
-    "price": 125.71,
-    "chg": 0.01,
-    "chgW": 0.01,
-    "chgM": -0.05,
-    "chgYTD": 62.54,
+    "price": 125.79,
+    "chg": 0.06,
+    "chgW": -2.94,
+    "chgM": 0.48,
+    "chgYTD": 62.65,
     "marketCap": "$19.0B",
     "pe": "9.3x",
     "evEbitda": "6.0x",
@@ -2043,82 +2043,82 @@ window.agriData = {
     "drawdown": "-11.4%"
   },
   "ICL": {
-    "price": 5.67,
-    "chg": -0.18,
-    "chgW": 2.72,
-    "chgM": 9.46,
-    "chgYTD": -0.7,
+    "price": 5.6,
+    "chg": -1.23,
+    "chgW": -3.45,
+    "chgM": 10.67,
+    "chgYTD": -1.93,
     "marketCap": "–",
-    "pe": "23.6x",
+    "pe": "23.3x",
     "evEbitda": "7.4x",
     "de": "0.5x",
-    "drawdown": "-18.7%"
+    "drawdown": "-19.7%"
   },
   "FMC": {
-    "price": 10.66,
-    "chg": -3.79,
-    "chgW": -2.02,
-    "chgM": -9.89,
-    "chgYTD": -23.14,
-    "marketCap": "$1.3B",
-    "pe": "6.5x",
+    "price": 11.33,
+    "chg": 6.29,
+    "chgW": 2.81,
+    "chgM": 5.79,
+    "chgYTD": -18.31,
+    "marketCap": "$1.4B",
+    "pe": "6.9x",
     "evEbitda": "19.6x",
     "de": "2.7x",
-    "drawdown": "-73.3%"
+    "drawdown": "-71.4%"
   },
   "CTVA": {
-    "price": 82.4,
-    "chg": -0.58,
-    "chgW": 3.7,
-    "chgM": -7.77,
-    "chgYTD": 22.93,
-    "marketCap": "$55.0B",
-    "pe": "50.2x",
+    "price": 83.9,
+    "chg": 1.82,
+    "chgW": 2.58,
+    "chgM": 6.59,
+    "chgYTD": 25.17,
+    "marketCap": "$56.0B",
+    "pe": "50.8x",
     "evEbitda": "13.5x",
     "de": "0.2x",
-    "drawdown": "-9.4%"
+    "drawdown": "-7.8%"
   },
   "ADM": {
-    "price": 79.1,
-    "chg": -1.24,
-    "chgW": -3.18,
-    "chgM": -1.87,
-    "chgYTD": 37.59,
-    "marketCap": "$38.1B",
-    "pe": "21.9x",
+    "price": 81.54,
+    "chg": 3.08,
+    "chgW": 1.54,
+    "chgM": 2.86,
+    "chgYTD": 41.83,
+    "marketCap": "$39.3B",
+    "pe": "22.3x",
     "evEbitda": "15.6x",
     "de": "0.4x",
-    "drawdown": "-10.6%"
+    "drawdown": "-7.8%"
   },
   "BG": {
-    "price": 111.57,
-    "chg": -1.48,
-    "chgW": -4.29,
-    "chgM": 6.19,
-    "chgYTD": 25.25,
-    "marketCap": "$21.4B",
-    "pe": "24.4x",
+    "price": 115.48,
+    "chg": 3.5,
+    "chgW": 2.1,
+    "chgM": 8.71,
+    "chgYTD": 29.64,
+    "marketCap": "$22.2B",
+    "pe": "24.9x",
     "evEbitda": "12.5x",
     "de": "1.0x",
-    "drawdown": "-17.3%"
+    "drawdown": "-14.4%"
   },
   "INGR": {
-    "price": 103.5,
-    "chg": -1.18,
-    "chgW": -3.29,
-    "chgM": 3.16,
-    "chgYTD": -6.13,
-    "marketCap": "$6.5B",
+    "price": 104.62,
+    "chg": 1.08,
+    "chgW": -2.08,
+    "chgM": 5.19,
+    "chgYTD": -5.12,
+    "marketCap": "$6.6B",
     "pe": "11.4x",
     "evEbitda": "6.4x",
     "de": "0.4x",
-    "drawdown": "-20.7%"
+    "drawdown": "-19.8%"
   },
   "FPI": {
     "price": 10.25,
-    "chg": -1.06,
-    "chgW": 1.28,
-    "chgM": 8.81,
+    "chg": 0.0,
+    "chgW": 0.89,
+    "chgM": 9.63,
     "chgYTD": 5.78,
     "marketCap": "$450M",
     "pe": "20.1x",
@@ -2127,208 +2127,208 @@ window.agriData = {
     "drawdown": "-22.5%"
   },
   "LAND": {
-    "price": 8.87,
-    "chg": 0.0,
-    "chgW": 2.07,
-    "chgM": 7.13,
-    "chgYTD": -3.06,
-    "marketCap": "$383M",
-    "pe": "-29.1x",
+    "price": 8.97,
+    "chg": 1.13,
+    "chgW": 3.7,
+    "chgM": 10.6,
+    "chgYTD": -1.97,
+    "marketCap": "$387M",
+    "pe": "-29.4x",
     "evEbitda": "12.6x",
     "de": "0.7x",
-    "drawdown": "-31.8%"
+    "drawdown": "-31.0%"
   },
   "DE": {
-    "price": 622.66,
-    "chg": -1.87,
-    "chgW": 0.28,
-    "chgM": 3.87,
-    "chgYTD": 33.74,
-    "marketCap": "$168.1B",
-    "pe": "35.2x",
+    "price": 630.33,
+    "chg": 1.23,
+    "chgW": -2.65,
+    "chgM": 6.35,
+    "chgYTD": 35.39,
+    "marketCap": "$170.1B",
+    "pe": "35.0x",
     "evEbitda": "23.5x",
     "de": "3.8x",
-    "drawdown": "-7.6%"
+    "drawdown": "-6.5%"
   },
   "AGCO": {
-    "price": 110.9,
-    "chg": -0.59,
-    "chgW": 6.61,
-    "chgM": 3.52,
-    "chgYTD": 6.31,
-    "marketCap": "$7.8B",
-    "pe": "15.4x",
+    "price": 113.39,
+    "chg": 2.25,
+    "chgW": 6.16,
+    "chgM": 10.99,
+    "chgYTD": 8.69,
+    "marketCap": "$7.9B",
+    "pe": "15.7x",
     "evEbitda": "10.3x",
     "de": "0.7x",
-    "drawdown": "-22.9%"
+    "drawdown": "-21.1%"
   },
   "CNH": {
-    "price": 11.43,
-    "chg": -1.64,
-    "chgW": 4.38,
-    "chgM": 10.76,
-    "chgYTD": 23.97,
-    "marketCap": "$18.4B",
-    "pe": "45.7x",
+    "price": 11.68,
+    "chg": 2.19,
+    "chgW": -1.6,
+    "chgM": 13.95,
+    "chgYTD": 26.68,
+    "marketCap": "$18.8B",
+    "pe": "46.7x",
     "evEbitda": "37.0x",
     "de": "3.4x",
-    "drawdown": "-14.1%"
+    "drawdown": "-12.2%"
   },
   "XYL": {
-    "price": 112.65,
-    "chg": -0.68,
-    "chgW": -0.7,
-    "chgM": -3.57,
-    "chgYTD": -17.28,
-    "marketCap": "$26.3B",
-    "pe": "26.8x",
+    "price": 111.31,
+    "chg": -1.19,
+    "chgW": -1.86,
+    "chgM": -4.84,
+    "chgYTD": -18.26,
+    "marketCap": "$26.0B",
+    "pe": "26.5x",
     "evEbitda": "14.3x",
     "de": "0.3x",
-    "drawdown": "-27.0%"
+    "drawdown": "-27.8%"
   },
   "VMI": {
-    "price": 480.53,
-    "chg": 0.74,
-    "chgW": -0.24,
-    "chgM": 0.82,
-    "chgYTD": 19.44,
-    "marketCap": "$9.3B",
+    "price": 476.28,
+    "chg": -0.88,
+    "chgW": -1.97,
+    "chgM": -1.13,
+    "chgYTD": 18.38,
+    "marketCap": "$9.2B",
     "pe": "18.6x",
     "evEbitda": "14.8x",
     "de": "0.5x",
-    "drawdown": "-18.0%"
+    "drawdown": "-18.7%"
   },
   "LNN": {
-    "price": 114.26,
-    "chg": 0.11,
-    "chgW": -1.62,
-    "chgM": 3.34,
-    "chgYTD": -3.06,
+    "price": 113.88,
+    "chg": -0.33,
+    "chgW": -1.97,
+    "chgM": 2.76,
+    "chgYTD": -3.39,
     "marketCap": "$1.2B",
     "pe": "21.9x",
     "evEbitda": "13.6x",
     "de": "0.3x",
-    "drawdown": "-22.8%"
+    "drawdown": "-23.1%"
   },
   "MWA": {
-    "price": 24.72,
-    "chg": -2.18,
-    "chgW": -1.63,
-    "chgM": -0.92,
-    "chgYTD": 3.78,
-    "marketCap": "$3.9B",
-    "pe": "17.4x",
+    "price": 24.38,
+    "chg": -1.38,
+    "chgW": -2.25,
+    "chgM": -3.41,
+    "chgYTD": 2.35,
+    "marketCap": "$3.8B",
+    "pe": "17.2x",
     "evEbitda": "10.6x",
     "de": "0.4x",
-    "drawdown": "-20.3%"
+    "drawdown": "-21.4%"
   },
   "WTS": {
-    "price": 372.37,
-    "chg": -1.53,
-    "chgW": 0.67,
-    "chgM": 8.21,
-    "chgYTD": 34.91,
-    "marketCap": "$12.4B",
-    "pe": "32.5x",
+    "price": 366.34,
+    "chg": -1.62,
+    "chgW": -2.46,
+    "chgM": 5.94,
+    "chgYTD": 32.72,
+    "marketCap": "$12.2B",
+    "pe": "32.1x",
     "evEbitda": "21.2x",
     "de": "0.1x",
-    "drawdown": "-5.6%"
+    "drawdown": "-7.1%"
   },
   "TSN": {
-    "price": 55.35,
-    "chg": -2.12,
-    "chgW": -5.22,
-    "chgM": -8.74,
-    "chgYTD": -5.58,
+    "price": 55.4,
+    "chg": 0.09,
+    "chgW": -5.27,
+    "chgM": -4.42,
+    "chgYTD": -5.49,
     "marketCap": "$19.5B",
-    "pe": "35.0x",
+    "pe": "34.2x",
     "evEbitda": "9.7x",
     "de": "0.4x",
     "drawdown": "-20.3%"
   },
   "PPC": {
-    "price": 31.11,
-    "chg": -0.58,
-    "chgW": -0.42,
-    "chgM": 6.03,
-    "chgYTD": -20.21,
-    "marketCap": "$7.4B",
-    "pe": "13.6x",
+    "price": 31.69,
+    "chg": 1.86,
+    "chgW": -1.74,
+    "chgM": 15.83,
+    "chgYTD": -18.72,
+    "marketCap": "$7.5B",
+    "pe": "13.8x",
     "evEbitda": "5.7x",
     "de": "0.8x",
-    "drawdown": "-31.5%"
+    "drawdown": "-30.3%"
   },
   "HRL": {
-    "price": 21.28,
-    "chg": -10.25,
-    "chgW": -11.63,
-    "chgM": -16.12,
-    "chgYTD": -10.21,
-    "marketCap": "–",
-    "pe": "28.0x",
-    "evEbitda": "10.2x",
+    "price": 21.57,
+    "chg": 1.36,
+    "chgW": -9.67,
+    "chgM": -13.75,
+    "chgYTD": -8.99,
+    "marketCap": "$11.9B",
+    "pe": "34.8x",
+    "evEbitda": "9.0x",
     "de": "0.0x",
-    "drawdown": "-20.0%"
+    "drawdown": "-18.9%"
   },
   "CAG": {
-    "price": 16.02,
-    "chg": -1.05,
-    "chgW": -1.54,
-    "chgM": 6.59,
-    "chgYTD": -7.45,
+    "price": 16.09,
+    "chg": 0.44,
+    "chgW": -2.07,
+    "chgM": 10.89,
+    "chgYTD": -7.05,
     "marketCap": "$7.7B",
-    "pe": "10.3x",
+    "pe": "10.4x",
     "evEbitda": "8.6x",
     "de": "1.2x",
-    "drawdown": "-21.2%"
+    "drawdown": "-20.8%"
   },
   "CALM": {
-    "price": 79.75,
-    "chg": -3.99,
-    "chgW": -3.25,
-    "chgM": -8.42,
-    "chgYTD": 0.23,
+    "price": 80.21,
+    "chg": 0.58,
+    "chgW": -3.13,
+    "chgM": -8.62,
+    "chgYTD": 0.8,
     "marketCap": "$3.7B",
-    "pe": "12.5x",
+    "pe": "12.1x",
     "evEbitda": "6.0x",
     "de": "–",
-    "drawdown": "-31.7%"
+    "drawdown": "-31.2%"
   },
   "DBA": {
-    "price": 28.82,
-    "chg": 0.8,
-    "chgW": 1.55,
-    "chgM": 4.88,
-    "chgYTD": 12.93,
+    "price": 29.19,
+    "chg": 1.28,
+    "chgW": 3.07,
+    "chgM": 6.11,
+    "chgYTD": 14.38,
     "marketCap": "–",
-    "pe": "12.2x",
+    "pe": "12.3x",
     "evEbitda": "–",
     "de": "–",
-    "drawdown": "-0.3%"
+    "drawdown": "-0.0%"
   },
   "MOO": {
-    "price": 84.27,
-    "chg": -0.94,
-    "chgW": 0.91,
-    "chgM": 0.9,
-    "chgYTD": 15.77,
+    "price": 84.99,
+    "chg": 0.85,
+    "chgW": -0.23,
+    "chgM": 4.0,
+    "chgYTD": 16.76,
     "marketCap": "–",
-    "pe": "19.3x",
+    "pe": "19.4x",
     "evEbitda": "–",
     "de": "–",
-    "drawdown": "-2.6%"
+    "drawdown": "-1.8%"
   },
   "VEGI": {
-    "price": 45.96,
-    "chg": -1.23,
-    "chgW": 0.57,
-    "chgM": 1.46,
-    "chgYTD": 19.16,
+    "price": 46.58,
+    "chg": 1.35,
+    "chgW": -0.3,
+    "chgM": 5.43,
+    "chgYTD": 20.77,
     "marketCap": "–",
-    "pe": "21.6x",
+    "pe": "21.9x",
     "evEbitda": "–",
     "de": "–",
-    "drawdown": "-2.8%"
+    "drawdown": "-1.5%"
   },
   "USAG": {},
   "COCO.L": {
@@ -2338,7 +2338,7 @@ window.agriData = {
     "chgM": NaN,
     "chgYTD": NaN,
     "marketCap": "–",
-    "pe": "58.0x",
+    "pe": "61.6x",
     "evEbitda": "–",
     "de": "–",
     "drawdown": "nan%"
